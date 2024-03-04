@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import './Testimonial.css';
-import Section_title from '../Section_title';
+import SectionTitle from '../SectionTitle';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
@@ -34,7 +34,7 @@ const Testimonial = () => {
         <section className='sect-space testi-bg bg-gry'>
             <div className='container'>
                 <div className='row'>
-                    <div className='text-center'><Section_title smTitle='Testimonial' mainTitle='Here are some of our most valuable comments.' /></div>
+                    <div className='text-center'><SectionTitle smTitle='Testimonial' mainTitle='Here are some of our most valuable comments.' /></div>
                 </div>
                 <div className='m-t30 '>
 

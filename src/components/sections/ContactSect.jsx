@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import './ContactSect.css';
-import Section_title from '../Section_title';
+import SectionTitle from '../SectionTitle';
 import Button from '../Button';
 import TextField from '@mui/material/TextField';
 import InputLabel from '@mui/material/InputLabel';
@@ -35,7 +35,7 @@ const ContactSect = () => {
 
                 <div className='row'>
                     <div className='col-lg-4 col-md-6'>
-                        <Section_title smTitle="Contact" mainTitle="Semper tellus semmag" />
+                        <SectionTitle smTitle="Contact" mainTitle="Semper tellus semmag" />
                         <p className='m-t20'>Cursus quis condimentum nunc ultricies dis nisi diam nec. Bibendum potenti taciti ex parturient lacinia velit habitant.  </p>
                         <motion.div 
                            ref={ref}

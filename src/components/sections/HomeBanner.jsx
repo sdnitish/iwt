@@ -10,7 +10,7 @@ import 'swiper/css/scrollbar';
 // import required modules
 import { Autoplay, Navigation } from 'swiper/modules';
 
-const Home_banner = () => {
+const HomeBanner = () => {
     return (
         <>
             <Swiper
@@ -37,4 +37,4 @@ const Home_banner = () => {
     )
 }
 
-export default Home_banner
+export default HomeBanner

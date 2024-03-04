@@ -1,5 +1,5 @@
 import React from 'react';
-import Section_title from '../Section_title';
+import SectionTitle from '../SectionTitle';
 import { Aoutoplay, Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
@@ -8,14 +8,15 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 // import required modules
 import { Autoplay, Navigation } from 'swiper/modules';
-import Product_card from '../Product_card';
+// import ProductCard from '../ProductCard';
+import ProductCard from '../ProductCard';
 
 const ProductSlider = () => {
   return (
     <>
       <section className='sect-space bg-gry'>
         <div className='container'>
-            <div className='text-center'><Section_title  smTitle='Related Products' mainTitle="Cursus quis condimentum nunc ultricies " /></div>
+            <div className='text-center'><SectionTitle  smTitle='Related Products' mainTitle="Cursus quis condimentum nunc ultricies " /></div>
             <div className=' m-t30'>
             <Swiper
                 loop={true}
@@ -46,19 +47,19 @@ const ProductSlider = () => {
                 modules={[Autoplay , Navigation]}
                 className="home-slider">
                 <SwiperSlide>
-                  <Product_card  productName="Product name one" />
+                  <ProductCard  productName="Product name one" />
                 </SwiperSlide>
                 <SwiperSlide>
-                   <Product_card  productName="Product name two" />
+                   <ProductCard  productName="Product name two" />
                 </SwiperSlide>
                 <SwiperSlide>
-                   <Product_card  productName="Product name three" />
+                   <ProductCard  productName="Product name three" />
                 </SwiperSlide>
                 <SwiperSlide>
-                   <Product_card  productName="Product name four" />
+                   <ProductCard  productName="Product name four" />
                 </SwiperSlide>
                 <SwiperSlide>
-                   <Product_card  productName="Product name five" />
+                   <ProductCard  productName="Product name five" />
                 </SwiperSlide>
 
             </Swiper>

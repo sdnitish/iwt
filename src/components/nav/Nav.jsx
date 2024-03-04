@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './Nav.css';
 import MenuList from './MenuList';
 import Socials from './Socials';
-import Btn_link from '../Btn_link';
+import BtnLink from '../BtnLink';
 import PermPhoneMsgIcon from '@mui/icons-material/PermPhoneMsg';
 import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
 
@@ -31,7 +31,7 @@ const Nav = () => {
                                         </li>
                                     </ul>
                                 </div>
-                                <Btn_link Href="" addClass='' btnName="Request Quote" />
+                                <BtnLink Href="" addClass='' btnName="Request Quote" />
                             </div>
                         </div>
                     </div>

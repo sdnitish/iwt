@@ -1,22 +1,22 @@
 import React from 'react';
-import Home_banner from './components/sections/Home_banner';
+import HomeBanner from './components/sections/HomeBanner';
 import FeaturesSect from './components/sections/FeaturesSect';
-import Company_profile from './components/sections/Company_profile';
-import Product_section from './components/sections/Product_section';
-import Why_choose_us from './components/sections/Why_choose_us';
+import CompanyProfile from './components/sections/CompanyProfile';
+import ProductSection from './components/sections/ProductSection';
+import WhyChoose from './components/sections/WhyChoose';
 import ContactSect from './components/sections/ContactSect';
 import Testimonial from './components/sections/Testimonial';
 
 const Home = () => {
   return (
     <>
-    <Home_banner />
+    <HomeBanner />
     <FeaturesSect />
-    {/* <Company_profile/>
-    <Product_section />
-    <Why_choose_us />
+    <CompanyProfile/>
+    <ProductSection />
+    <WhyChoose />
     <Testimonial />
-    <ContactSect /> */}
+    <ContactSect />
     </>
   )
 }

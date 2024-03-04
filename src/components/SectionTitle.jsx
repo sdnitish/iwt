@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Section_title = (props) => {
+const SectionTitle = (props) => {
     return (
         <>
             <span className='sm-title'>{props.smTitle}</span>
@@ -9,4 +9,4 @@ const Section_title = (props) => {
     )
 }
 
-export default Section_title
+export default SectionTitle

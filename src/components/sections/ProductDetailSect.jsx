@@ -1,5 +1,5 @@
 import {React , useState , useEffect} from 'react';
-import Section_title from '../Section_title';
+import SectionTitle from '../SectionTitle';
 import LoremIpsum from 'react-lorem-ipsum';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -97,7 +97,7 @@ const ProductDetailSect = () => {
                             </Swiper>
                         </div>
                     </motion.div>
-                    <Section_title smTitle="Product Details" mainTitle="Bibendum potenti taciti ex parturient lacini" />
+                    <SectionTitle smTitle="Product Details" mainTitle="Bibendum potenti taciti ex parturient lacini" />
                     <LoremIpsum p={5} />
                 </div>
             </div>

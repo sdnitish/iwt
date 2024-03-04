@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import './Product_card.css';
+import './ProductCard.css';
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const Product_card = (props) => {
+const ProductCard = (props) => {
 
   const boxVariant = {
     visible: { opacity: 1, scale: 1, translateX: 0, transition: {duration: 0.4} },
@@ -39,4 +39,4 @@ const Product_card = (props) => {
   )
 }
 
-export default Product_card
+export default ProductCard

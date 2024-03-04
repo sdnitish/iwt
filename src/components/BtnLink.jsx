@@ -1,7 +1,7 @@
 import React from 'react';
 import LastPageIcon from '@mui/icons-material/LastPage';
 
-const Btn_link = (props) => {
+const BtnLink = (props) => {
   return (
     <a className={props.addClass  + ' ' + 'thm-btn'} href={props.Href}>{props.btnName} 
     {/* <LastPageIcon /> */}
@@ -10,4 +10,4 @@ const Btn_link = (props) => {
   )
 }
 
-export default Btn_link
+export default BtnLink

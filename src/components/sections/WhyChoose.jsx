@@ -1,13 +1,13 @@
-import React, {useEffect, useState} from 'react';
-import './Why_choose_us.css'
+import React, {useEffect} from 'react';
+import './WhyChoose.css'
 import CountUp from 'react-countup';
-import Section_title from '../Section_title';
+import SectionTitle from '../SectionTitle';
 import LoremIpsum from 'react-lorem-ipsum';
-import Btn_link from '../Btn_link';
+import BtnLink from '../BtnLink';
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const Why_choose_us = () => {
+const WhyChoose = () => {
 
   // const boxVariant = {
   //   visible: { opacity: 1, scale: 1, translateY: 0, transition: {duration: 0.21} },
@@ -18,10 +18,10 @@ const Why_choose_us = () => {
     visible: { opacity: 1, scale: 1, translateX: 0, transition: {duration: 0.4} },
     hidden: { opacity: 0.25, scale: 0.65 , translateX: -100},
   }
-  const boxVariantThree = {
-    visible: { opacity: 1, scale: 1, translateX: 0, transition: {duration: 0.4} },
-    hidden: { opacity: 0.25, scale: 0.65 , translateX: 100},
-  }
+  // const boxVariantThree = {
+  //   visible: { opacity: 1, scale: 1, translateX: 0, transition: {duration: 0.4} },
+  //   hidden: { opacity: 0.25, scale: 0.65 , translateX: 100},
+  // }
 
   const control = useAnimation()
   const [ref, inView] = useInView()
@@ -107,7 +107,7 @@ const Why_choose_us = () => {
             </div>
           </motion.div>
           <div className='col-lg-7 m-t30'>
-            <Section_title smTitle="Why Choose" mainTitle="We Are Expert In All
+            <SectionTitle smTitle="Why Choose" mainTitle="We Are Expert In All
              Industry" />
             <LoremIpsum p={1} />
 
@@ -140,7 +140,7 @@ const Why_choose_us = () => {
               </div>
             </div>
 
-            <div className='col-12 m-t40'><Btn_link Href="" btnName="Readmore About" /></div>
+            <div className='col-12 m-t40'><BtnLink Href="" btnName="Readmore About" /></div>
           </div>
         </div>
       </div>
@@ -148,4 +148,4 @@ const Why_choose_us = () => {
   )
 }
 
-export default Why_choose_us
+export default WhyChoose

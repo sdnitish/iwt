@@ -1,12 +1,12 @@
 import React ,{useEffect} from 'react';
-import './Company_profile.css';
+import './CompanyProfile.css';
 import { LoremIpsum } from 'react-lorem-ipsum';
-import Section_title from '../Section_title';
-import Btn_link from '../Btn_link';
+import SectionTitle from '../SectionTitle';
+import BtnLink from '../BtnLink';
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const Company_profile = () => {
+const CompanyProfile = () => {
 
   const boxVariant = {
     visible: { opacity: 1, scale: 1, translateX: 0, transition: {duration: 0.5} },
@@ -35,11 +35,11 @@ const Company_profile = () => {
             <div 
              className='col-lg-6'>
               <div>
-                <Section_title smTitle="About Company" mainTitle="Company lorem ipsumt konilat diltavt" />
+                <SectionTitle smTitle="About Company" mainTitle="Company lorem ipsumt konilat diltavt" />
               </div>
               <LoremIpsum p={3} />
               <div className='row align-items-center mt-4'>
-                <Btn_link Href="" btnName="Readmore" />
+                <BtnLink Href="" btnName="Readmore" />
                 <div className="abt-contact-content ">
                   <div className="contact-icon">
                      <i className="fa-solid fa-phone-volume"></i>
@@ -77,4 +77,4 @@ const Company_profile = () => {
   )
 }
 
-export default Company_profile
+export default CompanyProfile

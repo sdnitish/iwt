@@ -1,5 +1,5 @@
 import React from 'react';
-import Company_profile from './components/sections/Company_profile';
+import CompanyProfile from './components/sections/CompanyProfile';
 import BreadCrumb from './components/sections/BreadCrumb';
 import ContactSect from './components/sections/ContactSect';
 import Sitemap from './components/sections/Sitemap';
@@ -9,12 +9,12 @@ import ProductDetailSect from './components/sections/ProductDetailSect';
 const About = () => {
   return (
     <>
-      {/* <BreadCrumb />
-      <Company_profile/>
+      <BreadCrumb />
+      <CompanyProfile/>
       <ProductSlider />
       <ProductDetailSect />
       <ContactSect />
-      <Sitemap /> */}
+      <Sitemap />
     </>
   )
 }
