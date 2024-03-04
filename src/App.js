@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path='/about' element={<About />} />
       </Routes>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </ BrowserRouter>
   );
 }

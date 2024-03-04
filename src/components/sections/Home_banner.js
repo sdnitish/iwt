@@ -1,5 +1,7 @@
 import React, { useRef, useState } from 'react';
 import {  Swiper, SwiperSlide } from 'swiper/react';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -25,11 +27,11 @@ const Home_banner = () => {
                   }}
                 modules={[Autoplay , Navigation]}
                 className="home-slider">
-                <SwiperSlide><img className='w-100' loading='lazy' src='images/slider/Banner-1@2x.jpg' alt='' /></SwiperSlide>
-                <SwiperSlide><img className='w-100' loading='lazy' src='images/slider/Banner-2@2x.jpg' alt='' /></SwiperSlide>
-                <SwiperSlide><img className='w-100' loading='lazy' src='images/slider/Banner-3@2x.jpg' alt='' /></SwiperSlide>
-                <div className="prev-slide slide-btn"><span><i className="fa-solid fa-chevron-left"></i></span></div>
-                <div className="next-slide slide-btn"><span><i className="fa-solid fa-chevron-right"></i></span></div>
+                <SwiperSlide><img className='w-100' loading='lazy' src='images/slider/ban1.jpg' alt='' /></SwiperSlide>
+                <SwiperSlide><img className='w-100' loading='lazy' src='images/slider/ban2.jpg' alt='' /></SwiperSlide>
+                <SwiperSlide><img className='w-100' loading='lazy' src='images/slider/ban1.jpg' alt='' /></SwiperSlide>
+                <div className="prev-slide slide-btn"><span><ArrowForwardIcon /></span></div>
+                <div className="next-slide slide-btn"><span><ArrowBackIcon /></span></div>
             </Swiper>
         </>
     )

@@ -1,6 +1,6 @@
 import React from 'react';
 import Home_banner from './components/sections/Home_banner';
-import Features_sect from './components/sections/Features_sect';
+import FeaturesSect from './components/sections/FeaturesSect';
 import Company_profile from './components/sections/Company_profile';
 import Product_section from './components/sections/Product_section';
 import Why_choose_us from './components/sections/Why_choose_us';
@@ -11,12 +11,12 @@ const Home = () => {
   return (
     <>
     <Home_banner />
-    <Features_sect />
-    <Company_profile/>
+    <FeaturesSect />
+    {/* <Company_profile/>
     <Product_section />
     <Why_choose_us />
     <Testimonial />
-    <ContactSect />
+    <ContactSect /> */}
     </>
   )
 }

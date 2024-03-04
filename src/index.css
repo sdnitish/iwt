@@ -13,8 +13,8 @@ section{
   overflow-x: hidden;
 }
 :root{
-  --primry-clr: red;
-  --secondary-clr: #8a0c0c;
+  --primry-clr: #2c2b7b;
+  --secondary-clr: #dea82c;
 }
 ul{
   padding: 0;

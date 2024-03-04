@@ -31,6 +31,7 @@ const Nav = () => {
                                         </li>
                                     </ul>
                                 </div>
+                                <Btn_link Href="" addClass='' btnName="Request Quote" />
                             </div>
                         </div>
                     </div>
@@ -41,23 +42,29 @@ const Nav = () => {
                     <div className='row'>
                         <div className='col-lg-12'>
                             <div className='mainmenu-wrapper'>
-                                <div className='logo-box'> <a href=''><img src='./images/logo-valvetek.png' alt='' /></a> </div>
+                <div className='logo-box'> <a href=''><img src='./images/logo.png' alt='' /></a> </div>
+                               {/* <div className='col-1'></div> */}
                                 <div className='Mainmenu'>
                                     {/* menu list appear here */}
                                     <MenuList />
                                 </div>
-                                <Btn_link Href="" addClass='' btnName="Request Quote" />
                                 <span onClick={toggleSidenav} className='menuBtn'><i className="fa-solid fa-bars-staggered"></i></span>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className='menu-shape-top'>
+                    <img src="../images/shapes/cloud-menu.png" alt="" />
+                </div>
+                <div className='menu-shape-botm'>
+                    {/* <img src="../images/shapes/paper-cut.png" alt="" /> */}
                 </div>
             </nav>
             {/* menu for mobile*/}
             <div className={isOpen ? 'phone-nav-overlay active' : 'phone-nav-overlay'}>
                 <span onClick={toggleSidenav} className='close-nav'><i className="fa-solid fa-xmark"></i></span>
                <div className='phone-nav'>
-                 <div className='logo-box'> <a href=''><img src='./images/logo-valvetek.png' alt='' /></a> </div>
+                 <div className='logo-box'> <a href=''><img src='./images/logo.png' alt='' /></a> </div>
                  {/* menu list appear here for mobile*/}
                  <MenuList />
                </div>

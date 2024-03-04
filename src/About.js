@@ -9,12 +9,12 @@ import ProductDetailSect from './components/sections/ProductDetailSect';
 const About = () => {
   return (
     <>
-      <BreadCrumb />
+      {/* <BreadCrumb />
       <Company_profile/>
       <ProductSlider />
       <ProductDetailSect />
       <ContactSect />
-      <Sitemap />
+      <Sitemap /> */}
     </>
   )
 }
