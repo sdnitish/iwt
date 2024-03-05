@@ -15,6 +15,7 @@ section{
 :root{
   --primry-clr: #2c2b7b;
   --secondary-clr: #dea82c;
+  --gradient: linear-gradient(var(--primry-clr) , var(--secondary-clr));
 }
 ul{
   padding: 0;

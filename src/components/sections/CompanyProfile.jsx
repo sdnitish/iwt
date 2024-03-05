@@ -40,15 +40,15 @@ const CompanyProfile = () => {
               animate={control}
               className='abt-floated'>
               <div className='abt-text-circle'>
-                <div class="video-main">
-                  <div class="promo-video">
-                    <div class="waves-block">
-                      <div class="waves wave-1"></div>
-                      <div class="waves wave-2"></div>
-                      <div class="waves wave-3"></div>
+                <div className="video-main">
+                  <div className="promo-video">
+                    <div className="waves-block">
+                      <div className="waves wave-1"></div>
+                      <div className="waves wave-2"></div>
+                      <div className="waves wave-3"></div>
                     </div>
                   </div>
-                  <a href="https://www.youtube.com/watch?v=BqI0Q7e4kbk" class="video video-popup mfp-iframe" data-lity><i class="fa fa-play"></i></a>
+                  <a href="https://www.youtube.com/watch?v=BqI0Q7e4kbk" className="video video-popup mfp-iframe" data-lity><i className="fa fa-play"></i></a>
                 </div>
               </div>
               <div className='abt-shape anim-left-right'><img loading='lazy' src="images/shapes/service-left-shape.svg" alt="" /></div>
