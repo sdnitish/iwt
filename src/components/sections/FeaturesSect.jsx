@@ -4,7 +4,7 @@ import FeatureCard from '../FeatureCard';
 
 const FeaturesSect = () => {
   return (
-    <section className='sect-space pt-4'>
+    <section className=' pt-5'>
       <div className='container'>
         {/* <div className='row'>
             <div className='col-lg-6'><SectionTitle smTitle="Features" mainTitle="Semper tellus sem magnis lacinia, elit montes quis" /></div>

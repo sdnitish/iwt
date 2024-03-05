@@ -30,8 +30,8 @@ const HomeBanner = () => {
                 <SwiperSlide><img className='w-100' loading='lazy' src='images/slider/ban1.jpg' alt='' /></SwiperSlide>
                 <SwiperSlide><img className='w-100' loading='lazy' src='images/slider/ban2.jpg' alt='' /></SwiperSlide>
                 <SwiperSlide><img className='w-100' loading='lazy' src='images/slider/ban1.jpg' alt='' /></SwiperSlide>
-                <div className="prev-slide slide-btn"><span><ArrowForwardIcon /></span></div>
-                <div className="next-slide slide-btn"><span><ArrowBackIcon /></span></div>
+                <div className="prev-slide slide-btn"><span><ArrowBackIcon /></span></div>
+                <div className="next-slide slide-btn"><span><ArrowForwardIcon /></span></div>
             </Swiper>
         </>
     )

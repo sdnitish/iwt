@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link , useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+// import ChildMenu from './ChildMenu';
 
 const HasChildMenu = (props) => {
 
@@ -10,13 +11,9 @@ const HasChildMenu = (props) => {
     }
 
     return (
-        <li className='hasChild'><Link to="/">Products</Link><i onClick={toggleDropdown} className="fa-solid fa-angle-down"></i>
+        <li className='hasChild'><Link to=""><img className='menu-gif' src={props.servGif} alt="" /> <span>{props.servName}</span> </Link><i onClick={toggleDropdown} className="fa-solid fa-angle-down"></i>
             <ul className={isOpen ? 'active' : ''}>
-                <li><a href="#">Product name lorem</a></li>
-                <li><a href="#">Product name lorem</a></li>
-                <li><a href="#">Product name lorem</a></li>
-                <li><a href="#">Product name lorem</a></li>
-                <li><a href="#">Product name lorem</a></li>
+                {props.servChild}
             </ul>
         </li>
     )
