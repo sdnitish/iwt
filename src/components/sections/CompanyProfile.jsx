@@ -1,12 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './CompanyProfile.css';
 import { LoremIpsum } from 'react-lorem-ipsum';
 import SectionTitle from '../SectionTitle';
 import BtnLink from '../BtnLink';
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import ModalVideo from 'react-modal-video';
 
 const CompanyProfile = () => {
+
+  const [isOpen, setOpen] = useState(false);
 
   const boxVariant = {
     visible: { opacity: 1, scale: 1, translateX: 0, transition: { duration: 0.5 } },
@@ -27,6 +30,13 @@ const CompanyProfile = () => {
 
   return (
     <>
+    <ModalVideo
+				channel="youtube"
+				youtube={{ mute: 0, autoplay: 1, theme: "dark"}}
+				isOpen={isOpen}
+				videoId="-vPON-2pEXg?si=zRK4aAWaCjMBHiZW"
+				onClose={() => setOpen(false)} 
+			/>
       <section className="about-section">
         <div className='about-left-shape anim-up-down'><img src="images/shapes/abt-left.png" alt="" /></div>
         <div className='about-right-shape anim-scale'><img src="images/shapes/abt-right.png" alt="" /></div>
@@ -48,7 +58,7 @@ const CompanyProfile = () => {
                       <div className="waves wave-3"></div>
                     </div>
                   </div>
-                  <a href="https://www.youtube.com/watch?v=BqI0Q7e4kbk" className="video video-popup mfp-iframe" data-lity><i className="fa fa-play"></i></a>
+                  <span onClick={() => setOpen(true)} className="video-btn" ><i className="fa fa-play"></i></span>
                 </div>
               </div>
               <div className='abt-shape anim-left-right'><img loading='lazy' src="images/shapes/service-left-shape.svg" alt="" /></div>

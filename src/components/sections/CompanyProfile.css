@@ -41,12 +41,12 @@
 }
 .about-right-shape{
     right: 0;
-    height: 25%;
+    height: fit-content;
     width: auto;
     max-width: 250px;
     left: unset;
     /* top: 0; */
-    /* bottom: ; */
+    bottom:-90px ;
 }
 .about-right-shape img,
 .about-left-shape img{
@@ -110,7 +110,7 @@
     display: inline-block;
   }
   
-  .video {
+  .video-btn {
     height: 50px;
     width: 50px;
     line-height: 50px;
@@ -121,6 +121,7 @@
     display: inline-block;
     background: var(--primry-clr);
     z-index: 999;
+    cursor: pointer;
   }
   
   @keyframes waves {
