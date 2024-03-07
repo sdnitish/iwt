@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import './WhyChoose.css'
 import CountUp from 'react-countup';
 import SectionTitle from '../SectionTitle';
@@ -15,13 +15,13 @@ const WhyChoose = () => {
   // }
 
   const boxVariantTwo = {
-    visible: { opacity: 1, scale: 1, translateX: 0, transition: {duration: 0.4} },
-    hidden: { opacity: 0.25, scale: 0.65 , translateX: -100},
+    visible: { opacity: 1, scale: 1, translateX: 0, transition: { duration: 0.4 } },
+    hidden: { opacity: 0.25, scale: 0.65, translateX: -100 },
   }
-  // const boxVariantThree = {
-  //   visible: { opacity: 1, scale: 1, translateX: 0, transition: {duration: 0.4} },
-  //   hidden: { opacity: 0.25, scale: 0.65 , translateX: 100},
-  // }
+  const boxVariantThree = {
+    visible: { width: 'var(--prog1)', transition: { duration: 0.6 }},
+    hidden: { width: 0},
+  }
 
   const control = useAnimation()
   const [ref, inView] = useInView()
@@ -40,7 +40,7 @@ const WhyChoose = () => {
       <img className='shape-right anim-up-down' src="./images/shapes/why-shape.png" alt="" />
       {/* <h1 className='text-center'><CountUp end={100} enableScrollSpy scrollSpyOnce="true" /></h1> */}
       <div className='container'>
-        <div className='row m-b40'>
+        {/* <div className='row m-b40'>
           <div className='col-lg-4 col-md-6 m-b30'>
             <div
              className='countup_box'>
@@ -92,55 +92,77 @@ const WhyChoose = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className='row'>
-          <motion.div 
-              ref={ref}
-              variants={boxVariantTwo}
-              initial="hidden"
-              animate={control}
-           className='col-lg-5'>
+          <div
+            // ref={ref}
+            // variants={boxVariantTwo}
+            // initial="hidden"
+            // animate={control}
+            className='col-lg-6'>
             <div className='why-left-img'>
-              <img src="./images/img/welcome.png" alt="" />
-              <div className='color-layer'><span>Why Us</span></div>
+              <img src="./images/img/why-img1.jpg" alt="" />
+              {/* <div className='color-layer'><span>Why Us</span></div> */}
             </div>
-          </motion.div>
-          <div className='col-lg-7 m-t30'>
-            <SectionTitle smTitle="Why Choose" mainTitle="We Are Expert In All
-             Industry" />
-            <LoremIpsum p={1} />
-
+          </div>
+          <div className='col-lg-6 m-t30'>
+            <SectionTitle smTitle="Why Choose" mainTitle="We Are Expert In Google Promotion Services" />
+            {/* <LoremIpsum p={1} /> */}
+            <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Commodo vulputate ultrices suspendisse nam rutrum aliquam laoreet pellentesque. Commodo primis ipsum feugiat vitae cursus nisl adipiscing.</p>
             <div className="row ">
-              <div className="col-lg-6 col-md-6 col-sm-12">
-                <ul className="list-why-us">
-                  <li>Our Work Growth</li>
-                  <li>1500 Employed</li>
-                  <li>1500 Employed</li>
-                </ul>
+              <div className="col-lg-5 col-md-5 col-sm-12">
+                <img className='w-100' src="./images/gif/why-gif.gif" alt="" />
               </div>
-              <div className="col-lg-6 col-md-6 col-sm-12">
+              <div className="col-lg-7 col-md-7 col-sm-12">
                 <ul className="list-why-us">
-                  <li>Our Employee Growth</li>
+                  <li>Your Business Growth</li>
+                  <li>Easily Service Management</li>
+                  <li>Easily Your Business Growth</li>
                   <li>Service Management</li>
-                  <li>Service Management</li>
+                  <li>Easily Your Business Growth</li>
                 </ul>
               </div>
             </div>
-
-            <div className='col-12 m-t30'>
-              <div className='why_icn_box'>
-                <div className='icon-box row'>
-                  <img className='award-img' src="./images/shapes/award.png" alt="" />
-                  <div className='award-cont'>
-                    <p className='title'>Best Quality Products Always</p>
-                    <p> Eiusmod tempor incididunt ut labore et dolore magna aliqua. ra maecenas accumsan lacus vel facilisis.</p>
-                  </div>
+            <div class="skill-feature m-t30">
+              <p class="skill-feature_title">Customer Satisfied</p>
+              <div class="progress">
+                <motion.div
+                 ref={ref}
+                 variants={boxVariantThree}
+                 initial="hidden"
+                 animate={control}
+                 style={{ "--prog1": "90%" }}  class="progress-bar">
+                  <div class="progress-value">
+                    <CountUp end={90} enableScrollSpy scrollSpyOnce="false" /> <span>%</span></div>
+                </motion.div>
+              </div>
+            </div>
+            <div class="skill-feature m-t30">
+              <p class="skill-feature_title">Successful Projects</p>
+              <div class="progress">
+                <motion.div
+                 ref={ref}
+                 variants={boxVariantThree}
+                 initial="hidden"
+                 animate={control}
+                 style={{ "--prog1": "96%" }}  class="progress-bar">
+                   <div class="progress-value">
+                    <CountUp end={96} enableScrollSpy scrollSpyOnce="false" /> <span>%</span></div>
+                </motion.div>
+              </div>
+            </div>
+           
+            <div className='row align-items-center m-t40'>
+              <div className='col-auto'><BtnLink Href="" btnName="Book Service" /></div>
+              <div className='col-auto d-flex align-items-center'>
+                <img src="./images/shapes/group-img.png" alt="" />
+                <div className='client-count'>
+                 <CountUp end={296} enableScrollSpy scrollSpyOnce="false" /> <span>+</span>
+                 <p>Happy Clients</p>
                 </div>
               </div>
             </div>
-
-            <div className='col-12 m-t40'><BtnLink Href="" btnName="Readmore About" /></div>
           </div>
         </div>
       </div>
