@@ -1410,7 +1410,21 @@
 	font-weight: 600;
 	line-height: 1.26;
 }
-
+.title-big{
+	color: transparent;
+	-webkit-text-stroke-width:1px;
+	-webkit-text-stroke-color: var(--primry-clr);
+	font-size: 6vw;
+	font-weight: 800;
+	position: absolute;
+	left: 0;
+	top: -5vw;
+	margin: auto;
+	text-align: center;
+	width: 100%;
+	opacity: .21;
+	z-index: -1;
+}
 @media (max-width: 600px) {
 	.sect-title {
 		font-size: 26px;

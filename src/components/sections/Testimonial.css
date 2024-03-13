@@ -1,43 +1,64 @@
-/* .testi-bg{
-    background: linear-gradient(rgba(0, 0, 0, 0.614),rgba(0, 0, 0, 0.674)), url(../../../public/images/bg/testi-bg2.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    position: relative;
-}
-.testi-bg .sect-title{
-    color: white !important;
-} */
+
 .testi-img{
-    width: 65px;
-    height: 65px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
     border: 5px solid white;
-    margin-right: 40px;
     box-shadow: 0px 0px 4px rgb(116, 116, 116);
-    margin-top: 10px;
+    margin-bottom: 19px;
 }
 .reviews-box{
     position: relative;
-    width: calc(100% - 105px);
-    padding: 40px;
-    background: white;
-    box-shadow: 0px 4px 16px 0px rgb(0 0 0 / 6%);
+    width: 100%;
 }
-.reviews-box::before{
-    content: '';
+.testi-box{
+    position: relative;
+    padding:  60px;
+    margin: 30px auto;
+    width: 90%;
+}
+.Testimonial-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    position: relative;
+    z-index: 4;
+}
+.testi-box::before{
+    content: "";
+    width: 90%;
+    height: 90%;
     position: absolute;
-    width: 0;
-    height: 0;
-    border-width: 20px 20px 12px 0;
-    border-style: solid;
-    border-color: transparent #fff transparent #fff;
-    z-index: 1;
-    left: -20px;
-    top: 30px;
+    left: 5%;
+    top: 5%;
+    background: white;
+    z-index: 3;
+    border-radius: 30px;
+    transform: skew(-2deg , -2deg);
+    box-shadow: 0px 0px 4px gray;
+}
+.testi-box::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: var(--primry-clr);
+    z-index: 2;
+    transform: rotate(-4deg) skew(-2deg , -2deg);
+    border-radius: 30px;
+    transition: all 450ms ease;
+    box-shadow: 0px 0px 4px gray;
+}
+.testi-box:hover::after{
+    transform: rotate(-6deg) skew(-2deg , -2deg);
+    background: var(--secondary-clr);
 }
 .testi-words{
-    font-size: 21px;
+    font-size: 16px;
     color: rgb(107, 106, 106);
     line-height: 1.4;
     letter-spacing: 0;
@@ -47,21 +68,12 @@
     position: relative;
     margin-top: 31px;
 }
-.testi-name-box::before{
-    position: absolute;
-    content: "";
-    top: 10px;
-    width: 50px;
-    height: 3px;
-    left: -60px;
-    background-color: var(--primry-clr);
-}
 .testi-name-box i{
     position: absolute;
     right: 40px;
     color: var(--primry-clr);
     top: 0;
-    font-size: 60px;
+    font-size: 40px;
 }
 .testi-name{
     font-size: 22px;
@@ -86,10 +98,6 @@
     }
     .testi-words{
         font-size: 16px;
-    }
-    .reviews-box{
-        padding: 25px;
-        width: calc(100% - 80px);
     }
     .testi-name-box i{
         font-size: 35px;

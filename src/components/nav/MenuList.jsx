@@ -62,7 +62,8 @@ const MenuList = () => {
             servName="Web Designing" 
             servChild={<ChildMenu servChild={webDesign} />}
              />
-            <li className=''><Link to="/"><img className='menu-gif' src="./images/gif/Company-Profile-f.gif" alt="" /> <span>Company Profile</span> </Link></li>
+            <li className=''><Link to="/about"><img className='menu-gif' src="./images/gif/Company-Profile-f.gif" alt="" /> <span>Company Profile</span> </Link></li>
+            <li className=''><Link to="/contact"><img className='menu-gif' src="./images/gif/Company-Profile-f.gif" alt="" /> <span>Contact</span> </Link></li>
             <li className=''><Link to="/"><img className='menu-gif' src="./images/gif/Seo-f.gif" alt="" /> <span>Seo</span> </Link></li>
         </ul>
     )

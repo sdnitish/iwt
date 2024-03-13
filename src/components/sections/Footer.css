@@ -1,19 +1,84 @@
 .Footer-top{
     width: 100%;
-    padding-top: 100px;
-    border-top: 1px solid rgb(218, 216, 216);
+    /* padding-top: 100px; */
+    /* border-top: 1px solid rgb(218, 216, 216); */
 }
 .footer-main{
-    background: black;
-    padding-top: 22px;
+    background: var(--primry-clr);
+    padding-top: 42px;
+    position: relative;
+    overflow: hidden;
+}
+.footer-main .container{
+    position: relative;
+    z-index: 10;
+}
+/* .btm-layer{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 80px;
+    width: 100%;
+    z-index: 2;
+    background: var(--secondary-clr);
+} */
+.btm-layer2{
+    position: absolute;
+    left: -18%;
+    top: -75%;
+    height: 178%;
+    max-height: 900px;
+    width: 61%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    z-index: 3;
+    background: var(--secondary-clr);
+}
+.btm-layer3{
+    position: absolute;
+    left: -18%;
+    top: -69%;
+    height: 172%;
+    max-height: 900px;
+    width: 59%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    z-index: 4;
+    /* background: url(../../../public/images/bg/ft-bg2.jpg); */
+    background: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 0 ;
+    overflow: hidden;
+}
+.btm-layer3 img{
+    max-width: 650px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+@media (max-width: 768px) {
+    .btm-layer3 img{
+        max-width: 225px;
+    }
+    .btm-layer3 {
+        position: relative;
+        left: unset;
+        top: unset;
+        height: 187px;
+        max-height: 301px;
+        width: 219px;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+    }
 }
 .ft-logo-box{
     width: 100%;
-    padding: 40px;
-    background: var(--primry-clr);
-    border-top-left-radius: 50px;
-    margin-top: -100px;
-    border: 1px solid var(--primry-clr);
+    /* padding: 40px; */
+    /* background: var(--primry-clr); */
+    /* border-top-left-radius: 50px; */
+    /* margin-top: -100px; */
+    /* border: 1px solid var(--primry-clr); */
 }
 @media (max-width: 767px) {
     .ft-logo-box{
@@ -59,6 +124,7 @@
     font-weight: 700;
 }
 .ft-logo img{
+    max-height: 100px;
     max-width: 100%;
 }
 .ft-logo-box .social-icn-common{
@@ -73,8 +139,9 @@
 .copy-box{
     width: 100%;
     padding: 25px 0;
-    border-top: 1px solid rgba(236, 234, 234, 0.639);
+    /* border-top: 1px solid rgba(236, 234, 234, 0.639); */
     margin-top: 60px;
+    background: var(--secondary-clr);
 }
 .copy-right-text{
     font-size: 14px;
@@ -107,7 +174,15 @@
     bottom: -4px;
     width: 54%;
     height: 3px;
-    background: var(--primry-clr);
+    background: var(--secondary-clr);
+    animation: line-anm-ft 2s linear infinite;
+}
+@keyframes line-anm-ft {
+    0%{width: 54%;}
+    25%{width: 40%;}
+    50%{width: 44%;}
+    75%{width: 64%;}
+    100%{width: 54%;}
 }
 .footer-widget .title-ft::after{
     content: '';
@@ -116,9 +191,17 @@
     bottom: -6px;
     height: 8px;
     width: 8px;
-    background: rgba(255, 0, 0, 0.961);
+    background: var(--secondary-clr);
     border-radius: 50%;
-    box-shadow: 8px 0px 1px red;
+    box-shadow: 8px 0px 1px var(--secondary-clr);
+    animation: line-anm-ft-bef 2s linear infinite;
+}
+@keyframes line-anm-ft-bef {
+    0%{background: var(--secondary-clr);}
+    25%{background:  white;}
+    50%{background: var(--secondary-clr) ; box-shadow: 8px 0px 1px white;}
+    75%{background: var(--secondary-clr) ; box-shadow: 8px 0px 1px var(--secondary-clr);}
+    100%{background: var(--primry-clr);}
 }
 .footer-widget .links{
     list-style: none;
@@ -134,13 +217,13 @@
     transition: all 350ms ease-out;
 }
 .footer-widget .links li a:hover{
-    color: var(--primry-clr);
+    color: var(--secondary-clr);
 }
 
 
 .footer-widget .contacts-box:hover .cont-icn{
     background: white;
-    color: var(--primry-clr);
+    color: var(--secondary-clr);
 }
 .footer-widget .cont-icn{
     width: 40px;
@@ -150,7 +233,7 @@
     text-align: center;
     font-size: 14px;
     color: white;
-    background: var(--primry-clr) ;
+    background: var(--secondary-clr) ;
     transition: all 400ms;
     margin-right: 16px;
 }
@@ -166,7 +249,7 @@
 }
 .footer-widget .contacts-box .conta-links .title{
     font-size: 13px;
-    color: var(--primry-clr);
+    color: var(--secondary-clr);
     margin-bottom: 3px;
     text-transform: uppercase;
     font-weight: 600;

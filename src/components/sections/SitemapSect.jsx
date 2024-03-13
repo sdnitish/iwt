@@ -2,7 +2,7 @@ import React from 'react';
 import SectionTitle from '../SectionTitle';
 import MarketBtn from '../MarketBtn';
 
-const Sitemap = () => {
+const SitemapSect = () => {
   return (
     <>
       <section className='sect-space p-t30'>
@@ -30,4 +30,4 @@ const Sitemap = () => {
   )
 }
 
-export default Sitemap
+export default SitemapSect

@@ -1,19 +1,24 @@
 .Contact_box{
     width: 100%;
-    padding: 14%;
+    /* padding: 0 5%; */
     position: relative;
-    border-bottom-right-radius: 60px;
+    /* border-bottom-right-radius: 60px; */
 }
-.Contact_box::before{
+.contact-container{
+    position: relative;
+    overflow: hidden;
+    height: fit-content;
+}
+.contact-container::before{
     background: url(../../../public/images/bg/contact-bg.png);
     background-size: cover;
-    background-position: 356px -110px;
+    background-position: center;
     background-repeat: no-repeat;
-    width: 100%;
+    width: 50%;
     height: 100%;
     position: absolute;
     content: '';
-    left: 0;
+    right: 0;
     top: 0;
     z-index: 2;
 }
@@ -53,7 +58,10 @@
         margin-right: 0;
     }
     .Contact_box{
-        padding: 8%;
+        /* padding: 8%; */
+    }
+    .contact-container::before{
+        display: none;
     }
 }
 .contacts-box:hover .cont-icn{
@@ -97,4 +105,194 @@
     line-height: 1.26;
     display: block;
     transition: all 400ms;
+}
+.conta-info-bx{
+    width: 100%;
+    margin-top: 40px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    position: relative;
+}
+.conta-info-bx-icn{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    width: 110px;
+    height: 75px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    background: var(--primry-clr);
+    z-index: 5;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 650ms ease;
+}
+.conta-info-bx-icn img{
+    width: 35px;
+}
+.conta-info-bx-icn svg{
+    font-size: 43px;
+    margin-top: -6px;
+    margin-left: -6px;
+}
+.conta-info-bx:hover .conta-info-bx-bg{
+    background: var(--primry-clr);
+    height: 50%;
+}
+.conta-info-bx:hover .conta-info-bx-bg2{
+    background: var(--secondary-clr);
+    height: 50%;
+}
+.conta-info-bx:hover .conta-info-bx-icn{
+    background: var(--secondary-clr);
+}
+.conta-info-bx-bg{
+    background: var(--secondary-clr);
+    /* border-bottom-left-radius: 25px; */
+    /* border-bottom-right-radius: 25px; */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    height: 60%;
+    transition: all 650ms ease;
+}
+.conta-info-bx-bg::before{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 3;
+      border-top: 10px solid white;
+      border-right: 10px solid white;
+      border-left: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+}
+.conta-info-bx-bg::after{
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 3;
+      border-top: 10px solid white;
+      border-right: 10px solid transparent;
+      border-left: 10px solid white;
+      border-bottom: 10px solid transparent;
+}
+.conta-info-bx-bg2{
+    background: var(--primry-clr);
+    /* border-top-left-radius: 25px; */
+    /* border-top-right-radius: 25px; */
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    height: 40%;
+    transition: all 650ms ease;
+}
+.conta-info-bx-bg2::before{
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 3;
+      border-top: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-left: 10px solid white;
+      border-bottom: 10px solid white;
+}
+.conta-info-bx-bg2::after{
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: 3;
+      border-top: 10px solid transparent;
+      border-right: 10px solid white;
+      border-left: 10px solid transparent;
+      border-bottom: 10px solid white;
+}
+.conta-info-bx-in{
+    min-height: 200px;
+    background: white;
+    margin: auto;
+    border-radius: 20px;
+    /* border-bottom-left-radius: 20px; */
+    /* border-bottom-right-radius: 20px; */
+    width: calc(100% - 30px);
+    position: relative;
+    z-index: 4;
+    box-shadow: 0px 0px 4px gray;
+    padding-top: 85px;
+}
+.conta-info-bx-in span,
+.conta-info-bx-in a{
+    color: var(--primry-clr);
+    font-size: 19px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 350ms ease;
+    margin-top: 10px;
+    line-height: 1;
+    display: flex;
+    width: 100%;
+    text-align: center;
+    gap: 8px;
+    justify-content: center;
+    padding:0 5% ;
+}
+.conta-info-bx-in a:hover{
+    color: var(--secondary-clr);
+}
+.conta-scls ul{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 15px;
+    margin: 35px 0;
+}
+.conta-scls ul li a {
+    background: white;
+    padding: 13px 8px;
+    box-shadow: -6px 9px 4px rgb(184, 184, 184);
+    transition: all 450ms ease;
+}
+.conta-scls ul li a:hover{
+    box-shadow: 3px 4px 4px gray;
+}
+.conta-scls ul li a svg{
+    color: var(--primry-clr);
+    font-size: 30px;
+}
+@media (max-width: 768px) {
+    .conta-scls ul li a svg{
+        font-size: 25px;
+    } 
+    .conta-scls ul{
+        justify-content: center;
+    }
+}
+.conta-scls ul li a svg[data-testid="XIcon"]{
+    color: black;
+}
+.conta-scls ul li a svg[data-testid="WhatsAppIcon"]{
+    color: rgb(7, 164, 7);
+}
+.conta-scls ul li a svg[data-testid="InstagramIcon"]{
+    color: rgb(164, 7, 72);
+}
+.conta-scls ul li a svg[data-testid="FacebookOutlinedIcon"]{
+    color: rgb(19, 48, 161);
+}
+.conta-scls ul li a svg[data-testid="SubscriptionsIcon"]{
+    color: rgb(248, 46, 15);
+}
+.conta-scls ul li a svg[data-testid="LinkedInIcon"]{
+    color: rgb(24, 103, 172);
 }

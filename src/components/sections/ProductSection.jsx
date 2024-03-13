@@ -48,6 +48,38 @@ const HomeBanner = () => {
           <div className=' col-lg-3 col-md-4 col-sm-6 m-b30'>
             <ProductCard productName="Service Name"
               servDesc="Conubia praesent ad auctor hac non morbi ad hac platea. Tincidunt ex cubilia urna tempus; natoque rhoncus sit. Habitasse justo lacinia ac senectus fusce sem nunc scelerisque maximus"
+              servPrice="90, 0000"
+              servLink="#"
+              servIcon="./images/gif/Website-Designing-f.gif"
+            />
+          </div>
+          <div className=' col-lg-3 col-md-4 col-sm-6 m-b30'>
+            <ProductCard productName="Service Name"
+              servDesc="Conubia praesent ad auctor hac non morbi ad hac platea. Tincidunt ex cubilia urna tempus; natoque rhoncus sit. Habitasse justo lacinia ac senectus fusce sem nunc scelerisque maximus"
+              servPrice="90, 0000"
+              servLink="#"
+              servIcon="./images/gif/Website-Designing-f.gif"
+            />
+          </div>
+          <div className=' col-lg-3 col-md-4 col-sm-6 m-b30'>
+            <ProductCard productName="Service Name"
+              servDesc="Conubia praesent ad auctor hac non morbi ad hac platea. Tincidunt ex cubilia urna tempus; natoque rhoncus sit. Habitasse justo lacinia ac senectus fusce sem nunc scelerisque maximus"
+              servPrice="90, 0000"
+              servLink="#"
+              servIcon="./images/gif/Website-Designing-f.gif"
+            />
+          </div>
+          <div className=' col-lg-3 col-md-4 col-sm-6 m-b30'>
+            <ProductCard productName="Service Name"
+              servDesc="Conubia praesent ad auctor hac non morbi ad hac platea. Tincidunt ex cubilia urna tempus; natoque rhoncus sit. Habitasse justo lacinia ac senectus fusce sem nunc scelerisque maximus"
+              servPrice="90, 0000"
+              servLink="#"
+              servIcon="./images/gif/Website-Designing-f.gif"
+            />
+          </div>
+          <div className=' col-lg-3 col-md-4 col-sm-6 m-b30'>
+            <ProductCard productName="Service Name"
+              servDesc="Conubia praesent ad auctor hac non morbi ad hac platea. Tincidunt ex cubilia urna tempus; natoque rhoncus sit. Habitasse justo lacinia ac senectus fusce sem nunc scelerisque maximus"
               servPrice="80, 0000"
               servLink="#"
               servIcon="./images/gif/Website-Development.gif"

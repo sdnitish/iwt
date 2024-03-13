@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './WhyChoose.css'
 import CountUp from 'react-countup';
 import SectionTitle from '../SectionTitle';
-import LoremIpsum from 'react-lorem-ipsum';
+// import LoremIpsum from 'react-lorem-ipsum';
 import BtnLink from '../BtnLink';
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -36,74 +36,25 @@ const WhyChoose = () => {
   }, [control, inView]);
 
   return (
-    <section className="sect-space why-sect">
+    <section className="sect-space pb-2 why-sect">
       <img className='shape-right anim-up-down' src="./images/shapes/why-shape.png" alt="" />
       {/* <h1 className='text-center'><CountUp end={100} enableScrollSpy scrollSpyOnce="true" /></h1> */}
       <div className='container'>
-        {/* <div className='row m-b40'>
-          <div className='col-lg-4 col-md-6 m-b30'>
-            <div
-             className='countup_box'>
-              <div className='icon-box-bg'></div>
-              <div className='icon-box row'>
-                <div className='cout-icon col-4'>
-                  <i className="fa-solid fa-trophy"></i>
-                </div>
-                <div className='col-8'>
-                  <div className='count-text'>
-                    <CountUp end={100} enableScrollSpy scrollSpyOnce="true" /> <span>+</span>
-                  </div>
-                  <p className='count-name'>Awards won</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className='col-lg-4 col-md-6 m-b30'>
-            <div 
-             className='countup_box'>
-              <div className='icon-box-bg'></div>
-              <div className='icon-box row'>
-                <div className='cout-icon col-4'>
-                  <i className="fa-solid fa-business-time"></i>
-                </div>
-                <div className='col-8'>
-                  <div className='count-text'>
-                    <CountUp end={30} enableScrollSpy scrollSpyOnce="true" /> <span>+</span>
-                  </div>
-                  <p className='count-name'>Years Served</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className='col-lg-4 col-md-6 m-b30'>
-            <div
-             className='countup_box'>
-              <div className='icon-box-bg'></div>
-              <div className='icon-box row'>
-                <div className='cout-icon col-4'>
-                  <i className="fa-solid fa-users-gear"></i>
-                </div>
-                <div className='col-8'>
-                  <div className='count-text'>
-                    <CountUp end={10000} enableScrollSpy scrollSpyOnce="true" /> <span>+</span>
-                  </div>
-                  <p className='count-name'>Happy Clients</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
 
         <div className='row'>
-          <div
-            // ref={ref}
-            // variants={boxVariantTwo}
-            // initial="hidden"
-            // animate={control}
-            className='col-lg-6'>
-            <div className='why-left-img'>
-              <img src="./images/img/why-img1.jpg" alt="" />
-              {/* <div className='color-layer'><span>Why Us</span></div> */}
+          <div className='col-lg-6'>
+            <div className='why-img'>
+              <img className='why-left-img' src="./images/img/why-img4.jpg" alt="" />
+              <motion.div 
+                ref={ref}
+                variants={boxVariantTwo}
+                initial="hidden"
+                animate={control}
+                className='why-right-img'>
+              <img  src="./images/img/why-img1.jpg" alt="" />
+              </motion.div>
+              <img className='shape-left  anim-up-down' src="./images/shapes/dots.png" alt="" />
+              <span className='why-text anim-up-down'><span>Why Choose Us</span></span>
             </div>
           </div>
           <div className='col-lg-6 m-t30'>
@@ -124,30 +75,30 @@ const WhyChoose = () => {
                 </ul>
               </div>
             </div>
-            <div class="skill-feature m-t30">
-              <p class="skill-feature_title">Customer Satisfied</p>
-              <div class="progress">
+            <div className="skill-feature m-t30">
+              <p className="skill-feature_title">Customer Satisfied</p>
+              <div className="progress">
                 <motion.div
                  ref={ref}
                  variants={boxVariantThree}
                  initial="hidden"
                  animate={control}
-                 style={{ "--prog1": "90%" }}  class="progress-bar">
-                  <div class="progress-value">
+                 style={{ "--prog1": "90%" }}  className="progress-bar">
+                  <div className="progress-value">
                     <CountUp end={90} enableScrollSpy scrollSpyOnce="false" /> <span>%</span></div>
                 </motion.div>
               </div>
             </div>
-            <div class="skill-feature m-t30">
-              <p class="skill-feature_title">Successful Projects</p>
-              <div class="progress">
+            <div className="skill-feature m-t30">
+              <p className="skill-feature_title">Successful Projects</p>
+              <div className="progress">
                 <motion.div
                  ref={ref}
                  variants={boxVariantThree}
                  initial="hidden"
                  animate={control}
-                 style={{ "--prog1": "96%" }}  class="progress-bar">
-                   <div class="progress-value">
+                 style={{ "--prog1": "96%" }}  className="progress-bar">
+                   <div className="progress-value">
                     <CountUp end={96} enableScrollSpy scrollSpyOnce="false" /> <span>%</span></div>
                 </motion.div>
               </div>
@@ -165,6 +116,80 @@ const WhyChoose = () => {
             </div>
           </div>
         </div>
+         <div className='row counter-box'>
+          <div className='col-lg-3 col-md-4 col-sm-6 m-b30'>
+            <div
+             className='countup_box'>
+              <div className='icon-box-bg'></div>
+              <div className='icon-box row'>
+                <div className='cout-icon col-auto'>
+                  <img src="./images/gif/Award.gif" alt="" />
+                  {/* <i className="fa-solid fa-trophy"></i> */}
+                </div>
+                <div className='col-auto'>
+                  <div className='count-text'>
+                    <CountUp end={100} enableScrollSpy scrollSpyOnce="true" /> <span>+</span>
+                  </div>
+                  <p className='count-name'>Awards won</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='col-lg-3 col-md-4 col-sm-6 m-b30'>
+            <div 
+             className='countup_box'>
+              <div className='icon-box-bg'></div>
+              <div className='icon-box row'>
+                <div className='cout-icon col-auto'>
+                  {/* <i className="fa-solid fa-business-time"></i> */}
+                  <img src="./images/gif/Ideas.gif" alt="" />
+                </div>
+                <div className='col-auto'>
+                  <div className='count-text'>
+                    <CountUp end={30} enableScrollSpy scrollSpyOnce="true" /> <span>+</span>
+                  </div>
+                  <p className='count-name'>Years Served</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='col-lg-3 col-md-4 col-sm-6 m-b30'>
+            <div 
+             className='countup_box'>
+              <div className='icon-box-bg'></div>
+              <div className='icon-box row'>
+                <div className='cout-icon col-auto'>
+                  {/* <i className="fa-solid fa-business-time"></i> */}
+                  <img src="./images/gif/Award.gif" alt="" />
+                </div>
+                <div className='col-auto'>
+                  <div className='count-text'>
+                    <CountUp end={30} enableScrollSpy scrollSpyOnce="true" /> <span>+</span>
+                  </div>
+                  <p className='count-name'>Years Served</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='col-lg-3 col-md-4 col-sm-6 m-b30'>
+            <div
+             className='countup_box'>
+              <div className='icon-box-bg'></div>
+              <div className='icon-box row'>
+                <div className='cout-icon col-auto'>
+                  {/* <i className="fa-solid fa-users-gear"></i> */}
+                  <img src="./images/gif/Client.gif" alt="" />
+                </div>
+                <div className='col-auto'>
+                  <div className='count-text'>
+                    <CountUp end={2100} enableScrollSpy scrollSpyOnce="true" /> <span>+</span>
+                  </div>
+                  <p className='count-name'>Happy Clients</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
       </div>
     </section>
   )
