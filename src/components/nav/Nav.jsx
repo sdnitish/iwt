@@ -15,7 +15,11 @@ const Nav = () => {
     const toggleSidenav = () => {
         setIsopen(!isOpen);
     }
-
+    
+    // Close the navigation panel
+    // useEffect(() => {
+    //     setIsopen(!isOpen); 
+    // }, [ pathname ]);
 
     return (
         <>
@@ -49,7 +53,7 @@ const Nav = () => {
                                 {/* <div className='col-1'></div> */}
                                 <div className='Mainmenu'>
                                     {/* menu list appear here */}
-                                    <MenuList />
+                                    <MenuList closeMenu={setIsopen} />
                                 </div>
                                 <span onClick={toggleSidenav} className='menuBtn'><i className="fa-solid fa-bars-staggered"></i></span>
                             </div>
@@ -69,7 +73,7 @@ const Nav = () => {
                 <div className='phone-nav'>
                     <div className='logo-box'> <a href=''><img src='./images/logo.png' alt='' /></a> </div>
                     {/* menu list appear here for mobile*/}
-                    <MenuList />
+                    <MenuList closeMenu={setIsopen} />
                 </div>
                 <div>
                     {/* socials */}

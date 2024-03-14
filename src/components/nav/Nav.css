@@ -331,6 +331,14 @@ transform: rotate(180deg);
    }
 }
 @media (max-width: 780px) {
+   .Header{
+      padding: 0 0;
+      padding-bottom: 8px;
+   }
+   .logo-box a img{
+      padding: 0 0;
+      max-height: 60px;
+   }
    .Mainmenu{
       display: none;
    }
@@ -357,9 +365,6 @@ transform: rotate(180deg);
    }
    .Navbar{
       padding: 4px 0;
-   }
-   .logo-box a img{
-      max-height: 78px;
    }
    .phone-nav .logo-box a img{
       margin-left: 15px;

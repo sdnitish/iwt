@@ -9,20 +9,25 @@ import StepsSect from '../components/sections/StepsSect';
 import Testimonial from '../components/sections/Testimonial';
 import ContactSect from '../components/sections/ContactSect';
 // import ProductSection from './components/sections/ProductSection';
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   return (
     <>
-    <HomeBanner />
-    <WelcomeText />
-    <ProductSlider />
-    <CompanyProfile/>
-    <FeaturesSect />
-    <WhyChoose />
-    <StepsSect />
-    <Testimonial />
-    <ContactSect />
-    {/* <ProductSection /> */}
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Home Page</title>
+      </Helmet>
+      <HomeBanner />
+      <WelcomeText />
+      <ProductSlider />
+      <CompanyProfile />
+      <FeaturesSect />
+      <WhyChoose />
+      <StepsSect />
+      <Testimonial />
+      <ContactSect />
+      {/* <ProductSection /> */}
     </>
   )
 }
