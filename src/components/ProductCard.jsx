@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './ProductCard.css';
+import { Link} from 'react-router-dom';
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import BtnLink from './BtnLink';
@@ -37,14 +38,14 @@ const ProductCard = (props) => {
       </div>
       <div className='service-name-box'>
         <div className='service-content'>
-          <a className='service-name' href="">{props.productName}</a>
+          <Link className='service-name' to={props.servLink}>{props.productName}</Link>
           <span className='service-name-title' >{props.servDesc}</span>
           <p className='serv-price'>&#8377;: {props.servPrice}/- <span>(Gst Exclusive)</span></p>
           <BtnLink Href={props.servLink} btnName="Book our Service" />
         </div>
       </div>
       <div className='service-img'>
-        <img className='w-100' loading='lazy' src={props.servIcon} alt="" />
+        <img className='w-100' loading='lazy' src={"./images/icons/" + props.servIcon} alt="" />
       </div>
     </motion.div>
   )

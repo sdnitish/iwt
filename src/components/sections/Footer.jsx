@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link} from 'react-router-dom';
 import './Footer.css';
 // import Socials from '../nav/Socials';
@@ -20,6 +20,20 @@ const actions = [
 ];
 
 const Footer = () => {
+    const [siteInfo, setSiteInfo] = useState([]);
+
+    useEffect(() => {
+        getSiteInfo();
+    }, [])
+
+    const getSiteInfo = async () => {
+        let result = await fetch(`${process.env.REACT_APP_BASE_URL}siteInfo`);
+        result = await result.json();
+        if (result.status) {
+            setSiteInfo(result.siteInfo);
+        }
+    }
+
     return (
         <>
             <footer>
@@ -68,21 +82,21 @@ const Footer = () => {
                                         <div className='cont-icn'><i className="fa-solid fa-phone-volume"></i></div>
                                         <div className='conta-links'>
                                             <span className='title'>Phone</span>
-                                            <a href="#">+91 0000 00000</a>
+                                            <a href={"tel:" + siteInfo.primaryPhone}>{siteInfo.primaryPhone}</a>
                                         </div>
                                     </div>
                                     <div className='contacts-box'>
                                         <div className='cont-icn'><i className="fa-solid fa-envelope-open-text"></i></div>
                                         <div className='conta-links'>
                                             <span className='title'>Email</span>
-                                            <a href="#">contact@company.com</a>
+                                            <a href={"mailto:" + siteInfo.primaryMail}>{siteInfo.primaryMail}</a>
                                         </div>
                                     </div>
                                     <div className='contacts-box'>
                                         <div className='cont-icn'><i className="fa-solid fa-map-location-dot"></i></div>
                                         <div className='conta-links'>
                                             <span className='title'>Address</span>
-                                            <span>456, Loandon Street, lorem tisuml, 33454, India</span>
+                                            <span>{siteInfo.primaryAddress}</span>
                                         </div>
                                     </div>
 

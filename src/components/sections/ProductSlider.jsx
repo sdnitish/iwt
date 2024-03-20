@@ -1,6 +1,6 @@
-import React from 'react';
-import SectionTitle from '../SectionTitle';
-import { Aoutoplay, Swiper, SwiperSlide } from 'swiper/react';
+import React, { useEffect, useState } from 'react';
+// import SectionTitle from '../SectionTitle';
+import {  Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -12,6 +12,21 @@ import { Autoplay, Navigation } from 'swiper/modules';
 import ProductCard from '../ProductCard';
 
 const ProductSlider = () => {
+
+  const [products, setProduct] = useState([]);
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  const getProducts = async () => {
+    let result = await fetch(`${process.env.REACT_APP_BASE_URL}products`)
+    result = await result.json();
+    if (result.status) {
+      setProduct(result.products);
+    }
+  }
+
   return (
     <>
       <section className='sect-space bg-gry pt-0 '>
@@ -52,46 +67,24 @@ const ProductSlider = () => {
               }}
               modules={[Autoplay, Navigation]}
               className="home-slider">
-              <SwiperSlide>
-                <ProductCard productName="Service Name"
-                  servDesc="Conubia praesent ad auctor hac non morbi ad hac platea. Tincidunt ex cubilia urna tempus; natoque rhoncus sit. Habitasse justo lacinia ac senectus fusce sem nunc scelerisque maximus"
-                  servPrice="80, 0000"
-                  servLink="#"
-                  servIcon="./images/gif/Website-Development.gif"
+
+{
+            products
+              ?
+              products.map((value, index) =>
+              <SwiperSlide key={index}>
+                 <ProductCard 
+                productName={value.name}
+                servDesc={value.shortDescription}
+                servPrice={value.price}
+                servLink={'/'+value.slug}
+                servIcon={value.icon}
                 />
-              </SwiperSlide>
-              <SwiperSlide>
-                <ProductCard productName="Service Name"
-                  servDesc="Conubia praesent ad auctor hac non morbi ad hac platea. Tincidunt ex cubilia urna tempus; natoque rhoncus sit. Habitasse justo lacinia ac senectus fusce sem nunc scelerisque maximus"
-                  servPrice="80, 0000"
-                  servLink="#"
-                  servIcon="./images/gif/Website-Development.gif"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <ProductCard productName="Service Name"
-                  servDesc="Conubia praesent ad auctor hac non morbi ad hac platea. Tincidunt ex cubilia urna tempus; natoque rhoncus sit. Habitasse justo lacinia ac senectus fusce sem nunc scelerisque maximus"
-                  servPrice="80, 0000"
-                  servLink="#"
-                  servIcon="./images/gif/Website-Development.gif"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <ProductCard productName="Service Name"
-                  servDesc="Conubia praesent ad auctor hac non morbi ad hac platea. Tincidunt ex cubilia urna tempus; natoque rhoncus sit. Habitasse justo lacinia ac senectus fusce sem nunc scelerisque maximus"
-                  servPrice="80, 0000"
-                  servLink="#"
-                  servIcon="./images/gif/Website-Development.gif"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <ProductCard productName="Service Name"
-                  servDesc="Conubia praesent ad auctor hac non morbi ad hac platea. Tincidunt ex cubilia urna tempus; natoque rhoncus sit. Habitasse justo lacinia ac senectus fusce sem nunc scelerisque maximus"
-                  servPrice="80, 0000"
-                  servLink="#"
-                  servIcon="./images/gif/Website-Development.gif"
-                />
-              </SwiperSlide>
+             </SwiperSlide>
+              )
+              :
+              null
+          }
 
             </Swiper>
           </div>

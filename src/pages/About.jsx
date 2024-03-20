@@ -1,25 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import CompanyProfile from '../components/sections/CompanyProfile';
 import BreadCrumb from '../components/sections/BreadCrumb';
 import ContactSect from '../components/sections/ContactSect';
-import SitemapSect from '../components/sections/SitemapSect';
-import ProductSlider from '../components/sections/ProductSlider';
-import ProductDetailSect from '../components/sections/ProductDetailSect';
-import {Helmet} from "react-helmet";
+import HelmetComp from '../components/HelmetComp';
 
 const About = () => {
+
+  const [aboutData, setAboutData] = useState([]);
+
+  useEffect(() => {
+    getAboutData();
+  }, []);
+
+  const getAboutData = async () => {
+    let result = await fetch(`${process.env.REACT_APP_BASE_URL}about`);
+    result = await result.json();
+    if (result.status) {
+      setAboutData(result.about);
+    }
+  }
+
   return (
     <>
-      <Helmet>
-                <meta charSet="utf-8" />
-                <title>About Page</title>
-      </Helmet>
-      <BreadCrumb pageName="About Us" />
-      <CompanyProfile/>
-      <ProductDetailSect />
-      <ProductSlider />
+      <HelmetComp  metaData={aboutData} />
+      <BreadCrumb name={aboutData.name} />
+      <CompanyProfile pageData={aboutData}/>
       <ContactSect />
-      <SitemapSect />
     </>
   )
 }

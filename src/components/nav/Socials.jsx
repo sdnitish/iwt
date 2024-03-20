@@ -6,28 +6,61 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-const Socials = () => {
+const Socials = (props) => {
     return (
-            <ul className='social-icn-common'>
-                <li>
-                    <a href="#"><XIcon /></a>
-                </li>
-                <li>
-                    <a href="#"><WhatsAppIcon /></a>
-                </li>
-                <li>
-                    <a href="#"><InstagramIcon /></a>
-                </li>
-                <li>
-                    <a href="#"><FacebookOutlinedIcon /></a>
-                </li>
-                <li>
-                    <a href="#"><SubscriptionsIcon /></a>
-                </li>
-                <li>
-                    <a href="#"><LinkedInIcon /></a>
-                </li>
-            </ul>
+        <ul className='social-icn-common'>
+            {
+                (props.data)
+                    ?
+                    <>
+                        {
+                            props.data.twitter
+                                ?
+                                <li><a href={props.data.twitter}><XIcon /></a></li>
+                                :
+                                null
+                        }
+                        {
+                            props.data.whatsapp
+                                ?
+                                <li><a href={props.data.whatsapp}><WhatsAppIcon /></a></li>
+                                :
+                                null
+                        }
+                        {
+                            props.data.instagram
+                                ?
+                                <li><a href={props.data.instagram}><InstagramIcon /></a></li>
+                                :
+                                null
+                        }
+                        {
+                            props.data.facebook
+                                ?
+                                <li><a href={props.data.facebook}><FacebookOutlinedIcon /></a></li>
+                                :
+                                null
+                        }
+                        {
+                            props.data.youtube
+                                ?
+                                <li><a href={props.data.youtube}><SubscriptionsIcon /></a></li>
+                                :
+                                null
+                        }
+                        {
+                            props.data.linkedIn
+                                ?
+                                <li><a href={props.data.linkedIn}><LinkedInIcon /></a></li>
+                                :
+                                null
+                        }
+                    </>
+                    :
+                    null
+            }
+
+        </ul>
     )
 }
 

@@ -36,7 +36,7 @@ const FeatureCard = (props) => {
             <div className='brdr-shd-one'>
               <div className='brdr-shd-two'>
                 <div className='Icn'><img src={props.featImg} alt="" /></div>
-                <p className='Text'>Cursus quis condimentum nunc ultricies dis nisi diam nec. Bibendum potenti taci </p>
+                <p className='Text'>{props.titleOne}</p>
               </div>
             </div>
           </div>

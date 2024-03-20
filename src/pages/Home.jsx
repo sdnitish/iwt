@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import HomeBanner from '../components/sections/HomeBanner';
 import FeaturesSect from '../components/sections/FeaturesSect';
 import CompanyProfile from '../components/sections/CompanyProfile';
@@ -9,19 +9,31 @@ import StepsSect from '../components/sections/StepsSect';
 import Testimonial from '../components/sections/Testimonial';
 import ContactSect from '../components/sections/ContactSect';
 // import ProductSection from './components/sections/ProductSection';
-import { Helmet } from "react-helmet";
+import HelmetComp from '../components/HelmetComp';
 
 const Home = () => {
+
+  const [homeData, setHomeData] = useState([]);
+
+  useEffect(() => {
+    getHomeData();
+  }, []);
+
+  const getHomeData = async () => {
+    let result = await fetch(`${process.env.REACT_APP_BASE_URL}home`);
+    result = await result.json();
+    if (result.status) {
+      setHomeData(result.home);
+    }
+  }
+
   return (
     <>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Home Page</title>
-      </Helmet>
+      <HelmetComp metaData={homeData} />
       <HomeBanner />
       <WelcomeText />
       <ProductSlider />
-      <CompanyProfile />
+      <CompanyProfile pageData={homeData} />
       <FeaturesSect />
       <WhyChoose />
       <StepsSect />

@@ -1,19 +1,37 @@
-import { React} from 'react';
+import { React, useState, useEffect } from 'react';
 import SectionTitle from '../SectionTitle';
-import LoremIpsum from 'react-lorem-ipsum';
+// import LoremIpsum from 'react-lorem-ipsum';
 import PhoneInTalkOutlinedIcon from '@mui/icons-material/PhoneInTalkOutlined';
+import { useParams } from 'react-router-dom';
 
 const ProductDetailSect = () => {
+    
+    const params = useParams();
+
+    const [product, setProduct] = useState([]);
+
+    useEffect(() => {
+        getProduct();
+    });
+
+    const getProduct = async () => {
+        let result = await fetch(`${process.env.REACT_APP_BASE_URL}product/${params.slug}`);
+        result = await result.json();
+        if (result.status) {
+            setProduct(result.product);
+        }
+    }
 
     return (
         <section className='sect-space'>
             <div className='container'>
                 <div className=''>
-                    <img className='w-100' src="./images/img/Dynamic_Website_Designing.gif" alt="" />
+                    <img className='w-100'  src={"./images/products/" + product.img} alt={product.name} title={product.name} />
                     <div className="row">
                         <div className="col-lg-8 col-md-8 mt-4">
-                            <SectionTitle smTitle="Product Details" mainTitle="Bibendum potenti taciti ex parturient lacini" />
-                            <LoremIpsum p={5} />
+                            <SectionTitle smTitle="Service Details" mainTitle={product.shortDescription} />
+                            {product.description}
+                            {product.extraDescription}
                         </div>
                         <div className="col-lg-4 col-md-4">
                             <div className="all__sidebar-item-help"  >

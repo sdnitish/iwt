@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { Link} from 'react-router-dom';
 // import { useLocation } from 'react-router-dom';
 import './Nav.css';
 import MenuList from './MenuList';
@@ -11,11 +12,23 @@ import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
 const Nav = () => {
 
     const [isOpen, setIsopen] = useState(false);
+    const [siteInfo, setSiteInfo] = useState([]);
     // const {pathname} = useLocation();
     const toggleSidenav = () => {
         setIsopen(!isOpen);
     }
     
+    useEffect(() => {
+        getSiteInfo();
+    }, [])
+
+    const getSiteInfo = async () => {
+        let result = await fetch(`${process.env.REACT_APP_BASE_URL}siteInfo`);
+        result = await result.json();
+        if (result.status) {
+            setSiteInfo(result.siteInfo);
+        }
+    }
     // Close the navigation panel
     // useEffect(() => {
     //     setIsopen(!isOpen); 
@@ -29,12 +42,14 @@ const Nav = () => {
                         <div className="col-lg-12">
                             <div className="header-topbar-content">
                                 {/* socials */}
-                                <div className="cstm-socials"><Socials /></div>
+                                <div className="cstm-socials">
+                                    <Socials data={siteInfo} />
+                                </div>
 
                                 <div className="cstm-contact-infos">
                                     <ul>
-                                        <li><PermPhoneMsgIcon /><a href="">+91 00000 0000</a></li>
-                                        <li><ForwardToInboxIcon /><a href="">mail@company.com</a>
+                                    <li><PermPhoneMsgIcon /><a href={"tel:" + siteInfo.primaryPhone}>{siteInfo.primaryPhone}</a></li>
+                                        <li><ForwardToInboxIcon /><a href={"mailto:" + siteInfo.primaryMail}>{siteInfo.primaryMail}</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -49,7 +64,9 @@ const Nav = () => {
                     <div className='row'>
                         <div className='col-lg-12'>
                             <div className='mainmenu-wrapper'>
-                                <div className='logo-box'> <a href=''><img src='./images/logo.png' alt='' /></a> </div>
+                                <div className='logo-box'>
+                                  <Link to={'/'}><img src={'./images/' + siteInfo.logo} alt={siteInfo.compName} title={siteInfo.compName} /></Link>
+                                </div>
                                 {/* <div className='col-1'></div> */}
                                 <div className='Mainmenu'>
                                     {/* menu list appear here */}
@@ -71,7 +88,9 @@ const Nav = () => {
             <div className={isOpen ? 'phone-nav-overlay active' : 'phone-nav-overlay'}>
                 <span onClick={toggleSidenav} className='close-nav'><i className="fa-solid fa-xmark"></i></span>
                 <div className='phone-nav'>
-                    <div className='logo-box'> <a href=''><img src='./images/logo.png' alt='' /></a> </div>
+                    <div className='logo-box'> 
+                    <Link to={'/'}><img src={'./images/' + siteInfo.logo} alt={siteInfo.compName} title={siteInfo.compName} /></Link>
+                    </div>
                     {/* menu list appear here for mobile*/}
                     <MenuList closeMenu={setIsopen} />
                 </div>

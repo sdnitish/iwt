@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './CompanyProfile.css';
-import { LoremIpsum } from 'react-lorem-ipsum';
+// import { LoremIpsum } from 'react-lorem-ipsum';
+import { Parser } from 'html-to-react'
 import SectionTitle from '../SectionTitle';
 import BtnLink from '../BtnLink';
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import ModalVideo from 'react-modal-video';
 
-const CompanyProfile = () => {
+
+const CompanyProfile = (props) => {
 
   const [isOpen, setOpen] = useState(false);
-
   const boxVariant = {
     visible: { opacity: 1, scale: 1, translateX: 0, transition: { duration: 0.5 } },
     hidden: { opacity: 0.25, scale: 0.85, translateX: -180 },
@@ -18,7 +19,6 @@ const CompanyProfile = () => {
 
   const control = useAnimation()
   const [ref, inView] = useInView()
-
   useEffect(() => {
     if (inView) {
       control.start("visible");
@@ -64,7 +64,7 @@ const CompanyProfile = () => {
               <div className='abt-shape anim-left-right'><img loading='lazy' src="images/shapes/service-left-shape.svg" alt="" /></div>
               <div className='row h-100 align-items-end'>
                 <div className='w-50'>
-                  <img className='w-100' loading='lazy' src="images/img/abt1.jpg" alt="" />
+                  <img className='w-100' loading='lazy' src={"./images/pages/" + props.pageData.img} alt={props.pageData.shortDescription} title={props.pageData.shortDescription} />
                   <div className='exp-box'>
                     <img src="images/gif/abt.gif" alt="" />
                   </div>
@@ -76,9 +76,10 @@ const CompanyProfile = () => {
 
             </motion.div>
             <div>
-              <SectionTitle smTitle="About Company" mainTitle="Company lorem ipsumt konilat diltavt" />
+              <SectionTitle smTitle="About Company" mainTitle={props.pageData.shortDescription} />
             </div>
-            <LoremIpsum p={4} />
+            <p>{Parser().parse(props.pageData.description)}</p>
+              <p>{Parser().parse(props.pageData.extraDescription)}</p>
             <div className='row align-items-center mt-4'>
               <BtnLink Href="" btnName="Readmore" />
               <div className="abt-contact-content ">

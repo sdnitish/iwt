@@ -62,9 +62,9 @@ const MenuList = (props) => {
             servName="Web Designing" 
             servChild={<ChildMenu closeMenu={closeMenu} servChild={webDesign} />}
              />
-            <li ><Link onClick={closeMenu} to="/about"><img className='menu-gif' src="./images/gif/Company-Profile-f.gif" alt="" /> <span>Company Profile</span> </Link></li>
-            <li ><Link onClick={closeMenu} to="/contact"><img className='menu-gif' src="./images/gif/Company-Profile-f.gif" alt="" /> <span>Contact</span> </Link></li>
-            <li ><Link onClick={closeMenu} to="/"><img className='menu-gif' src="./images/gif/Seo-f.gif" alt="" /> <span>Seo</span> </Link></li>
+            <li ><Link onClick={closeMenu} to="/company-profile"><img className='menu-gif' src="./images/gif/Company-Profile-f.gif" alt="" /> <span>Company Profile</span> </Link></li>
+            <li ><Link onClick={closeMenu} to="/contact"><img className='menu-gif' src="./images/gif/contact.gif" alt="" /> <span>Contact</span> </Link></li>
+            {/* <li ><Link onClick={closeMenu} to="/"><img className='menu-gif' src="./images/gif/Seo-f.gif" alt="" /> <span>Seo</span> </Link></li> */}
         </ul>
     )
 }

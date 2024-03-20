@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SectionTitle from '../SectionTitle';
 import ProductCard from '../ProductCard';
 import { TypeAnimation } from 'react-type-animation';
 
 const HomeBanner = () => {
+  const [products, setProduct] = useState([]);
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  const getProducts = async () => {
+    let result = await fetch(`${process.env.REACT_APP_BASE_URL}products`)
+    result = await result.json();
+    if (result.status) {
+      setProduct(result.products);
+    }
+  }
+
   return (
     <section className='sect-space bg-gry'>
       <div className='container'>
@@ -29,70 +43,24 @@ const HomeBanner = () => {
           />} />
         </div>
         <div className='row'>
-          <div className=' col-lg-3 col-md-4 col-sm-6 m-b30'>
-            <ProductCard productName="Service Name"
-              servDesc="Conubia praesent ad auctor hac non morbi ad hac platea. Tincidunt ex cubilia urna tempus; natoque rhoncus sit. Habitasse justo lacinia ac senectus fusce sem nunc scelerisque maximus"
-              servPrice="80, 0000"
-              servLink="#"
-              servIcon="./images/gif/Website-Development.gif"
-            />
-          </div>
-          <div className=' col-lg-3 col-md-4 col-sm-6 m-b30'>
-            <ProductCard productName="Service Name"
-              servDesc="Conubia praesent ad auctor hac non morbi ad hac platea. Tincidunt ex cubilia urna tempus; natoque rhoncus sit. Habitasse justo lacinia ac senectus fusce sem nunc scelerisque maximus"
-              servPrice="90, 0000"
-              servLink="#"
-              servIcon="./images/gif/Website-Designing-f.gif"
-            />
-          </div>
-          <div className=' col-lg-3 col-md-4 col-sm-6 m-b30'>
-            <ProductCard productName="Service Name"
-              servDesc="Conubia praesent ad auctor hac non morbi ad hac platea. Tincidunt ex cubilia urna tempus; natoque rhoncus sit. Habitasse justo lacinia ac senectus fusce sem nunc scelerisque maximus"
-              servPrice="90, 0000"
-              servLink="#"
-              servIcon="./images/gif/Website-Designing-f.gif"
-            />
-          </div>
-          <div className=' col-lg-3 col-md-4 col-sm-6 m-b30'>
-            <ProductCard productName="Service Name"
-              servDesc="Conubia praesent ad auctor hac non morbi ad hac platea. Tincidunt ex cubilia urna tempus; natoque rhoncus sit. Habitasse justo lacinia ac senectus fusce sem nunc scelerisque maximus"
-              servPrice="90, 0000"
-              servLink="#"
-              servIcon="./images/gif/Website-Designing-f.gif"
-            />
-          </div>
-          <div className=' col-lg-3 col-md-4 col-sm-6 m-b30'>
-            <ProductCard productName="Service Name"
-              servDesc="Conubia praesent ad auctor hac non morbi ad hac platea. Tincidunt ex cubilia urna tempus; natoque rhoncus sit. Habitasse justo lacinia ac senectus fusce sem nunc scelerisque maximus"
-              servPrice="90, 0000"
-              servLink="#"
-              servIcon="./images/gif/Website-Designing-f.gif"
-            />
-          </div>
-          <div className=' col-lg-3 col-md-4 col-sm-6 m-b30'>
-            <ProductCard productName="Service Name"
-              servDesc="Conubia praesent ad auctor hac non morbi ad hac platea. Tincidunt ex cubilia urna tempus; natoque rhoncus sit. Habitasse justo lacinia ac senectus fusce sem nunc scelerisque maximus"
-              servPrice="90, 0000"
-              servLink="#"
-              servIcon="./images/gif/Website-Designing-f.gif"
-            />
-          </div>
-          <div className=' col-lg-3 col-md-4 col-sm-6 m-b30'>
-            <ProductCard productName="Service Name"
-              servDesc="Conubia praesent ad auctor hac non morbi ad hac platea. Tincidunt ex cubilia urna tempus; natoque rhoncus sit. Habitasse justo lacinia ac senectus fusce sem nunc scelerisque maximus"
-              servPrice="80, 0000"
-              servLink="#"
-              servIcon="./images/gif/Website-Development.gif"
-            />
-          </div>
-          <div className=' col-lg-3 col-md-4 col-sm-6 m-b30'>
-            <ProductCard productName="Service Name"
-              servDesc="Conubia praesent ad auctor hac non morbi ad hac platea. Tincidunt ex cubilia urna tempus; natoque rhoncus sit. Habitasse justo lacinia ac senectus fusce sem nunc scelerisque maximus"
-              servPrice="90, 0000"
-              servLink="#"
-              servIcon="./images/gif/Website-Designing-f.gif"
-            />
-          </div>
+        {
+            products
+              ?
+              products.map((value, index) =>
+              <div key={index} className=' col-lg-3 col-md-4 col-sm-6 m-b30'>
+              <ProductCard 
+                productName={value.name}
+                servDesc={value.shortDescription}
+                servPrice={value.price}
+                servLink={'/'+value.slug}
+                servIcon={value.icon}
+              />
+            </div>
+              )
+              :
+              null
+          }
+
         </div>
       </div>
     </section>

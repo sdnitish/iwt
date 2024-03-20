@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ContactSect.css';
 import SectionTitle from '../SectionTitle';
 import Socials from '../nav/Socials';
@@ -16,6 +16,9 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
 const ContactSect = () => {
 
+    const [siteInfo, setSiteInfo] = useState([]);
+    const [products, setProduct] = useState([]);
+
     const boxVariant = {
         visible: { opacity: 1, scale: 1, transition: { duration: 0.325 } },
         hidden: { opacity: 0.25, scale: 0.65 },
@@ -25,6 +28,8 @@ const ContactSect = () => {
     const [ref, inView] = useInView()
 
     useEffect(() => {
+        getSiteInfo();
+        getProducts();
         if (inView) {
             control.start("visible");
         }
@@ -33,6 +38,22 @@ const ContactSect = () => {
         }
     }, [control, inView]);
 
+    const getSiteInfo = async () => {
+        let result = await fetch(`${process.env.REACT_APP_BASE_URL}siteInfo`);
+        result = await result.json();
+        if (result.status) {
+            setSiteInfo(result.siteInfo);
+        }
+    }
+
+    const getProducts = async () => {
+        let result = await fetch(`${process.env.REACT_APP_BASE_URL}products`)
+        result = await result.json();
+        if (result.status) {
+            setProduct(result.products);
+        }
+    }
+
     return (
         <>
             <section className='sect-space bg-gry contact-container'>
@@ -40,46 +61,19 @@ const ContactSect = () => {
 
                     <div className='row'>
                         <div className='col-lg-5 col-md-6 conta-scls'>
-                            {/* <motion.div
-                            ref={ref}
-                            variants={boxVariant}
-                            initial="hidden"
-                            animate={control}
-                            className='contact-info'>
-                            <div className='contacts-box m-t30'>
-                                <div className='cont-icn'><i className="fa-solid fa-phone-volume"></i></div>
-                                <div className='conta-links'>
-                                    <span className='title'>Phone</span>
-                                    <a href="">+91 0000 00000</a>
-                                </div>
-                            </div>
-                            <div className='contacts-box'>
-                                <div className='cont-icn'><i className="fa-solid fa-envelope-open-text"></i></div>
-                                <div className='conta-links'>
-                                    <span className='title'>Email</span>
-                                    <a href="">contact@company.com</a>
-                                </div>
-                            </div>
-                            <div className='contacts-box'>
-                                <div className='cont-icn'><i className="fa-solid fa-map-location-dot"></i></div>
-                                <div className='conta-links'>
-                                    <span className='title'>Address</span>
-                                    <span>456, Loandon Street, lorem tisuml, 33454, India</span>
-                                </div>
-                            </div>
-                        </motion.div> */}
-                        <motion.div className='w-100'
-                         ref={ref}
-                         variants={boxVariant}
-                         initial="hidden"
-                         animate={control}
-                        >
-                            <img className='w-100' src="./images/gif/meeting-1.gif" alt="" />
-                        </motion.div>
-                         <Socials></Socials>
+
+                            <motion.div className='w-100'
+                                ref={ref}
+                                variants={boxVariant}
+                                initial="hidden"
+                                animate={control}
+                            >
+                                <img className='w-100' src="./images/gif/meeting-1.gif" alt="" />
+                            </motion.div>
+                            <Socials data={siteInfo} />
                         </div>
                         <div className='col-lg-7 col-md-6 px-4'>
-                           <SectionTitle smTitle="Contact" mainTitle="Semper tellus semmag" />
+                            <SectionTitle smTitle="Contact" mainTitle="Semper tellus semmag" />
                             <p className='m-t20'>Cursus quis condimentum nunc ultricies dis nisi diam nec. Bibendum potenti taciti ex parturient lacinia velit habitant.  </p>
                             <div className='Contact_box '>
                                 <form>
@@ -94,9 +88,15 @@ const ContactSect = () => {
                                                     label="Select product"
                                                 // onChange={handleChange}
                                                 >
-                                                    <MenuItem value={10}>Ten</MenuItem>
-                                                    <MenuItem value={20}>Twenty</MenuItem>
-                                                    <MenuItem value={30}>Thirty</MenuItem>
+                                                    {
+                                                        products
+                                                            ?
+                                                            products.map((value, index) =>
+                                                                <MenuItem key={index} value={value.name}>{value.name}</MenuItem>
+                                                            )
+                                                            :
+                                                            null
+                                                    }
                                                 </Select>
                                             </FormControl>
 
@@ -120,8 +120,8 @@ const ContactSect = () => {
                                 <div className='conta-info-bx-bg'></div>
                                 <div className='conta-info-bx-icn'><PhoneInTalkOutlinedIcon /></div>
                                 <div className='conta-info-bx-in'>
-                                    <a href=""><PhoneInTalkOutlinedIcon /> +91 0000 00000</a>
-                                    <a href=""><PhoneInTalkOutlinedIcon /> +91 0000 00000</a>
+                                    <a href={"tel:" + siteInfo.primaryPhone}><PhoneInTalkOutlinedIcon />{siteInfo.primaryPhone}</a>
+                                    <a href={"tel:" + siteInfo.secondaryPhone}><PhoneInTalkOutlinedIcon />{siteInfo.secondaryPhone}</a>
                                 </div>
                             </div>
                         </div>
@@ -131,8 +131,8 @@ const ContactSect = () => {
                                 <div className='conta-info-bx-bg'></div>
                                 <div className='conta-info-bx-icn'><MarkEmailUnreadOutlinedIcon /></div>
                                 <div className='conta-info-bx-in'>
-                                    <a href=""><MarkEmailUnreadOutlinedIcon /> contact@instantweb.com </a>
-                                    <a href=""><MarkEmailUnreadOutlinedIcon /> contact@instantweb.com </a>
+                                    <a href={"mailto:" + siteInfo.primaryMail}><MarkEmailUnreadOutlinedIcon /> {siteInfo.primaryMail}</a>
+                                    <a href={"mailto:" + siteInfo.secondaryMail}><MarkEmailUnreadOutlinedIcon /> {siteInfo.secondaryMail} </a>
                                 </div>
                             </div>
                         </div>
@@ -142,7 +142,7 @@ const ContactSect = () => {
                                 <div className='conta-info-bx-bg'></div>
                                 <div className='conta-info-bx-icn'><LocationOnOutlinedIcon /></div>
                                 <div className='conta-info-bx-in'>
-                                    <span><LocationOnOutlinedIcon /> 24/7 First Floor, Mall Road, Tilak Nagar, New Delhi - 110018</span>
+                                    <span><LocationOnOutlinedIcon /> {siteInfo.primaryAddress}</span>
                                 </div>
                             </div>
                         </div>

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {  Swiper, SwiperSlide } from 'swiper/react';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -11,6 +11,21 @@ import 'swiper/css/scrollbar';
 import { Autoplay, Navigation } from 'swiper/modules';
 
 const HomeBanner = () => {
+
+    const [banners, setBanner] = useState([]);
+
+    useEffect(() => {
+        getBanners();
+    }, []);
+
+    const getBanners = async () => {
+        let result = await fetch(`${process.env.REACT_APP_BASE_URL}banners`);
+        result = await result.json();
+        if (result.status) {
+            setBanner(result.banners);
+        }
+    }
+
     return (
         <>
             <Swiper
@@ -27,9 +42,17 @@ const HomeBanner = () => {
                   }}
                 modules={[Autoplay , Navigation]}
                 className="home-slider">
-                <SwiperSlide><img className='w-100' loading='lazy' src='images/slider/ban1.jpg' alt='' /></SwiperSlide>
-                <SwiperSlide><img className='w-100' loading='lazy' src='images/slider/ban2.jpg' alt='' /></SwiperSlide>
-                <SwiperSlide><img className='w-100' loading='lazy' src='images/slider/ban1.jpg' alt='' /></SwiperSlide>
+                 {
+                    banners
+                        ?
+                        banners.map((value, index) =>
+                            <SwiperSlide key={index}>
+                                <img className='w-100' loading='lazy' src={'./images/banners/' + value.img} alt={value.name} title={value.name} />
+                            </SwiperSlide>
+                        )
+                        :
+                        null
+                }
                 <div className="prev-slide slide-btn"><span><ArrowBackIcon /></span></div>
                 <div className="next-slide slide-btn"><span><ArrowForwardIcon /></span></div>
             </Swiper>

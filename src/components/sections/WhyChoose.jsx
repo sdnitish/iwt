@@ -58,9 +58,9 @@ const WhyChoose = () => {
             </div>
           </div>
           <div className='col-lg-6 m-t30'>
-            <SectionTitle smTitle="Why Choose" mainTitle="We Are Expert In Google Promotion Services" />
+            <SectionTitle smTitle="Why Choose" mainTitle="Get Premium Google Promotion and web designing services" />
             {/* <LoremIpsum p={1} /> */}
-            <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Commodo vulputate ultrices suspendisse nam rutrum aliquam laoreet pellentesque. Commodo primis ipsum feugiat vitae cursus nisl adipiscing.</p>
+            <p>We at Instant Web Technology are all about giving you the best and top-of-the-line Google promotion and web designing services that you can count on for all your online presence-building needs.</p>
             <div className="row ">
               <div className="col-lg-5 col-md-5 col-sm-12">
                 <img className='w-100' src="./images/gif/why-gif.gif" alt="" />
