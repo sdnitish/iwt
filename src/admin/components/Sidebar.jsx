@@ -90,19 +90,20 @@ function Sidebar() {
             addClass: location.pathname === "/admin/ourPresenceInCity" ? "active mb-2 border rounded" : ""
         },
         {
-            name: 'Location',
-            icon: <LocationOnIcon />,
-            link: '/admin/location',
-            hasChildren: false,
-            addClass: location.pathname === "/admin/location" ? "active mb-2 border rounded" : ""
-        },
-        {
             name: 'Parent Location',
             icon: <LocationOnIcon />,
             link: '/admin/parentLocation',
             hasChildren: false,
             addClass: location.pathname === "/admin/parentLocation" ? "active mb-2 border rounded" : ""
         },
+        {
+            name: 'Location',
+            icon: <LocationOnIcon />,
+            link: '/admin/location',
+            hasChildren: false,
+            addClass: location.pathname === "/admin/location" ? "active mb-2 border rounded" : ""
+        },
+     
         // {
         //     name: 'Product',
         //     icon: <InventoryIcon />,

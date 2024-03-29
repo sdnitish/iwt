@@ -26,14 +26,13 @@ function MarketPlaceSec(props) {
                     }
                 </div>
                 <div className='row m-t30'>
-                <MarketBtn Href='' locationName="Dummy Location" />
                     {
                         locations
                             ?
                             locations.map((value, index) =>
                                 <>
-                                    <div key={index} className='col-12'>
-                                        <MarketBtn Href={'/'+value.parentSlug} locationName={value.parentName} />
+                                    <div key={index} className='col-12 m-b20'>
+                                        <MarketBtn  Href={'/'+value.parentSlug} locationName={value.parentName} />
                                     </div>
                                     {
                                         value.cities.map((value, index) =>

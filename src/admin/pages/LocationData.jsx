@@ -11,8 +11,8 @@ const LocationData = () => {
     const params = useParams();
 
     const [name, setName] = useState('');
-    const [parentLocationId, setparentLocationId] = useState('');
-    const [parentLocations, setparentLocations] = useState([]);
+    const [parentLocationId, setParentLocationId] = useState('');
+    const [parentLocations, setParentLocations] = useState([]);
 
     const getLocation = async (id) => {
         let result = await fetch(`${process.env.REACT_APP_BASE_URL}admin/location/` + id)
@@ -20,16 +20,16 @@ const LocationData = () => {
 
         if (result.status) {
             setName(result.location.name);
-            setparentLocationId(result.location.parentLocationId);
-            setparentLocations(result.parentLocations);
+            setParentLocationId(result.location.parentLocationId);
+            setParentLocations(result.parentLocations);
         }
     }
 
-    const getparentLocations = async () => {
+    const getParentLocations = async () => {
         let result = await fetch(`${process.env.REACT_APP_BASE_URL}admin/parentLocations`);
         result = await result.json();
         if (result.status) {
-            setparentLocations(result.parentLocations);
+            setParentLocations(result.parentLocations);
         }
     }
 
@@ -37,7 +37,7 @@ const LocationData = () => {
         if (params._id) {
             getLocation(params._id);
         } else {
-            getparentLocations();
+            getParentLocations();
         }
     }, []);
 
@@ -83,11 +83,11 @@ const LocationData = () => {
                                 <div className='col-12'>
                                     <div className='add_box'>
                                         <div className='Label-box'>
-                                            <span className='Lavel'>parent Location :</span>
+                                            <span className='Lavel'>Parent Location :</span>
                                         </div>
                                         <div className='Input-box'>
                                             <select name='parentLocationId'>
-                                                <option value="">Select parent Location</option>
+                                                <option value="">Select Parent Location</option>
                                                 {
                                                     parentLocations
                                                         ?

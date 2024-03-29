@@ -12,7 +12,7 @@ const Sitemap = () => {
 
   useEffect(() => {
     getPages();
-  });
+  },[]);
 
   const getPages = async () => {
     let result = await fetch(`${process.env.REACT_APP_BASE_URL}sitemaps`)

@@ -44,18 +44,30 @@
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
     z-index: 4;
-    /* background: url(../../../public/images/bg/ft-bg2.jpg); */
-    background: white;
-    background-size: cover;
+    background: #fcfcfd;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: 0 0 ;
     overflow: hidden;
+}
+.btm-layer3::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+    width: 83%;
+    height: 58%;
+    background: url(../../../public/images/bg/web-development.gif);
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 .btm-layer3 img{
     max-width: 650px;
     position: absolute;
     right: 0;
     bottom: 0;
+    z-index: 4;
 }
 @media (max-width: 768px) {
     .btm-layer3 img{
@@ -70,6 +82,10 @@
         width: 219px;
         border-top-right-radius: 50%;
         border-bottom-right-radius: 50%;
+    }
+    .btm-layer3::before{
+        right: unset;
+        left: 0;
     }
 }
 .ft-logo-box{

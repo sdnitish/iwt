@@ -1,4 +1,5 @@
 import React , {useEffect} from 'react';
+import { Link } from 'react-router-dom';
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -27,7 +28,7 @@ const MarketBtn = (props) => {
     initial="hidden"
     animate={control}
     >
-      <a className={props.addClass  + ' ' + 'thm-btn w-100 text-center market-btn'} href={props.Href}>{props.locationName} </a>
+      <Link className={props.addClass  + ' ' + 'thm-btn w-100 text-center market-btn'} to={props.Href}>{props.locationName} </Link>
     </motion.div >
   )
 }
