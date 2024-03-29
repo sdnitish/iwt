@@ -5,10 +5,10 @@ import Sidebar from '../components/Sidebar';
 import '../Admin.css';
 import BreadCrumb from '../components/BreadCrumb';
 import AddData from '../components/AddData';
-import AddDataEditor from '../components/AddDataEditor';
-import Jodit from '../components/Jodit';
+// import AddDataEditor from '../components/AddDataEditor';
+// import Jodit from '../components/Jodit';
 
-const BannerData = () => {
+const TestimonialData = () => {
     const navigate = useNavigate();
     const params = useParams();
 
@@ -20,26 +20,26 @@ const BannerData = () => {
 
     const [defaultDescription, setDefaultDescription] = useState('');
 
-    const setContent = (content) => {
-        setDescription(content);
-    }
+    // const setContent = (content) => {
+    //     setDescription(content);
+    // }
 
-    const getBanner = async (id) => {
-        let result = await fetch(`${process.env.REACT_APP_BASE_URL}admin/banner/` + id)
+    const getTestimonial = async (id) => {
+        let result = await fetch(`${process.env.REACT_APP_BASE_URL}admin/testimonial/` + id)
         result = await result.json();
 
         if (result.status) {
-            setName(result.banner.name);
-            setTextField1(result.banner.textField1);
-            setTextField2(result.banner.textField2);
-            setDescription(result.banner.description);
-            setDefaultDescription(result.banner.description);
+            setName(result.testimonial.name);
+            setTextField1(result.testimonial.textField1);
+            setTextField2(result.testimonial.textField2);
+            setDescription(result.testimonial.description);
+            setDefaultDescription(result.testimonial.description);
         }
     }
 
     useEffect(() => {
         if (params._id) {
-            getBanner(params._id);
+            getTestimonial(params._id);
         }
     }, []);
 
@@ -56,7 +56,7 @@ const BannerData = () => {
             data.append("id", params._id);
         }
 
-        const url = `${process.env.REACT_APP_BASE_URL}admin/saveBanner`;
+        const url = `${process.env.REACT_APP_BASE_URL}admin/saveTestimonial`;
 
         let result = await fetch(
             url,
@@ -68,7 +68,7 @@ const BannerData = () => {
 
         result = await result.json();
         if (result.status) {
-            navigate('/admin/banner');
+            navigate('/admin/testimonial');
         }
     }
     return (
@@ -80,23 +80,39 @@ const BannerData = () => {
                 </div>
                 <div className='content_box'>
                     <div className='content_container'>
-                        <BreadCrumb pageName="Add / Update Banner" link="/admin/banner" btnName="Manage Banners" />
+                        <BreadCrumb pageName="Add / Update Testimonials" link="/admin/testimonial" btnName="Manage Testimonials" />
                         <form onSubmit={submitHandler} className='add_data'>
                             <div className='row'>
                                 <div className='col-12'>
-                                    <AddData changeFunction={setName} Label="Banner Name" inputType="text" Placeholder="Name" value={name} />
+                                    <AddData Label="Testi Image" changeFunction={setFile} inputType="file" />
                                 </div>
                                 <div className='col-12'>
-                                    <AddData changeFunction={setTextField1} Label="Text Fields One" inputType="text" Placeholder="Text" value={textField1} />
+                                    <AddData changeFunction={setName} Label="Testi Name" inputType="text" Placeholder="Name" value={name} />
                                 </div>
                                 <div className='col-12'>
-                                    <AddData changeFunction={setTextField2} Label="Text Fields Two" inputType="text" Placeholder="Text" value={textField2} />
+                                    <AddData changeFunction={setTextField1} Label="Testi Position" inputType="text" Placeholder="Text" value={textField1} />
                                 </div>
                                 <div className='col-12'>
-                                    <AddData Label="Banner Image" changeFunction={setFile} inputType="file" />
+                                    <AddData changeFunction={setTextField2} Label="Other Titles" inputType="text" Placeholder="Text" value={textField2} />
                                 </div>
                                 <div className='col-12'>
-                                    <AddDataEditor Label="Banner Description" Editor={<Jodit value={defaultDescription} description={setContent} />} />
+                                    <div className='row mt-4'>
+                                        <div className='col-12 textarea-box'>
+                                            <label htmlFor="">Testimonials messages :</label>
+                                            <textarea
+                                                name=""
+                                                onChange={(e) => setDescription(e.target.value)}
+                                                cols="30"
+                                                rows="10"
+                                                placeholder='Review Message'
+                                                defaultValue={description}
+                                            >
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='col-12'>
+                                    {/* <AddDataEditor Label="Testimonials messages" Editor={<Jodit value={defaultDescription} description={setContent} />} /> */}
                                     <div className='row justify-content-end'>
                                         <button className='btn btn-primary mt-2 float-right w-fit col-auto mx-2'>Save Data</button>
                                     </div>
@@ -110,4 +126,4 @@ const BannerData = () => {
     )
 }
 
-export default BannerData
+export default TestimonialData

@@ -3,7 +3,7 @@ import SectionTitle from '../SectionTitle';
 import ProductCard from '../ProductCard';
 import { TypeAnimation } from 'react-type-animation';
 
-const HomeBanner = () => {
+const ProductSection = () => {
   const [products, setProduct] = useState([]);
 
   useEffect(() => {
@@ -67,4 +67,4 @@ const HomeBanner = () => {
   )
 }
 
-export default HomeBanner
+export default ProductSection

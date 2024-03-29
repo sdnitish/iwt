@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 // import Socials from '../nav/Socials';
 import SpeedDial from '@mui/material/SpeedDial';
@@ -9,22 +9,23 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
 import PhoneForwardedIcon from '@mui/icons-material/PhoneForwarded';
 import AddIcCallIcon from '@mui/icons-material/AddIcCall';
-
 import ScrollToTop from 'react-scroll-to-top';
+import { useLocation } from 'react-router-dom';
 
-const actions = [
-    { icon: <PhoneForwardedIcon />, name: 'Call Now', href: 'tel:91000000000' },
-    { icon: <ForwardToInboxIcon />, name: 'Mail Now', href: 'mailto:email@email.com' },
-    { icon: <WhatsAppIcon />, name: 'Whatsapp', href: 'https://api.whatsapp.com/send/?phone=9899978293' },
-    { icon: <ShareIcon />, name: 'Share', href: '' },
-];
+
 
 const Footer = () => {
     const [siteInfo, setSiteInfo] = useState([]);
+    const { pathname } = useLocation();
+
+    // useEffect(() => {
+    //     getSiteInfo();
+    // }, [])
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         getSiteInfo();
-    }, [])
+    }, [pathname]);
 
     const getSiteInfo = async () => {
         let result = await fetch(`${process.env.REACT_APP_BASE_URL}siteInfo`);
@@ -33,6 +34,13 @@ const Footer = () => {
             setSiteInfo(result.siteInfo);
         }
     }
+
+    const actions = [
+        { icon: <PhoneForwardedIcon />, name: 'Call Now', href: 'tel:' + siteInfo.primaryPhone },
+        { icon: <ForwardToInboxIcon />, name: 'Mail Now', href: 'mailto:' + siteInfo.primaryMail },
+        { icon: <WhatsAppIcon />, name: 'Whatsapp', href: 'https://api.whatsapp.com/send/?phone=' + siteInfo.whatsapp },
+        { icon: <ShareIcon />, name: 'Share', href: '' },
+    ];
 
     return (
         <>
@@ -69,7 +77,7 @@ const Footer = () => {
                                         <li><Link to="/services">Services</Link></li>
                                         <li><Link to="/about">Company Profile</Link></li>
                                         <li><Link to="/sitemap">Sitemap</Link></li>
-                                        <li><Link to="/sitemap">Market Place</Link></li>
+                                        <li><Link to="/market-place">Market Place</Link></li>
                                         <li><Link to="/contact">Contact Us</Link></li>
                                     </ul>
                                 </div>
@@ -98,7 +106,12 @@ const Footer = () => {
                                             <span className='title'>Address</span>
                                             <span>{siteInfo.primaryAddress}</span>
                                         </div>
+                                        {/* <button className="button" data-sharer="twitter" data-title="Checkout Sharer.js!" data-hashtags="awesome, sharer.js" data-url="https://ellisonleao.github.io/sharer.js/">Share on Twitter</button> */}
                                     </div>
+                                    {/* <ShareSocial
+                                        url="url_to_share.com"
+                                        socialTypes={['facebook', 'twitter', 'reddit', 'linkedin']}
+                                    /> */}
 
                                 </div>
                             </div>

@@ -58,6 +58,9 @@
 .service-img{
     width: 100%;
     max-width: 110px;
+    max-height: 110px;
+    width: 110px;
+    height: 110px;
     height: auto;
     position: relative;
     z-index: 2;
@@ -69,7 +72,7 @@
     left: 0;
     right: 0;
     margin: auto;
-    padding: 21px;
+    padding: 18px;
     background: white;
 }
 .service-img img{
@@ -128,9 +131,16 @@
     font-weight: 600;
     text-decoration: none;
     display: block;
+    display: -webkit-box;
+    max-height: 200px;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 .service-name{
-    font-size: 23px;
+    font-size: 22px;
+    min-height: 51px;
+    line-height: 1.18;
     margin-bottom: 3px;
     color: black;
     font-weight: 600;

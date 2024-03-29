@@ -45,7 +45,7 @@ const ProductCard = (props) => {
         </div>
       </div>
       <div className='service-img'>
-        <img className='w-100' loading='lazy' src={"./images/icons/" + props.servIcon} alt="" />
+        <img className='w-100' loading='lazy' src={"./images/icons/" + props.servIcon} alt={props.productName} title={props.productName} />
       </div>
     </motion.div>
   )

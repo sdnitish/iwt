@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import Nav from '../components/nav/Nav';
 import BreadCrumb from '../components/sections/BreadCrumb'
 import SitemapSect from '../components/sections/SitemapSect'
 import ContactSect from '../components/sections/ContactSect'
 import HelmetComp from '../components/HelmetComp';
+import Footer from '../components/sections/Footer';
 
 const Sitemap = () => {
 
@@ -22,10 +24,12 @@ const Sitemap = () => {
 
   return (
     <>
-     <HelmetComp  metaData={sitemaps} />
+      <HelmetComp metaData={sitemaps} />
+      <Nav />
       <BreadCrumb name="Sitemap" />
       <SitemapSect sitemapData={sitemaps} />
       <ContactSect />
+      <Footer />
     </>
   )
 }

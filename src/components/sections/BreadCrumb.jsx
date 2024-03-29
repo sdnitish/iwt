@@ -9,7 +9,7 @@ const BreadCrumb = (props) => {
       <h1>{props.name ? props.name : null}</h1>
         <div className='page-title-box'>
             <ul>
-                <li><Link to="">Home</Link></li>
+                <li><Link to="/">Home</Link></li>
                 <li><span><i className="fa-solid fa-angles-right"></i></span></li>
                 <li><span>{props.name ? props.name : null}</span></li>
             </ul>

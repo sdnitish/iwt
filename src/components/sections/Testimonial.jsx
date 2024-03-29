@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Testimonial.css';
 import SectionTitle from '../SectionTitle';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -13,6 +13,9 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const Testimonial = () => {
+
+    const [testimonials, setTestimonials] = useState([]);
+
     const boxVariantTesti = {
         visible: { opacity: 1, transition: { duration: 0.5 } },
         hidden: { opacity: 1, },
@@ -22,6 +25,9 @@ const Testimonial = () => {
     const [ref, inView] = useInView()
 
     useEffect(() => {
+
+        getTestimonials();
+
         if (inView) {
             control.start("visible");
         }
@@ -29,6 +35,15 @@ const Testimonial = () => {
             control.start("hidden");
         }
     }, [control, inView]);
+
+    const getTestimonials = async () => {
+        let result = await fetch(`${process.env.REACT_APP_BASE_URL}admin/testimonials`);
+        result = await result.json();
+        if(result.status ){
+            setTestimonials(result.testimonials);
+        }
+    
+    }
 
     return (
         <section className='sect-space testi-bg '>
@@ -76,86 +91,36 @@ const Testimonial = () => {
                         }}
                         modules={[Autoplay, Navigation]}
                         className="home-slider">
-                        <SwiperSlide>
-                            <motion.div
-                                ref={ref}
-                                variants={boxVariantTesti}
-                                initial="hidden"
-                                animate={control}
-                                className='testi-box'>
-                                <div className='Testimonial-box'>
-                                    <img className='testi-img' src="./images/img/testi.png" alt="" />
-                                    <div className='reviews-box'>
-                                        <p className='testi-words'>“ After being forced to move twice within five years, our customers had a hard time finding us and our sales plummeted. The Trydus Co. not only revitalized our brand, but saved our nearly 100-year-old family business from the brink of ruin.”</p>
-                                        <div className='testi-name-box'>
-                                            <p className='testi-name'>Testi Name</p>
-                                            <span className='testi-position'>Client</span>
-                                            <i className="fa-solid fa-quote-right"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <motion.div
-                                ref={ref}
-                                variants={boxVariantTesti}
-                                initial="hidden"
-                                animate={control}
-                                className='testi-box'>
-                                <div className='Testimonial-box'>
-                                    <img className='testi-img' src="./images/img/testi.png" alt="" />
-                                    <div className='reviews-box'>
-                                        <p className='testi-words'>“ After being forced to move twice within five years, our customers had a hard time finding us and our sales plummeted. The Trydus Co. not only revitalized our brand, but saved our nearly 100-year-old family business from the brink of ruin.”</p>
-                                        <div className='testi-name-box'>
-                                            <p className='testi-name'>Testi Name</p>
-                                            <span className='testi-position'>Client</span>
-                                            <i className="fa-solid fa-quote-right"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <motion.div
-                                ref={ref}
-                                variants={boxVariantTesti}
-                                initial="hidden"
-                                animate={control}
-                                className='testi-box'>
-                                <div className='Testimonial-box'>
-                                    <img className='testi-img' src="./images/img/testi.png" alt="" />
-                                    <div className='reviews-box'>
-                                        <p className='testi-words'>“ After being forced to move twice within five years, our customers had a hard time finding us and our sales plummeted. The Trydus Co. not only revitalized our brand, but saved our nearly 100-year-old family business from the brink of ruin.”</p>
-                                        <div className='testi-name-box'>
-                                            <p className='testi-name'>Testi Name</p>
-                                            <span className='testi-position'>Client</span>
-                                            <i className="fa-solid fa-quote-right"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <motion.div
-                                ref={ref}
-                                variants={boxVariantTesti}
-                                initial="hidden"
-                                animate={control}
-                                className='testi-box'>
-                                <div className='Testimonial-box'>
-                                    <img className='testi-img' src="./images/img/testi.png" alt="" />
-                                    <div className='reviews-box'>
-                                        <p className='testi-words'>“ After being forced to move twice within five years, our customers had a hard time finding us and our sales plummeted. The Trydus Co. not only revitalized our brand, but saved our nearly 100-year-old family business from the brink of ruin.”</p>
-                                        <div className='testi-name-box'>
-                                            <p className='testi-name'>Testi Name</p>
-                                            <span className='testi-position'>Client</span>
-                                            <i className="fa-solid fa-quote-right"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        </SwiperSlide>
+                        {
+                            testimonials
+                                ?
+                                testimonials.map((value, index) =>
+
+                                    <SwiperSlide key={index}>
+                                        <motion.div
+                                            ref={ref}
+                                            variants={boxVariantTesti}
+                                            initial="hidden"
+                                            animate={control}
+                                            className='testi-box'>
+                                            <div className='Testimonial-box'>
+                                                <img className='testi-img' src={'./images/testimonials/' + value.img} alt={value.name} title={value.name} />
+                                                <div className='reviews-box'>
+                                                    <p className='testi-words'>{value.description}</p>
+                                                    <div className='testi-name-box'>
+                                                        <p className='testi-name'>{value.name}</p>
+                                                        <span className='testi-position'>{value.textField1}</span>
+                                                        <i className="fa-solid fa-quote-right"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </motion.div>
+                                    </SwiperSlide>
+                                )
+                                :
+                                null
+                        }
+                      
 
                     </Swiper>
 

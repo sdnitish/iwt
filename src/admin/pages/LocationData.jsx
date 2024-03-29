@@ -11,8 +11,8 @@ const LocationData = () => {
     const params = useParams();
 
     const [name, setName] = useState('');
-    const [parantLocationId, setParantLocationId] = useState('');
-    const [parantLocations, setParantLocations] = useState([]);
+    const [parentLocationId, setparentLocationId] = useState('');
+    const [parentLocations, setparentLocations] = useState([]);
 
     const getLocation = async (id) => {
         let result = await fetch(`${process.env.REACT_APP_BASE_URL}admin/location/` + id)
@@ -20,16 +20,16 @@ const LocationData = () => {
 
         if (result.status) {
             setName(result.location.name);
-            setParantLocationId(result.location.parantLocationId);
-            setParantLocations(result.parantLocations);
+            setparentLocationId(result.location.parentLocationId);
+            setparentLocations(result.parentLocations);
         }
     }
 
-    const getParantLocations = async () => {
-        let result = await fetch(`${process.env.REACT_APP_BASE_URL}admin/parantLocations`);
+    const getparentLocations = async () => {
+        let result = await fetch(`${process.env.REACT_APP_BASE_URL}admin/parentLocations`);
         result = await result.json();
         if (result.status) {
-            setParantLocations(result.parantLocations);
+            setparentLocations(result.parentLocations);
         }
     }
 
@@ -37,7 +37,7 @@ const LocationData = () => {
         if (params._id) {
             getLocation(params._id);
         } else {
-            getParantLocations();
+            getparentLocations();
         }
     }, []);
 
@@ -83,16 +83,16 @@ const LocationData = () => {
                                 <div className='col-12'>
                                     <div className='add_box'>
                                         <div className='Label-box'>
-                                            <span className='Lavel'>Parant Location :</span>
+                                            <span className='Lavel'>parent Location :</span>
                                         </div>
                                         <div className='Input-box'>
-                                            <select name='parantLocationId'>
-                                                <option value="">Select Parant Location</option>
+                                            <select name='parentLocationId'>
+                                                <option value="">Select parent Location</option>
                                                 {
-                                                    parantLocations
+                                                    parentLocations
                                                         ?
-                                                        parantLocations.map((value, index) =>
-                                                            (value._id === parantLocationId)
+                                                        parentLocations.map((value, index) =>
+                                                            (value._id === parentLocationId)
                                                                 ?
                                                                 <option
                                                                     selected

@@ -10,6 +10,10 @@ import PageData from '../admin/pages/PageData';
 import Login from '../pages/Login';
 import Product from '../admin/pages/Product';
 import ProductData from '../admin/pages/ProductData';
+import Category from '../admin/pages/Category';
+import CategoryData from '../admin/pages/CategoryData';
+import Testimonials from '../admin/pages/Testimonials';
+import TestimonialData from '../admin/pages/TestimonialData';
 import PromotionalCategory from '../admin/pages/PromotionalCategory';
 import PromotionalCategoryData from '../admin/pages/PromotionalCategoryData';
 import KeywordInCity from '../admin/pages/KeywordInCity';
@@ -18,8 +22,8 @@ import OurPresenceInCity from '../admin/pages/OurPresenceInCity';
 import PrivateComponent from '../components/PrivateComponent';
 import Location from '../admin/pages/Location';
 import LocationData from '../admin/pages/LocationData';
-import ParantLocation from '../admin/pages/ParantLocation';
-import ParantLocationData from '../admin/pages/ParantLocationData';
+import ParentLocation from '../admin/pages/ParentLocation';
+import ParentLocationData from '../admin/pages/ParentLocationData';
 
 function SiteLayout() {
     return (
@@ -40,6 +44,14 @@ function SiteLayout() {
                 <Route path='/admin/product/data' element={<ProductData />} />
                 <Route path='/admin/product/data/:_id' element={<ProductData />} />
 
+                <Route path='/admin/category' element={<Category />} />
+                <Route path='/admin/category/data' element={<CategoryData />} />
+                <Route path='/admin/category/data/:_id' element={<CategoryData />} />
+
+                <Route path='/admin/testimonial' element={<Testimonials />} />
+                <Route path='/admin/testimonial/data' element={<TestimonialData />} />
+                <Route path='/admin/testimonial/data/:_id' element={<TestimonialData />} />
+
                 <Route path='/admin/promotionalCategory' element={<PromotionalCategory />} />
                 <Route path='/admin/promotionalCategory/data' element={<PromotionalCategoryData />} />
                 <Route path='/admin/promotionalCategory/data/:_id' element={<PromotionalCategoryData />} />
@@ -51,9 +63,9 @@ function SiteLayout() {
                 <Route path='/admin/location/data' element={<LocationData />} />
                 <Route path='/admin/location/data/:_id' element={<LocationData />} />
 
-                <Route path='/admin/parantLocation' element={<ParantLocation />} />
-                <Route path='/admin/parantLocation/data' element={<ParantLocationData />} />
-                <Route path='/admin/parantLocation/data/:_id' element={<ParantLocationData />} />
+                <Route path='/admin/parentLocation' element={<ParentLocation />} />
+                <Route path='/admin/parentLocation/data' element={<ParentLocationData />} />
+                <Route path='/admin/parentLocation/data/:_id' element={<ParentLocationData />} />
             </Route>
 
             <Route path='/login' element={<Login />} />

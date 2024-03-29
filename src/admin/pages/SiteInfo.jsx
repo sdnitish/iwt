@@ -161,40 +161,62 @@ function SiteInfo() {
                                         Placeholder="Phone"
                                     />
                                 </div>
-                                <div className='col-md-6'>
-                                    <AddData
-                                        changeFunction={setLogo}
-                                        Label="Company Logo"
-                                        inputType="file"
-                                    />
+                                <div className='row'>
+                                    <div className='col-md-6'>
+                                        <AddData
+                                            changeFunction={setLogo}
+                                            Label="Company Logo"
+                                            inputType="file"
+                                        />
+                                    </div>
+                                    <div className='col-md-6'>
+                                        <div className="row align-items-center h-100">
+                                            <img className='img-logos-admn'  src={'../../images/' + logo} alt={compName} title={compName} />
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className='col-md-6'>
-                                    <AddData
-                                        changeFunction={setFavicon}
-                                        Label="Favicon"
-                                        inputType="file"
-                                    />
+
+                                <div className='row'>
+                                    <div className='col-md-6'>
+                                        <AddData
+                                            changeFunction={setFavicon}
+                                            Label="Favicon"
+                                            inputType="file"
+                                        />
+                                    </div>
+                                    <div className='col-md-6'>
+                                        <div className="row align-items-center h-100">
+                                            <img className='img-logos-admn' src={'../../images/' + favicon} alt={compName} title={compName} />
+                                        </div>
+                                    </div>
                                 </div>
+
                             </div>
                             <div className='row mt-4'>
                                 <div className='col-12'><h5 className='px-2 text-primary'>Company Address</h5></div>
-                                <div className='col-md-6'>
-                                    <AddData
-                                        value={primaryAddress}
-                                        changeFunction={setPrimaryAddress}
-                                        Label="Primary Address"
-                                        inputType="text"
-                                        Placeholder="Address"
-                                    />
+                                <div className='col-12 textarea-box mt-4'>
+                                    <label htmlFor="">Primary Address :</label>
+                                    <textarea
+                                        name=""
+                                        onChange={(e) => setPrimaryAddress(e.target.value)}
+                                        cols="30"
+                                        rows="10"
+                                        placeholder='Address'
+                                        defaultValue={primaryAddress}
+                                    >
+                                    </textarea>
                                 </div>
-                                <div className='col-md-6'>
-                                    <AddData
-                                        value={secondaryAddress}
-                                        changeFunction={setSecondaryAddress}
-                                        Label="Secondary Address"
-                                        inputType="text"
-                                        Placeholder="Address"
-                                    />
+                                <div className='col-12 textarea-box mt-4'>
+                                    <label htmlFor="">Secondary Address :</label>
+                                    <textarea
+                                        name=""
+                                        onChange={(e) => setSecondaryAddress(e.target.value)}
+                                        cols="30"
+                                        rows="10"
+                                        placeholder='Secondary Address'
+                                        defaultValue={secondaryAddress}
+                                    >
+                                    </textarea>
                                 </div>
                                 <div className='col-md-6'>
                                     <AddData

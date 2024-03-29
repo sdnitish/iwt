@@ -11,6 +11,8 @@ import GradingIcon from '@mui/icons-material/Grading';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import ReviewsIcon from '@mui/icons-material/Reviews';
+import FactCheckIcon from '@mui/icons-material/FactCheck';
 
 function Dashboard() {
 
@@ -46,10 +48,22 @@ function Dashboard() {
             'link': '/admin/pages'
         },
         {
-            'title': 'Products',
+            'title': 'Categories',
+            'heading': dashboard.categoryCount,
+            'icon': <FactCheckIcon className='fs-1' />,
+            'link': '/admin/category'
+        },
+        {
+            'title': 'Services',
             'heading': dashboard.productCount,
             'icon': <InventoryIcon className='fs-1' />,
             'link': '/admin/product'
+        },
+        {
+            'title': 'Testimonials',
+            'heading': dashboard.testimonialCount,
+            'icon': <ReviewsIcon className='fs-1' />,
+            'link': '/admin/testimonial'
         },
         {
             'title': 'Promotional Categories',
@@ -76,10 +90,10 @@ function Dashboard() {
             'link': '/admin/location'
         },
         {
-            'title': 'Parant Location',
-            'heading': dashboard.parantLocationCount,
+            'title': 'Parent Location',
+            'heading': dashboard.parentLocationCount,
             'icon': <LocationOnIcon className='fs-1' />,
-            'link': '/admin/parantLocation'
+            'link': '/admin/parentLocation'
         }
     ];
 

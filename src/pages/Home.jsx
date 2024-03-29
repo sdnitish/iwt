@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Nav from '../components/nav/Nav';
 import HomeBanner from '../components/sections/HomeBanner';
 import FeaturesSect from '../components/sections/FeaturesSect';
 import CompanyProfile from '../components/sections/CompanyProfile';
@@ -10,6 +11,7 @@ import Testimonial from '../components/sections/Testimonial';
 import ContactSect from '../components/sections/ContactSect';
 // import ProductSection from './components/sections/ProductSection';
 import HelmetComp from '../components/HelmetComp';
+import Footer from '../components/sections/Footer';
 
 const Home = () => {
 
@@ -30,6 +32,7 @@ const Home = () => {
   return (
     <>
       <HelmetComp metaData={homeData} />
+      <Nav />
       <HomeBanner />
       <WelcomeText />
       <ProductSlider />
@@ -40,6 +43,7 @@ const Home = () => {
       <Testimonial />
       <ContactSect />
       {/* <ProductSection /> */}
+      <Footer />
     </>
   )
 }

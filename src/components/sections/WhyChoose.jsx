@@ -19,8 +19,8 @@ const WhyChoose = () => {
     hidden: { opacity: 0.25, scale: 0.65, translateX: -100 },
   }
   const boxVariantThree = {
-    visible: { width: 'var(--prog1)', transition: { duration: 0.6 }},
-    hidden: { width: 0},
+    visible: { width: 'var(--prog1)', transition: { duration: 0.6 } },
+    hidden: { width: 0 },
   }
 
   const control = useAnimation()
@@ -45,13 +45,13 @@ const WhyChoose = () => {
           <div className='col-lg-6'>
             <div className='why-img'>
               <img className='why-left-img' src="./images/img/why-img4.jpg" alt="" />
-              <motion.div 
+              <motion.div
                 ref={ref}
                 variants={boxVariantTwo}
                 initial="hidden"
                 animate={control}
                 className='why-right-img'>
-              <img  src="./images/img/why-img1.jpg" alt="" />
+                <img src="./images/img/why-img1.jpg" alt="" />
               </motion.div>
               <img className='shape-left  anim-up-down' src="./images/shapes/dots.png" alt="" />
               <span className='why-text anim-up-down'><span>Why Choose Us</span></span>
@@ -79,11 +79,11 @@ const WhyChoose = () => {
               <p className="skill-feature_title">Customer Satisfied</p>
               <div className="progress">
                 <motion.div
-                 ref={ref}
-                 variants={boxVariantThree}
-                 initial="hidden"
-                 animate={control}
-                 style={{ "--prog1": "90%" }}  className="progress-bar">
+                  ref={ref}
+                  variants={boxVariantThree}
+                  initial="hidden"
+                  animate={control}
+                  style={{ "--prog1": "90%" }} className="progress-bar">
                   <div className="progress-value">
                     <CountUp end={90} enableScrollSpy scrollSpyOnce="false" /> <span>%</span></div>
                 </motion.div>
@@ -93,42 +93,58 @@ const WhyChoose = () => {
               <p className="skill-feature_title">Successful Projects</p>
               <div className="progress">
                 <motion.div
-                 ref={ref}
-                 variants={boxVariantThree}
-                 initial="hidden"
-                 animate={control}
-                 style={{ "--prog1": "96%" }}  className="progress-bar">
-                   <div className="progress-value">
+                  ref={ref}
+                  variants={boxVariantThree}
+                  initial="hidden"
+                  animate={control}
+                  style={{ "--prog1": "96%" }} className="progress-bar">
+                  <div className="progress-value">
                     <CountUp end={96} enableScrollSpy scrollSpyOnce="false" /> <span>%</span></div>
                 </motion.div>
               </div>
             </div>
-           
+
             <div className='row align-items-center m-t40'>
               <div className='col-auto'><BtnLink Href="" btnName="Book Service" /></div>
               <div className='col-auto d-flex align-items-center'>
                 <img src="./images/shapes/group-img.png" alt="" />
                 <div className='client-count'>
-                 <CountUp end={296} enableScrollSpy scrollSpyOnce="false" /> <span>+</span>
-                 <p>Happy Clients</p>
+                  <CountUp end={500} enableScrollSpy scrollSpyOnce="false" /> <span>+</span>
+                  <p>Happy Clients</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-         <div className='row counter-box'>
+        <div className='row counter-box'>
           <div className='col-lg-3 col-md-4 col-sm-6 m-b30'>
             <div
-             className='countup_box'>
+              className='countup_box'>
+              <div className='icon-box-bg'></div>
+              <div className='icon-box row'>
+                <div className='cout-icon col-auto'>
+                  <img src="./images/gif/Client.gif" alt="" />
+                </div>
+                <div className='col-auto'>
+                  <div className='count-text'>
+                    <CountUp end={500} enableScrollSpy scrollSpyOnce="true" /> <span>+</span>
+                  </div>
+                  <p className='count-name'>Happy Clients</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='col-lg-3 col-md-4 col-sm-6 m-b30'>
+            <div
+              className='countup_box'>
               <div className='icon-box-bg'></div>
               <div className='icon-box row'>
                 <div className='cout-icon col-auto'>
                   <img src="./images/gif/Award.gif" alt="" />
-                  {/* <i className="fa-solid fa-trophy"></i> */}
                 </div>
                 <div className='col-auto'>
                   <div className='count-text'>
-                    <CountUp end={100} enableScrollSpy scrollSpyOnce="true" /> <span>+</span>
+                    <CountUp end={10} enableScrollSpy scrollSpyOnce="true" /> <span>+</span>
                   </div>
                   <p className='count-name'>Awards won</p>
                 </div>
@@ -136,60 +152,41 @@ const WhyChoose = () => {
             </div>
           </div>
           <div className='col-lg-3 col-md-4 col-sm-6 m-b30'>
-            <div 
-             className='countup_box'>
+            <div
+              className='countup_box'>
               <div className='icon-box-bg'></div>
               <div className='icon-box row'>
                 <div className='cout-icon col-auto'>
-                  {/* <i className="fa-solid fa-business-time"></i> */}
                   <img src="./images/gif/Ideas.gif" alt="" />
                 </div>
                 <div className='col-auto'>
                   <div className='count-text'>
-                    <CountUp end={30} enableScrollSpy scrollSpyOnce="true" /> <span>+</span>
+                    <CountUp end={15} enableScrollSpy scrollSpyOnce="true" /> <span>+</span>
                   </div>
-                  <p className='count-name'>Years Served</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className='col-lg-3 col-md-4 col-sm-6 m-b30'>
-            <div 
-             className='countup_box'>
-              <div className='icon-box-bg'></div>
-              <div className='icon-box row'>
-                <div className='cout-icon col-auto'>
-                  {/* <i className="fa-solid fa-business-time"></i> */}
-                  <img src="./images/gif/Award.gif" alt="" />
-                </div>
-                <div className='col-auto'>
-                  <div className='count-text'>
-                    <CountUp end={30} enableScrollSpy scrollSpyOnce="true" /> <span>+</span>
-                  </div>
-                  <p className='count-name'>Years Served</p>
+                  <p className='count-name'>Technologies</p>
                 </div>
               </div>
             </div>
           </div>
           <div className='col-lg-3 col-md-4 col-sm-6 m-b30'>
             <div
-             className='countup_box'>
+              className='countup_box'>
               <div className='icon-box-bg'></div>
               <div className='icon-box row'>
                 <div className='cout-icon col-auto'>
-                  {/* <i className="fa-solid fa-users-gear"></i> */}
-                  <img src="./images/gif/Client.gif" alt="" />
+                  <img src="./images/gif/Award.gif" alt="" />
                 </div>
                 <div className='col-auto'>
                   <div className='count-text'>
-                    <CountUp end={2100} enableScrollSpy scrollSpyOnce="true" /> <span>+</span>
+                    <CountUp end={50} enableScrollSpy scrollSpyOnce="true" /> <span>+</span>
                   </div>
-                  <p className='count-name'>Happy Clients</p>
+                  <p className='count-name'>Employees</p>
                 </div>
               </div>
             </div>
           </div>
-        </div> 
+
+        </div>
       </div>
     </section>
   )

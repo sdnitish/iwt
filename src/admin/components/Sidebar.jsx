@@ -12,6 +12,8 @@ import GradingIcon from '@mui/icons-material/Grading';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import ReviewsIcon from '@mui/icons-material/Reviews';
+import FactCheckIcon from '@mui/icons-material/FactCheck';
 // import AddBusinessIcon from '@mui/icons-material/AddBusiness';
 
 function Sidebar() {
@@ -46,11 +48,25 @@ function Sidebar() {
             addClass: location.pathname === "/admin/pages" ? "active mb-2 border rounded" : ""
         },
         {
-            name: 'Product',
+            name: 'Services Category',
+            icon: <FactCheckIcon />,
+            link: '/admin/category',
+            hasChildren: false,
+            addClass: location.pathname === "/admin/category" ? "active mb-2 border rounded" : ""
+        },
+        {
+            name: 'Services',
             icon: <InventoryIcon />,
             link: '/admin/product',
             hasChildren: false,
             addClass: location.pathname === "/admin/product" ? "active mb-2 border rounded" : ""
+        },
+        {
+            name: 'Testimonials',
+            icon: <ReviewsIcon />,
+            link: '/admin/testimonial',
+            hasChildren: false,
+            addClass: location.pathname === "/admin/testimonial" ? "active mb-2 border rounded" : ""
         },
         {
             name: 'Promotional Category',
@@ -81,11 +97,11 @@ function Sidebar() {
             addClass: location.pathname === "/admin/location" ? "active mb-2 border rounded" : ""
         },
         {
-            name: 'Parant Location',
+            name: 'Parent Location',
             icon: <LocationOnIcon />,
-            link: '/admin/parantLocation',
+            link: '/admin/parentLocation',
             hasChildren: false,
-            addClass: location.pathname === "/admin/parantLocation" ? "active mb-2 border rounded" : ""
+            addClass: location.pathname === "/admin/parentLocation" ? "active mb-2 border rounded" : ""
         },
         // {
         //     name: 'Product',

@@ -8,10 +8,7 @@ import AddData from '../components/AddData';
 import AddDataEditor from '../components/AddDataEditor';
 import Jodit from '../components/Jodit';
 
-function ProductData() {
-
-    const [categories, setCategories] = useState([]);
-
+function CategoryData() {
     const navigate = useNavigate();
     const params = useParams();
 
@@ -36,28 +33,27 @@ function ProductData() {
     const [metaDescription, setMetaDescription] = useState('');
     const [metaKeywords, setMetaKeywords] = useState('');
 
-    const getProduct = async (id) => {
-        let result = await fetch(process.env.REACT_APP_BASE_URL + "admin/product/" + id)
+    const getCategory = async (id) => {
+        let result = await fetch(process.env.REACT_APP_BASE_URL + "admin/category/" + id)
         result = await result.json();
 
         if (result.status) {
-            setName(result.product.name);
-            setPrice(result.product.price);
-            setShortDescription(result.product.shortDescription);
-            setDescription(result.product.description);
-            setDefaultDescription(result.product.description);
-            setExtraDescription(result.product.extraDescription);
-            setDefaultExtraDescription(result.product.extraDescription);
-            setMetaTitle(result.product.metaTitle);
-            setMetaDescription(result.product.metaDescription);
-            setMetaKeywords(result.product.metaKeywords);
+            setName(result.category.name);
+            setPrice(result.category.price);
+            setShortDescription(result.category.shortDescription);
+            setDescription(result.category.description);
+            setDefaultDescription(result.category.description);
+            setExtraDescription(result.category.extraDescription);
+            setDefaultExtraDescription(result.category.extraDescription);
+            setMetaTitle(result.category.metaTitle);
+            setMetaDescription(result.category.metaDescription);
+            setMetaKeywords(result.category.metaKeywords);
         }
     }
 
     useEffect(() => {
-        getCategories();
         if (params._id) {
-            getProduct(params._id);
+            getCategory(params._id);
         }
     }, []);
 
@@ -73,7 +69,7 @@ function ProductData() {
         }
 
         let result = await fetch(
-            process.env.REACT_APP_BASE_URL + "admin/saveProduct",
+            process.env.REACT_APP_BASE_URL + "admin/saveCategory",
             {
                 method: "POST",
                 body: data
@@ -82,17 +78,8 @@ function ProductData() {
         result = await result.json();
 
         if (result.status) {
-            navigate('/admin/product');
+            navigate('/admin/category');
         }
-    }
-
-  
-    const getCategories = async () => {
-      let categories_res = await fetch(`${process.env.REACT_APP_BASE_URL}admin/categories`)
-      categories_res = await categories_res.json();
-      if (categories_res.status) {
-        setCategories(categories_res.categories);
-      }
     }
 
     return (
@@ -104,38 +91,26 @@ function ProductData() {
                 </div>
                 <div className='content_box'>
                     <div className='content_container'>
-                        <BreadCrumb pageName="Add Product" link="/admin/product" btnName="Manage Products" />
+                        <BreadCrumb pageName="Add Category" link="/admin/category" btnName="Manage Categories" />
                         <form onSubmit={submitHandler} className='add_data'>
                             <div className='row'>
-                            <div className='col-12'>
+                                {/* <div className='col-12'>
                                     <div className='add_box'>
                                         <div className='Label-box'>
                                             <span className='Lavel'>Product Category :</span>
                                         </div>
                                         <div className='Input-box'>
-                                            <select name='category'>
-                                            <option value="" key="">Select Service Category</option>
-                                            {
-                                                    categories
-                                                        ?
-                                                        categories.map((value, index) =>
-                                                                <option
-                                                                    key={index}
-                                                                    value={value._id}
-                                                                >
-                                                                    {value.name}
-                                                                </option>
-                                                        )
-                                                        :
-                                                        null
-
-                                                }
+                                            <select name='parentLocationId'>
+                                                <option value="">Select product Category</option>
+                                                <option value="">Select product Category</option>
+                                                <option value="">Select product Category</option>
+                                                <option value="">Select product Category</option>
                                             </select>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                                 <div className='col-12'>
-                                    <AddData changeFunction={setName} value={name} Label="Service Name" inputType="text" Placeholder="Name" name="name" />
+                                    <AddData changeFunction={setName} value={name} Label="Service Category" inputType="text" Placeholder="Category Name" name="name" />
                                 </div>
                                 <div className='col-12'>
                                     <AddData changeFunction={setImg} Label="Service Image" name="img" inputType="file" />
@@ -143,9 +118,9 @@ function ProductData() {
                                 <div className='col-12'>
                                     <AddData changeFunction={setIcon} Label="Service Icon" name="icon" inputType="file" />
                                 </div>
-                                <div className='col-12'>
+                                {/* <div className='col-12'>
                                     <AddData changeFunction={setPrice} value={price} Label="Service Price" inputType="text" Placeholder="Service Price" name="price" />
-                                </div>
+                                </div> */}
                                 <div className='col-12 textarea-box'>
                                     <label htmlFor="">Short Description :</label>
                                     <textarea
@@ -163,7 +138,7 @@ function ProductData() {
                                 <div className='col-12'>
                                     <AddDataEditor Label="Extra Description" Editor={<Jodit value={extraDefaultDescription} name="extraDescription" description={setExtraContent} />} />
                                 </div>
-                                <div className='col-12'>
+                                {/* <div className='col-12'>
                                     <AddData changeFunction={setMetaTitle} value={metaTitle} Label="Meta Title" Placeholder="Meta Title" name="metaTitle" inputType="text" />
                                 </div>
                                 <div className='col-12 textarea-box mt-3 mb-2'>
@@ -173,7 +148,7 @@ function ProductData() {
                                 <div className='col-12 textarea-box mt-3 mb-2'>
                                     <label htmlFor="">Meta Keyword :</label>
                                     <textarea onChange={(e) => setMetaKeywords(e.target.value)} value={metaKeywords} name="metaKeywords" cols="30" rows="10" placeholder='Meta Keyword'></textarea>
-                                </div>
+                                </div> */}
                                 <div className='row justify-content-end'>
                                     <button type='submit' className='btn btn-primary mt-2 float-right w-fit col-auto mx-2'>Save Data</button>
                                 </div>
@@ -186,4 +161,4 @@ function ProductData() {
     )
 }
 
-export default ProductData
+export default CategoryData

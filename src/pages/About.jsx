@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import Nav from '../components/nav/Nav';
 import CompanyProfile from '../components/sections/CompanyProfile';
 import BreadCrumb from '../components/sections/BreadCrumb';
 import ContactSect from '../components/sections/ContactSect';
 import HelmetComp from '../components/HelmetComp';
+import Footer from '../components/sections/Footer';
 
 const About = () => {
 
@@ -23,9 +25,11 @@ const About = () => {
   return (
     <>
       <HelmetComp  metaData={aboutData} />
+      <Nav />
       <BreadCrumb name={aboutData.name} />
       <CompanyProfile pageData={aboutData}/>
       <ContactSect />
+      <Footer />
     </>
   )
 }
