@@ -81,7 +81,7 @@ const CompanyProfile = (props) => {
             <p>{Parser().parse(props.pageData.description)}</p>
               <p>{Parser().parse(props.pageData.extraDescription)}</p>
             <div className='row align-items-center mt-4'>
-              <BtnLink Href="" btnName="Readmore" />
+              <BtnLink Href="/company-profile" btnName="Readmore" />
               <div className="abt-contact-content ">
                 <div className="contact-icon">
                   <i className="fa-solid fa-phone-volume"></i>
