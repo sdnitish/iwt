@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // import { useLocation } from 'react-router-dom';
 import './Nav.css';
 import MenuList from './MenuList';
@@ -17,7 +17,7 @@ const Nav = () => {
     const toggleSidenav = () => {
         setIsopen(!isOpen);
     }
-    
+
     useEffect(() => {
         getSiteInfo();
     }, [])
@@ -48,7 +48,7 @@ const Nav = () => {
 
                                 <div className="cstm-contact-infos">
                                     <ul>
-                                    <li><PermPhoneMsgIcon /><a href={"tel:" + siteInfo.primaryPhone}>{siteInfo.primaryPhone}</a></li>
+                                        <li><PermPhoneMsgIcon /><a href={"tel:" + siteInfo.primaryPhone}>{siteInfo.primaryPhone}</a></li>
                                         <li><ForwardToInboxIcon /><a href={"mailto:" + siteInfo.primaryMail}>{siteInfo.primaryMail}</a>
                                         </li>
                                     </ul>
@@ -65,7 +65,7 @@ const Nav = () => {
                         <div className='col-lg-12'>
                             <div className='mainmenu-wrapper'>
                                 <div className='logo-box'>
-                                  <Link to={'/'}><img src={'./images/' + siteInfo.logo} alt={siteInfo.compName} title={siteInfo.compName} /></Link>
+                                    <Link to={'/'}><img src={process.env.REACT_APP_BASE_URL + 'images/' + siteInfo.logo} alt={siteInfo.compName} title={siteInfo.compName} /></Link>
                                 </div>
                                 {/* <div className='col-1'></div> */}
                                 <div className='Mainmenu'>
@@ -88,8 +88,8 @@ const Nav = () => {
             <div className={isOpen ? 'phone-nav-overlay active' : 'phone-nav-overlay'}>
                 <span onClick={toggleSidenav} className='close-nav'><i className="fa-solid fa-xmark"></i></span>
                 <div className='phone-nav'>
-                    <div className='logo-box'> 
-                    <Link to={'/'}><img src={'./images/' + siteInfo.logo} alt={siteInfo.compName} title={siteInfo.compName} /></Link>
+                    <div className='logo-box'>
+                        <Link to={'/'}><img src={'./images/' + siteInfo.logo} alt={siteInfo.compName} title={siteInfo.compName} /></Link>
                     </div>
                     {/* menu list appear here for mobile*/}
                     <MenuList closeMenu={setIsopen} />

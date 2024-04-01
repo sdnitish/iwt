@@ -30,13 +30,13 @@ const CompanyProfile = (props) => {
 
   return (
     <>
-    <ModalVideo
-				channel="youtube"
-				youtube={{ mute: 0, autoplay: 1, theme: "dark"}}
-				isOpen={isOpen}
-				videoId="-vPON-2pEXg?si=zRK4aAWaCjMBHiZW"
-				onClose={() => setOpen(false)} 
-			/>
+      <ModalVideo
+        channel="youtube"
+        youtube={{ mute: 0, autoplay: 1, theme: "dark" }}
+        isOpen={isOpen}
+        videoId="-vPON-2pEXg?si=zRK4aAWaCjMBHiZW"
+        onClose={() => setOpen(false)}
+      />
       <section className="about-section">
         <div className='about-left-shape anim-up-down'><img src="images/shapes/abt-left.png" alt="" /></div>
         <div className='about-right-shape anim-scale'><img src="images/shapes/abt-right.png" alt="" /></div>
@@ -64,7 +64,7 @@ const CompanyProfile = (props) => {
               <div className='abt-shape anim-left-right'><img loading='lazy' src="images/shapes/service-left-shape.svg" alt="" /></div>
               <div className='row h-100 align-items-end'>
                 <div className='w-50'>
-                  <img className='w-100' loading='lazy' src={"./images/pages/" + props.pageData.img} alt={props.pageData.shortDescription} title={props.pageData.shortDescription} />
+                  <img className='w-100' loading='lazy' src={process.env.REACT_APP_BASE_URL + "images/pages/" + props.pageData.img} alt={props.pageData.shortDescription} title={props.pageData.shortDescription} />
                   <div className='exp-box'>
                     <img src="images/gif/abt.gif" alt="" />
                   </div>
@@ -79,7 +79,7 @@ const CompanyProfile = (props) => {
               <SectionTitle smTitle="About Company" mainTitle={props.pageData.shortDescription} />
             </div>
             <p>{Parser().parse(props.pageData.description)}</p>
-              <p>{Parser().parse(props.pageData.extraDescription)}</p>
+            <p>{Parser().parse(props.pageData.extraDescription)}</p>
             <div className='row align-items-center mt-4'>
               <BtnLink Href="" btnName="Readmore" />
               <div className="abt-contact-content ">
