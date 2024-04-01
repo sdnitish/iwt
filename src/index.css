@@ -36,7 +36,7 @@ a{
   display: inline-block;
 }
 .Welcome-Letter span{
-  background: url(../public/images/bg/wel-text-bg.jpg);
+  background: url(../public/images/bg/wel-text-bg.webp);
   background-size: cover;
   background-repeat: no-repeat;
   /* background-position: bottom; */
@@ -51,7 +51,7 @@ a{
 }
 
 .feat-sect-bg{
-  background: url(../public/images/bg/feat-bg.jpg);
+  background: url(../public/images/bg/feat-bg.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;

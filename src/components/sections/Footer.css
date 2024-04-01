@@ -50,7 +50,7 @@
     background-position: 0 0 ;
     overflow: hidden;
 }
-.btm-layer3::before{
+/* .btm-layer3::before{
     content: "";
     position: absolute;
     bottom: 0;
@@ -61,7 +61,7 @@
     background: url(../../../public/images/bg/web-development.gif);
     background-size: 100%;
     background-repeat: no-repeat;
-}
+} */
 .btm-layer3 img{
     max-width: 650px;
     position: absolute;
@@ -83,10 +83,10 @@
         border-top-right-radius: 50%;
         border-bottom-right-radius: 50%;
     }
-    .btm-layer3::before{
+    /* .btm-layer3::before{
         right: unset;
         left: 0;
-    }
+    } */
 }
 .ft-logo-box{
     width: 100%;

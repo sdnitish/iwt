@@ -122,9 +122,15 @@
 }
 .icn-and-text .Text{
     font-size: 14px;
+    line-height: 1.21;
     color: gray;
     font-weight: 600;
     text-align: center;
+}
+@media (max-width: 768px) {
+    .icn-and-text .Text{
+        font-size: 12px;
+    }
 }
 .bg-shade-one{
     width: 70%;

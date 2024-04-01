@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import SectionTitle from '../SectionTitle';
+import { Parser } from 'html-to-react'
 import {  Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
@@ -43,10 +43,10 @@ const ProductSlider = () => {
                 disableOnInteraction: false,
               }}
               // navigation={true}
-              navigation={{
-                prevEl: '.prev-slide',
-                nextEl: '.next-slide',
-              }}
+              // navigation={{
+              //   prevEl: '.prev-slide',
+              //   nextEl: '.next-slide',
+              // }}
               breakpoints={{
                 240: {
                   slidesPerView: 1,
@@ -75,7 +75,7 @@ const ProductSlider = () => {
               <SwiperSlide key={index}>
                  <ProductCard 
                 productName={value.name}
-                servDesc={value.shortDescription}
+                servDesc={Parser().parse(value.description)}
                 servPrice={value.price}
                 servLink={'/'+value.slug}
                 servIcon={value.icon}

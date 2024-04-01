@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import HasChildMenu from './HasChildMenu';
 import ChildMenu from './ChildMenu';
@@ -13,7 +13,7 @@ const MenuList = (props) => {
 
     return (
         <ul>
-            <li className='active'><Link onClick={closeMenu} to="/"><img className='menu-gif' src="./images/gif/Home-Icon-f.gif" alt="" /><span>Home</span></Link></li>
+            <li className='active'><Link onClick={closeMenu} to="/"><img className='menu-gif' src={process.env.REACT_APP_BASE_URL + "images/gif/Home-Icon.gif"} alt="" /><span>Home</span></Link></li>
 
             {
                 categories
@@ -32,9 +32,9 @@ const MenuList = (props) => {
                     null
             }
 
-            <li ><Link onClick={closeMenu} to="/company-profile"><img className='menu-gif' src="./images/gif/Company-Profile-f.gif" alt="" /> <span>Company Profile</span> </Link></li>
-            <li ><Link onClick={closeMenu} to="/contact"><img className='menu-gif' src="./images/gif/contact.gif" alt="" /> <span>Contact</span> </Link></li>
-            {/* <li ><Link onClick={closeMenu} to="/"><img className='menu-gif' src="./images/gif/Seo-f.gif" alt="" /> <span>Seo</span> </Link></li> */}
+            <li ><Link onClick={closeMenu} to="/company-profile"><img className='menu-gif' src={process.env.REACT_APP_BASE_URL + "images/gif/Company-Profile.gif"} alt="" /> <span>Company Profile</span> </Link></li>
+
+            <li ><Link onClick={closeMenu} to="/contact"><img className='menu-gif' src={process.env.REACT_APP_BASE_URL + "images/gif/contact.gif"} alt="" /> <span>Contact</span> </Link></li>
         </ul>
     )
 }

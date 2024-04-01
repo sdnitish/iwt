@@ -89,7 +89,7 @@ const Nav = () => {
                     </div>
                 </div>
                 <div className='menu-shape-top'>
-                    <img src="../images/shapes/cloud-menu.png" alt="" />
+                    <img src={process.env.REACT_APP_BASE_URL + "images/shapes/cloud-menu.png"} alt="" />
                 </div>
                 <div className='menu-shape-botm'>
                     {/* <img src="../images/shapes/paper-cut.png" alt="" /> */}
@@ -100,7 +100,7 @@ const Nav = () => {
                 <span onClick={toggleSidenav} className='close-nav'><i className="fa-solid fa-xmark"></i></span>
                 <div className='phone-nav'>
                     <div className='logo-box'>
-                        <Link to={'/'}><img src={'./images/' + siteInfo.logo} alt={siteInfo.compName} title={siteInfo.compName} /></Link>
+                        <Link to={'/'}><img src={process.env.REACT_APP_BASE_URL + 'images/' + siteInfo.logo} alt={siteInfo.compName} title={siteInfo.compName} /></Link>
                     </div>
                     {/* menu list appear here for mobile*/}
                     <MenuList closeMenu={setIsopen} />
