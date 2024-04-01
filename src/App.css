@@ -1356,14 +1356,15 @@
 
 @media (max-width:800px) {
 	.slide-btn {
-		width: 20px;
+		width: 30px;
 		height: 30px;
-		line-height: 30px;
+		line-height: 24px;
 		top: 40%;
 	}
 
+	.slide-btn svg,
 	.slide-btn i {
-		font-size: 12px;
+		font-size: 6px;
 		line-height: 30px;
 	}
 }
