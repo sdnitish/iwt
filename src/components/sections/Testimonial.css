@@ -14,6 +14,7 @@
 .testi-box{
     position: relative;
     padding:  60px;
+    min-height: 450px;
     margin: 30px auto;
     width: 90%;
 }

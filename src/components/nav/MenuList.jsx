@@ -49,22 +49,22 @@ const MenuList = (props) => {
 
     return (
         <ul>
-            <li className='active'><Link onClick={closeMenu} to="/"><img className='menu-gif' src="./images/gif/Home-Icon-f.gif" alt="" /><span>Home</span></Link></li>
+            <li className='active'><Link onClick={closeMenu} to="/"><img className='menu-gif' src={process.env.REACT_APP_BASE_URL + "images/gif/Home-Icon.gif"} alt="" /><span>Home</span></Link></li>
             <HasChildMenu 
             closeMenu={closeMenu}
-            servGif="./images/gif/Website-Designing-f.gif"
+            servGif={process.env.REACT_APP_BASE_URL + "images/gif/Website-Designing.gif"}
             servName="Web Development" 
             servChild={<ChildMenu closeMenu={closeMenu} servChild={webDevelopment} />}
              />
             <HasChildMenu 
             closeMenu={closeMenu}
-            servGif="./images/gif/Website-Development.gif"
+            servGif={process.env.REACT_APP_BASE_URL + "images/gif/Website-Development.gif"}
             servName="Web Designing" 
             servChild={<ChildMenu closeMenu={closeMenu} servChild={webDesign} />}
              />
-            <li ><Link onClick={closeMenu} to="/company-profile"><img className='menu-gif' src="./images/gif/Company-Profile-f.gif" alt="" /> <span>Company Profile</span> </Link></li>
-            <li ><Link onClick={closeMenu} to="/contact"><img className='menu-gif' src="./images/gif/contact.gif" alt="" /> <span>Contact</span> </Link></li>
-            {/* <li ><Link onClick={closeMenu} to="/"><img className='menu-gif' src="./images/gif/Seo-f.gif" alt="" /> <span>Seo</span> </Link></li> */}
+            <li ><Link onClick={closeMenu} to="/company-profile"><img className='menu-gif' src={process.env.REACT_APP_BASE_URL + "images/gif/Company-Profile.gif"} alt="" /> <span>Company Profile</span> </Link></li>
+
+            <li ><Link onClick={closeMenu} to="/contact"><img className='menu-gif' src={process.env.REACT_APP_BASE_URL + "images/gif/contact.gif"} alt="" /> <span>Contact</span> </Link></li>
         </ul>
     )
 }

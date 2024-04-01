@@ -37,23 +37,23 @@ const WhyChoose = () => {
 
   return (
     <section className="sect-space pb-2 why-sect">
-      <img className='shape-right anim-up-down' src="./images/shapes/why-shape.png" alt="" />
+      <img className='shape-right anim-up-down' src={process.env.REACT_APP_BASE_URL + "images/shapes/why-shape.png"} alt="" />
       {/* <h1 className='text-center'><CountUp end={100} enableScrollSpy scrollSpyOnce="true" /></h1> */}
       <div className='container'>
 
         <div className='row'>
           <div className='col-lg-6'>
             <div className='why-img'>
-              <img className='why-left-img' src="./images/img/why-img4.jpg" alt="" />
+              <img className='why-left-img' src={process.env.REACT_APP_BASE_URL + "images/img/why-img4.webp"} alt="" />
               <motion.div
                 ref={ref}
                 variants={boxVariantTwo}
                 initial="hidden"
                 animate={control}
                 className='why-right-img'>
-                <img src="./images/img/why-img1.jpg" alt="" />
+                <img src={process.env.REACT_APP_BASE_URL + "images/img/why-img1.webp"} alt="" />
               </motion.div>
-              <img className='shape-left  anim-up-down' src="./images/shapes/dots.png" alt="" />
+              <img className='shape-left  anim-up-down' src={process.env.REACT_APP_BASE_URL + "images/shapes/dots.png"} alt="" />
               <span className='why-text anim-up-down'><span>Why Choose Us</span></span>
             </div>
           </div>
@@ -63,7 +63,7 @@ const WhyChoose = () => {
             <p>We at Instant Web Technology are all about giving you the best and top-of-the-line Google promotion and web designing services that you can count on for all your online presence-building needs.</p>
             <div className="row ">
               <div className="col-lg-5 col-md-5 col-sm-12">
-                <img className='w-100' src="./images/gif/why-gif.gif" alt="" />
+                <img className='w-100' src={process.env.REACT_APP_BASE_URL + "images/gif/why-gif.gif"} alt="" />
               </div>
               <div className="col-lg-7 col-md-7 col-sm-12">
                 <ul className="list-why-us">
@@ -107,7 +107,7 @@ const WhyChoose = () => {
             <div className='row align-items-center m-t40'>
               <div className='col-auto'><BtnLink Href="" btnName="Book Service" /></div>
               <div className='col-auto d-flex align-items-center'>
-                <img src="./images/shapes/group-img.png" alt="" />
+                <img src={process.env.REACT_APP_BASE_URL + "images/shapes/group-img.png"} alt="" />
                 <div className='client-count'>
                   <CountUp end={500} enableScrollSpy scrollSpyOnce="false" /> <span>+</span>
                   <p>Happy Clients</p>
@@ -123,7 +123,7 @@ const WhyChoose = () => {
               <div className='icon-box-bg'></div>
               <div className='icon-box row'>
                 <div className='cout-icon col-auto'>
-                  <img src="./images/gif/Client.gif" alt="" />
+                  <img src={process.env.REACT_APP_BASE_URL + "images/gif/Client.gif"} alt="" />
                 </div>
                 <div className='col-auto'>
                   <div className='count-text'>
@@ -140,7 +140,7 @@ const WhyChoose = () => {
               <div className='icon-box-bg'></div>
               <div className='icon-box row'>
                 <div className='cout-icon col-auto'>
-                  <img src="./images/gif/Award.gif" alt="" />
+                  <img src={process.env.REACT_APP_BASE_URL + "images/gif/Award.gif"} alt="" />
                 </div>
                 <div className='col-auto'>
                   <div className='count-text'>
@@ -157,7 +157,7 @@ const WhyChoose = () => {
               <div className='icon-box-bg'></div>
               <div className='icon-box row'>
                 <div className='cout-icon col-auto'>
-                  <img src="./images/gif/Ideas.gif" alt="" />
+                  <img src={process.env.REACT_APP_BASE_URL + "images/gif/Ideas.gif"} alt="" />
                 </div>
                 <div className='col-auto'>
                   <div className='count-text'>
@@ -174,7 +174,7 @@ const WhyChoose = () => {
               <div className='icon-box-bg'></div>
               <div className='icon-box row'>
                 <div className='cout-icon col-auto'>
-                  <img src="./images/gif/Award.gif" alt="" />
+                  <img src={process.env.REACT_APP_BASE_URL + "images/gif/Award.gif"} alt="" />
                 </div>
                 <div className='col-auto'>
                   <div className='count-text'>

@@ -68,7 +68,7 @@ const ContactSect = () => {
                                 initial="hidden"
                                 animate={control}
                             >
-                                <img className='w-100' src="./images/gif/meeting-1.gif" alt="" />
+                                <img className='w-100' src={process.env.REACT_APP_BASE_URL + "images/gif/meeting-1.gif"} alt="" />
                             </motion.div>
                             <Socials data={siteInfo} />
                         </div>

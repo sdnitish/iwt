@@ -21,11 +21,11 @@ const FeaturesSect = () => {
             <div className='col-lg-6'><p className='m-t20'>Cursus quis condimentum nunc ultricies dis nisi diam nec. Bibendum potenti taciti ex parturient lacinia velit habitant. Volutpat nunc inceptos ultricies nisl accumsan mus quisque hac nunc. Primis curabitur iaculis class per egestas imperdiet. </p></div>
         </div> */}
         <div className='row'>
-            <FeatureCard addClass="card-one" featImg="./images/gif/feat3.gif" featNumb="01" titleOne="A major factor that differentiates us from the rest is our staff and experts." featTitle="Experienced staff" featDesc="Our company is filled with all sorts of industry masters who know how to deal with their part in the project and land you massive results." />
+            <FeatureCard addClass="card-one" featImg={process.env.REACT_APP_BASE_URL + "images/gif/feat3.gif"} featNumb="01" titleOne="A major factor that differentiates us from the rest is our staff and experts." featTitle="Experienced staff" featDesc="Our company is filled with all sorts of industry masters who know how to deal with their part in the project and land you massive results." />
 
-            <FeatureCard addClass="card-two" featImg="./images/gif/feat3.gif"  featNumb="02" titleOne="Unlike other companies, we are not limited to the number of services." featTitle="Variety of services" featDesc="We are a company that gives you a large chunk of services you can choose from. Whether you need a web designing service or google promotion we do it all." />
+            <FeatureCard addClass="card-two" featImg={process.env.REACT_APP_BASE_URL + "images/gif/feat3.gif"}  featNumb="02" titleOne="Unlike other companies, we are not limited to the number of services." featTitle="Variety of services" featDesc="We are a company that gives you a large chunk of services you can choose from. Whether you need a web designing service or google promotion we do it all." />
 
-            <FeatureCard  addClass="card-three" featImg="./images/gif/feat3.gif" featNumb="03" titleOne="We advise first seeing the testimonials of our clients and then opting for our services"  featTitle="Proven results" featDesc="We have always been a company that is more about outcomes rather than just extending the timelines. We are focused on saving as much time as possible with maximising the results." />
+            <FeatureCard  addClass="card-three" featImg={process.env.REACT_APP_BASE_URL + "images/gif/feat3.gif"} featNumb="03" titleOne="We advise first seeing the testimonials of our clients and then opting for our services"  featTitle="Proven results" featDesc="We have always been a company that is more about outcomes rather than just extending the timelines. We are focused on saving as much time as possible with maximising the results." />
 
         </div>
       </div>

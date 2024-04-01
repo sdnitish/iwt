@@ -47,6 +47,8 @@ function SiteInfo() {
             setSecondaryMail(result.siteInfo.secondaryMail);
             setPrimaryPhone(result.siteInfo.primaryPhone);
             setSecondaryPhone(result.siteInfo.secondaryPhone);
+            setLogo(result.siteInfo.logo);
+            setFavicon(result.siteInfo.favicon);
             setPrimaryAddress(result.siteInfo.primaryAddress);
             setSecondaryAddress(result.siteInfo.secondaryAddress);
             setThirdAddress(result.siteInfo.thirdAddress);
@@ -171,7 +173,7 @@ function SiteInfo() {
                                     </div>
                                     <div className='col-md-6'>
                                         <div className="row align-items-center h-100">
-                                            <img className='img-logos-admn'  src={'../../images/' + logo} alt={compName} title={compName} />
+                                            <img className='img-logos-admn'  src={process.env.REACT_APP_BASE_URL + 'images/' + logo} alt={compName} title={compName} />
                                         </div>
                                     </div>
                                 </div>
@@ -186,7 +188,7 @@ function SiteInfo() {
                                     </div>
                                     <div className='col-md-6'>
                                         <div className="row align-items-center h-100">
-                                            <img className='img-logos-admn' src={'../../images/' + favicon} alt={compName} title={compName} />
+                                            <img className='img-logos-admn' src={process.env.REACT_APP_BASE_URL + 'images/' + favicon} alt={compName} title={compName} />
                                         </div>
                                     </div>
                                 </div>

@@ -8,7 +8,7 @@ import ContactSect from '../components/sections/ContactSect'
 import HelmetComp from '../components/HelmetComp';
 import Footer from '../components/sections/Footer';
 
-const ProductDetail = () => {
+const ProductDetail = (props) => {
   
   const params = useParams();
 
@@ -19,7 +19,7 @@ const ProductDetail = () => {
   }, []);
 
   const getProduct = async () => {
-    let result = await fetch(`${process.env.REACT_APP_BASE_URL}product/${params.slug}`);
+    let result = await fetch(`${process.env.REACT_APP_BASE_URL}product/${props.slug}`);
     result = await result.json();
     if (result.status) {
       setProduct(result.product);
@@ -31,7 +31,7 @@ const ProductDetail = () => {
       <HelmetComp metaData={product}></HelmetComp>
       <Nav />
       <BreadCrumb name={product.name} />
-      <ProductDetailSect />
+      <ProductDetailSect product={product} />
       <ProductSlider />
       <ContactSect />
       <Footer />

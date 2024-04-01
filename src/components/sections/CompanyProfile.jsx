@@ -38,8 +38,8 @@ const CompanyProfile = (props) => {
         onClose={() => setOpen(false)}
       />
       <section className="about-section">
-        <div className='about-left-shape anim-up-down'><img src="images/shapes/abt-left.png" alt="" /></div>
-        <div className='about-right-shape anim-scale'><img src="images/shapes/abt-right.png" alt="" /></div>
+        <div className='about-left-shape anim-up-down'><img src={process.env.REACT_APP_BASE_URL + "images/shapes/abt-left.webp"} alt="" /></div>
+        <div className='about-right-shape anim-scale'><img src={process.env.REACT_APP_BASE_URL + "images/shapes/abt-right.webp"} alt="" /></div>
         <div className='container'>
           <div className=''>
 
@@ -61,16 +61,16 @@ const CompanyProfile = (props) => {
                   <span onClick={() => setOpen(true)} className="video-btn" ><i className="fa fa-play"></i></span>
                 </div>
               </div>
-              <div className='abt-shape anim-left-right'><img loading='lazy' src="images/shapes/service-left-shape.svg" alt="" /></div>
+              <div className='abt-shape anim-left-right'><img loading='lazy' src={process.env.REACT_APP_BASE_URL + "images/shapes/service-left-shape.svg"} alt="" /></div>
               <div className='row h-100 align-items-end'>
                 <div className='w-50'>
                   <img className='w-100' loading='lazy' src={process.env.REACT_APP_BASE_URL + "images/pages/" + props.pageData.img} alt={props.pageData.shortDescription} title={props.pageData.shortDescription} />
                   <div className='exp-box'>
-                    <img src="images/gif/abt.gif" alt="" />
+                    <img src={process.env.REACT_APP_BASE_URL + "images/gif/abt.gif"} alt="" />
                   </div>
                 </div>
                 <div className='abt-left-img'>
-                  <img className='w-100' loading='lazy' src="images/img/abt2.jpg" alt="" />
+                  <img className='w-100' loading='lazy' src={process.env.REACT_APP_BASE_URL + "images/img/abt-2.webp"} alt="" />
                 </div>
               </div>
 
@@ -88,7 +88,7 @@ const CompanyProfile = (props) => {
                 </div>
                 <div className="contact-text">
                   <span>Call Us Anytime</span>
-                  <a className="link" href="">+91 00000 00000</a>
+                  <a className="link" href="tel:9899978293">+91 989-997-8293</a>
                 </div>
               </div>
             </div>
