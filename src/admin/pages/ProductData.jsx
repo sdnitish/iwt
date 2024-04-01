@@ -16,6 +16,7 @@ function ProductData() {
     const params = useParams();
 
     const [name, setName] = useState('');
+    const [categoryId, setCategoryId] = useState('');
     const [img, setImg] = useState('');
     const [icon, setIcon] = useState('');
     const [price, setPrice] = useState('');
@@ -43,6 +44,7 @@ function ProductData() {
         if (result.status) {
             setName(result.product.name);
             setPrice(result.product.price);
+            setCategoryId(result.product.categoryId);
             setShortDescription(result.product.shortDescription);
             setDescription(result.product.description);
             setDefaultDescription(result.product.description);
@@ -86,13 +88,12 @@ function ProductData() {
         }
     }
 
-  
     const getCategories = async () => {
-      let categories_res = await fetch(`${process.env.REACT_APP_BASE_URL}admin/categories`)
-      categories_res = await categories_res.json();
-      if (categories_res.status) {
-        setCategories(categories_res.categories);
-      }
+        let categories_res = await fetch(`${process.env.REACT_APP_BASE_URL}admin/categories`)
+        categories_res = await categories_res.json();
+        if (categories_res.status) {
+            setCategories(categories_res.categories);
+        }
     }
 
     return (
@@ -107,18 +108,28 @@ function ProductData() {
                         <BreadCrumb pageName="Add Product" link="/admin/product" btnName="Manage Products" />
                         <form onSubmit={submitHandler} className='add_data'>
                             <div className='row'>
-                            <div className='col-12'>
+                                <div className='col-12'>
                                     <div className='add_box'>
                                         <div className='Label-box'>
                                             <span className='Lavel'>Product Category :</span>
                                         </div>
                                         <div className='Input-box'>
-                                            <select name='category'>
-                                            <option value="" key="">Select Service Category</option>
-                                            {
+                                            <select name='categoryId'>
+                                                <option value="" key="">Select Service Category</option>
+                                                {
                                                     categories
                                                         ?
                                                         categories.map((value, index) =>
+                                                            (value._id === categoryId)
+                                                                ?
+                                                                <option
+                                                                    selected
+                                                                    key={index}
+                                                                    value={value._id}
+                                                                >
+                                                                    {value.name}
+                                                                </option>
+                                                                :
                                                                 <option
                                                                     key={index}
                                                                     value={value._id}

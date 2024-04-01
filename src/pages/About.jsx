@@ -24,10 +24,10 @@ const About = () => {
 
   return (
     <>
-      <HelmetComp  metaData={aboutData} />
+      <HelmetComp metaData={aboutData} />
       <Nav />
       <BreadCrumb name={aboutData.name} />
-      <CompanyProfile pageData={aboutData}/>
+      <CompanyProfile pageData={aboutData} />
       <ContactSect />
       <Footer />
     </>

@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 // import { useLocation } from 'react-router-dom';
 import './Nav.css';
@@ -11,16 +10,14 @@ import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
 
 const Nav = () => {
 
+    const [categories, setCategories] = useState([]);
     const [isOpen, setIsopen] = useState(false);
     const [siteInfo, setSiteInfo] = useState([]);
-    // const {pathname} = useLocation();
-    const toggleSidenav = () => {
-        setIsopen(!isOpen);
-    }
 
     useEffect(() => {
+        getCategories();
         getSiteInfo();
-    }, [])
+    }, []);
 
     const getSiteInfo = async () => {
         let result = await fetch(`${process.env.REACT_APP_BASE_URL}siteInfo`);
@@ -29,6 +26,20 @@ const Nav = () => {
             setSiteInfo(result.siteInfo);
         }
     }
+
+    const getCategories = async () => {
+        let result = await fetch(`${process.env.REACT_APP_BASE_URL}/categories`);
+        result = await result.json();
+        if (result.status) {
+            setCategories(result.data);
+        }
+    };
+
+    // const {pathname} = useLocation();
+    const toggleSidenav = () => {
+        setIsopen(!isOpen);
+    }
+
     // Close the navigation panel
     // useEffect(() => {
     //     setIsopen(!isOpen); 
@@ -70,7 +81,7 @@ const Nav = () => {
                                 {/* <div className='col-1'></div> */}
                                 <div className='Mainmenu'>
                                     {/* menu list appear here */}
-                                    <MenuList closeMenu={setIsopen} />
+                                    <MenuList categories={categories} closeMenu={setIsopen} />
                                 </div>
                                 <span onClick={toggleSidenav} className='menuBtn'><i className="fa-solid fa-bars-staggered"></i></span>
                             </div>
