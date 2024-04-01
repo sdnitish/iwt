@@ -12,6 +12,8 @@ import ModalVideo from 'react-modal-video';
 const CompanyProfile = (props) => {
 
   const [isOpen, setOpen] = useState(false);
+  const [siteInfo, setSiteInfo] = useState([]);
+
   const boxVariant = {
     visible: { opacity: 1, scale: 1, translateX: 0, transition: { duration: 0.5 } },
     hidden: { opacity: 0.25, scale: 0.85, translateX: -180 },
@@ -20,6 +22,7 @@ const CompanyProfile = (props) => {
   const control = useAnimation()
   const [ref, inView] = useInView()
   useEffect(() => {
+    getSiteInfo();
     if (inView) {
       control.start("visible");
     }
@@ -27,6 +30,14 @@ const CompanyProfile = (props) => {
       control.start("hidden");
     }
   }, [control, inView]);
+
+  const getSiteInfo = async () => {
+    let result = await fetch(`${process.env.REACT_APP_BASE_URL}siteInfo`);
+    result = await result.json();
+    if (result.status) {
+      setSiteInfo(result.siteInfo);
+    }
+  }
 
   return (
     <>
@@ -38,8 +49,8 @@ const CompanyProfile = (props) => {
         onClose={() => setOpen(false)}
       />
       <section className="about-section">
-        <div className='about-left-shape anim-up-down'><img src={process.env.REACT_APP_BASE_URL + "images/shapes/abt-left.webp"} alt="" /></div>
-        <div className='about-right-shape anim-scale'><img src={process.env.REACT_APP_BASE_URL + "images/shapes/abt-right.webp"} alt="" /></div>
+        <div className='about-left-shape anim-up-down'><img src="images/shapes/abt-left.png" alt={siteInfo.compName} title={siteInfo.compName} /></div>
+        <div className='about-right-shape anim-scale'><img src="images/shapes/abt-right.png" alt={siteInfo.compName} title={siteInfo.compName} /></div>
         <div className='container'>
           <div className=''>
 
@@ -66,11 +77,11 @@ const CompanyProfile = (props) => {
                 <div className='w-50'>
                   <img className='w-100' loading='lazy' src={process.env.REACT_APP_BASE_URL + "images/pages/" + props.pageData.img} alt={props.pageData.shortDescription} title={props.pageData.shortDescription} />
                   <div className='exp-box'>
-                    <img src={process.env.REACT_APP_BASE_URL + "images/gif/abt.gif"} alt="" />
+                    <img src="images/gif/abt.gif" alt={props.pageData.shortDescription} title={props.pageData.shortDescription} />
                   </div>
                 </div>
                 <div className='abt-left-img'>
-                  <img className='w-100' loading='lazy' src={process.env.REACT_APP_BASE_URL + "images/img/abt-2.webp"} alt="" />
+                  <img className='w-100' loading='lazy' src="images/img/abt2.jpg" alt={props.pageData.shortDescription} title={props.pageData.shortDescription} />
                 </div>
               </div>
 
@@ -88,7 +99,7 @@ const CompanyProfile = (props) => {
                 </div>
                 <div className="contact-text">
                   <span>Call Us Anytime</span>
-                  <a className="link" href="tel:9899978293">+91 989-997-8293</a>
+                  <a className="link" href={"tel:" + siteInfo.primaryPhone}>{siteInfo.primaryPhone}</a>
                 </div>
               </div>
             </div>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
 import Nav from '../components/nav/Nav';
 import BreadCrumb from '../components/sections/BreadCrumb'
 import ProductDetailSect from '../components/sections/ProductDetailSect'
@@ -7,16 +6,16 @@ import ProductSlider from '../components/sections/ProductSlider';
 import ContactSect from '../components/sections/ContactSect'
 import HelmetComp from '../components/HelmetComp';
 import Footer from '../components/sections/Footer';
+import { useParams } from 'react-router-dom';
 
 const ProductDetail = (props) => {
-  
-  const params = useParams();
 
   const [product, setProduct] = useState([]);
+  const param = useParams();
 
   useEffect(() => {
     getProduct();
-  }, []);
+  }, [param]);
 
   const getProduct = async () => {
     let result = await fetch(`${process.env.REACT_APP_BASE_URL}product/${props.slug}`);

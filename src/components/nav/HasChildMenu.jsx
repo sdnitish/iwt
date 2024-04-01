@@ -13,9 +13,9 @@ const HasChildMenu = (props) => {
     const closeMenu = () => {
         props.closeMenu(false);
     };
- 
+
     return (
-        <li className='hasChild'><Link onClick={closeMenu} to="/services"><img className='menu-gif' src={props.servGif} alt="" /> <span>{props.servName}</span> </Link><i onClick={toggleDropdown} className="fa-solid fa-angle-down"></i>
+        <li className='hasChild'><Link onClick={closeMenu} to={"/services"}><img className='menu-gif' src={props.servGif} alt="" /> <span>{props.servName}</span> </Link><i onClick={toggleDropdown} className="fa-solid fa-angle-down"></i>
             <ul className={isOpen ? 'active' : ''}>
                 {props.servChild}
             </ul>

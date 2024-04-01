@@ -13,16 +13,14 @@ const Socials = lazy(() => import('./Socials'));
 
 const Nav = () => {
 
+    const [categories, setCategories] = useState([]);
     const [isOpen, setIsopen] = useState(false);
     const [siteInfo, setSiteInfo] = useState([]);
-    // const {pathname} = useLocation();
-    const toggleSidenav = () => {
-        setIsopen(!isOpen);
-    }
 
     useEffect(() => {
+        getCategories();
         getSiteInfo();
-    }, [])
+    }, []);
 
     const getSiteInfo = async () => {
         let result = await fetch(`${process.env.REACT_APP_BASE_URL}siteInfo`);
@@ -31,6 +29,20 @@ const Nav = () => {
             setSiteInfo(result.siteInfo);
         }
     }
+
+    const getCategories = async () => {
+        let result = await fetch(`${process.env.REACT_APP_BASE_URL}/categories`);
+        result = await result.json();
+        if (result.status) {
+            setCategories(result.data);
+        }
+    };
+
+    // const {pathname} = useLocation();
+    const toggleSidenav = () => {
+        setIsopen(!isOpen);
+    }
+
     // Close the navigation panel
     // useEffect(() => {
     //     setIsopen(!isOpen); 
@@ -76,7 +88,7 @@ const Nav = () => {
                                 {/* <div className='col-1'></div> */}
                                 <div className='Mainmenu'>
                                     {/* menu list appear here */}
-                                    <MenuList closeMenu={setIsopen} />
+                                    <MenuList categories={categories} closeMenu={setIsopen} />
                                 </div>
                                 <span onClick={toggleSidenav} className='menuBtn'><i className="fa-solid fa-bars-staggered"></i></span>
                             </div>
@@ -84,7 +96,7 @@ const Nav = () => {
                     </div>
                 </div>
                 <div className='menu-shape-top'>
-                    <img src={process.env.REACT_APP_BASE_URL + "images/shapes/cloud-menu.png"} alt="" />
+                    <img src={process.env.REACT_APP_BASE_URL +  "images/shapes/cloud-menu.png"} alt="" />
                 </div>
                 <div className='menu-shape-botm'>
                     {/* <img src="../images/shapes/paper-cut.png" alt="" /> */}

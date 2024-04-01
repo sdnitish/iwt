@@ -114,7 +114,7 @@ const Footer = () => {
                         <div className='container'>
                             <div className='row justify-content-end'>
                                 <div className='col-md-8 '>
-                                    <div className='copy-right-text'><span>Copyright © 2024. All Rights Reserved.</span><a href="#">Company Name</a></div>
+                                    <div className='copy-right-text'><span>Copyright © 2024 <strong>Instant Web Technology PVT LTD. </strong>- We are also known by the brand name</span><a href="https://www.instavyapar.com" target='_blank'>Insta Vyapar</a></div>
                                 </div>
                             </div>
                         </div>
