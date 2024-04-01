@@ -1,12 +1,13 @@
 import React from 'react';
-import LastPageIcon from '@mui/icons-material/LastPage';
+import { Link } from 'react-router-dom';
+// import LastPageIcon from '@mui/icons-material/LastPage';
 
 const BtnLink = (props) => {
   return (
-    <a className={props.addClass  + ' ' + 'thm-btn'} href={props.Href}>{props.btnName} 
+    <Link className={props.addClass  + ' ' + 'thm-btn'} to={props.Href}>{props.btnName} 
     {/* <LastPageIcon /> */}
     <img src="images/img/pointer.gif" alt="" />
-    </a>
+    </Link>
   )
 }
 
