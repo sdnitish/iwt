@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './ProductCard.css';
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import BtnLink from './BtnLink';
@@ -33,7 +33,7 @@ const ProductCard = (props) => {
       animate={control}
       className='service-card'>
       <div className='serv-tag'>
-        Service 
+        Service
         <div className='brdr-btm'></div>
       </div>
       <div className='service-name-box'>
@@ -45,7 +45,7 @@ const ProductCard = (props) => {
         </div>
       </div>
       <div className='service-img'>
-        <img className='w-100' loading='lazy' src={"./images/icons/" + props.servIcon} alt={props.productName} title={props.productName} />
+        <img className='w-100' loading='lazy' src={process.env.REACT_APP_BASE_URL + "images/icons/" + props.servIcon} alt={props.productName} title={props.productName} />
       </div>
     </motion.div>
   )

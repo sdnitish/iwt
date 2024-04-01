@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {  Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 // Import Swiper styles
@@ -39,15 +39,15 @@ const HomeBanner = () => {
                 navigation={{
                     prevEl: '.prev-slide',
                     nextEl: '.next-slide',
-                  }}
-                modules={[Autoplay , Navigation]}
+                }}
+                modules={[Autoplay, Navigation]}
                 className="home-slider">
-                 {
+                {
                     banners
                         ?
                         banners.map((value, index) =>
                             <SwiperSlide key={index}>
-                                <img className='w-100' loading='lazy' src={'./images/banners/' + value.img} alt={value.name} title={value.name} />
+                                <img className='w-100' loading='lazy' src={process.env.REACT_APP_BASE_URL + 'images/banners/' + value.img} alt={value.name} title={value.name} />
                             </SwiperSlide>
                         )
                         :
