@@ -35,13 +35,12 @@ const HomeBanner = () => {
                     delay: 6500,
                     disableOnInteraction: false,
                 }}
-                // navigation={true}
                 navigation={{
                     prevEl: '.prev-slide',
                     nextEl: '.next-slide',
                 }}
                 modules={[Autoplay, Navigation]}
-                className="home-slider">
+                className="home-slider hero-slide-h">
                 {
                     banners
                         ?

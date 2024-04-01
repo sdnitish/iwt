@@ -1,6 +1,10 @@
-import { BrowserRouter} from 'react-router-dom';
-import SiteLayout from './layouts/SiteLayout';
+import React, { lazy, Suspense } from 'react';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css'
+import { BrowserRouter } from 'react-router-dom';
 import AdminLayout from './layouts/AdminLayout';
+// import SiteLayout from './layouts/SiteLayout';
+const SiteLayout = lazy(() => import('./layouts/SiteLayout'));
 
 function App() {
   return (
@@ -10,7 +14,10 @@ function App() {
           ?
           <AdminLayout />
           :
-          <SiteLayout />
+          <Suspense 
+             fallback={<SkeletonTheme baseColor="#f5f4f4" highlightColor="#cfcece"> <p> <Skeleton count={31} /> </p> </SkeletonTheme>}>
+            <SiteLayout />
+          </Suspense>
       }
     </ BrowserRouter>
   );

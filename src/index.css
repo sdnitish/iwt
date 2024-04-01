@@ -209,7 +209,9 @@ a{
   text-decoration: none;
   display: block;
 }
-
+.hero-slide-h{
+  min-height: 80vh;
+}
 /* .pd-slider::before{
   content: "";
   height: 150px;
