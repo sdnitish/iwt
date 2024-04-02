@@ -41,7 +41,7 @@ function Pages() {
             td.push(
                 [
                     index + 1,
-                    <img className='img-one' src={"../images/pages/" + value.img} />,
+                    <img className='img-one' src={process.env.REACT_APP_BASE_URL + "images/pages/" + value.img} />,
                     value.name,
                     <SwitchBtn checked={value.isActive} url={process.env.REACT_APP_BASE_URL + "admin/changeActivePage/" + value._id} />,
                     <div className='d-flex gap-2 justify-content-center'>
