@@ -34,7 +34,7 @@ function CategoryData() {
     const [metaKeywords, setMetaKeywords] = useState('');
 
     const getCategory = async (id) => {
-        let result = await fetch(process.env.REACT_APP_BASE_URL + "admin/category/" + id)
+        let result = await fetch(process.env.REACT_APP_BASE_URL + "adminCategory/" + id)
         result = await result.json();
 
         if (result.status) {
@@ -69,7 +69,7 @@ function CategoryData() {
         }
 
         let result = await fetch(
-            process.env.REACT_APP_BASE_URL + "admin/saveCategory",
+            process.env.REACT_APP_BASE_URL + "adminSaveCategory",
             {
                 method: "POST",
                 body: data
