@@ -23,7 +23,7 @@ function Dashboard() {
     }, []);
 
     const getDashboard = async () => {
-        let result = await fetch(process.env.REACT_APP_BASE_URL + "admin/dashboard");
+        let result = await fetch(process.env.REACT_APP_BASE_URL + "adminDashboard");
         result = await result.json();
         setDashboard(result);
     }
