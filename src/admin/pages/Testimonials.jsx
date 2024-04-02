@@ -23,9 +23,9 @@ function Testimonials() {
     }, []);
 
     const getTestimonials = async () => {
-        let result = await fetch(`${process.env.REACT_APP_BASE_URL}admin/testimonials`);
+        let result = await fetch(`${process.env.REACT_APP_BASE_URL}adminTestimonials`);
         result = await result.json();
-        if(result.status ){
+        if (result.status) {
             setTestimonials(result.testimonials);
         }
     }
@@ -40,20 +40,20 @@ function Testimonials() {
 
     let td = [];
 
-        testimonials.map((value, index) =>
-            td.push(
-                [
-                    index + 1,
-                    <img className='img-one' src={"../images/testimonials/" + value.img} />,
-                    value.name,
-                    <SwitchBtn checked={value.isActive} url={process.env.REACT_APP_BASE_URL + "admin/changeActiveTestimonial/" + value._id} />,
-                    <div className='d-flex gap-2 justify-content-center'>
-                        <Link to={"/admin/testimonial/data/" + value._id} className='btn btn-primary'>Edit</Link>
-                        <DeleteBtn deleteAndRender={render} url={process.env.REACT_APP_BASE_URL + "admin/deleteTestimonial/" + value._id} />
-                    </div>
-                ]
-            )
+    testimonials.map((value, index) =>
+        td.push(
+            [
+                index + 1,
+                <img className='img-one' src={"../images/testimonials/" + value.img} />,
+                value.name,
+                <SwitchBtn checked={value.isActive} url={process.env.REACT_APP_BASE_URL + "adminChangeActiveTestimonial/" + value._id} />,
+                <div className='d-flex gap-2 justify-content-center'>
+                    <Link to={"/admin/testimonial/data/" + value._id} className='btn btn-primary'>Edit</Link>
+                    <DeleteBtn deleteAndRender={render} url={process.env.REACT_APP_BASE_URL + "adminDeleteTestimonial/" + value._id} />
+                </div>
+            ]
         )
+    )
 
 
     return (

@@ -39,7 +39,7 @@ function SiteInfo() {
     }, []);
 
     const getSiteInfo = async () => {
-        let result = await fetch(process.env.REACT_APP_BASE_URL + "admin/siteInfo");
+        let result = await fetch(process.env.REACT_APP_BASE_URL + "adminSiteInfo");
         result = await result.json();
         if (result.status) {
             setCompName(result.siteInfo.compName);
@@ -93,7 +93,7 @@ function SiteInfo() {
         data.append("googleAnalytic", googleAnalytic);
         data.append("footerText", footerText);
 
-        const url = process.env.REACT_APP_BASE_URL + "admin/updateSiteInfo";
+        const url = process.env.REACT_APP_BASE_URL + "adminUpdateSiteInfo";
 
         fetch(
             url,
@@ -173,7 +173,7 @@ function SiteInfo() {
                                     </div>
                                     <div className='col-md-6'>
                                         <div className="row align-items-center h-100">
-                                            <img className='img-logos-admn'  src={process.env.REACT_APP_BASE_URL + 'images/' + logo} alt={compName} title={compName} />
+                                            <img className='img-logos-admn' src={process.env.REACT_APP_BASE_URL + 'images/' + logo} alt={compName} title={compName} />
                                         </div>
                                     </div>
                                 </div>

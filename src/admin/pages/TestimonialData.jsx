@@ -25,7 +25,7 @@ const TestimonialData = () => {
     // }
 
     const getTestimonial = async (id) => {
-        let result = await fetch(`${process.env.REACT_APP_BASE_URL}admin/testimonial/` + id)
+        let result = await fetch(`${process.env.REACT_APP_BASE_URL}adminTestimonial/` + id)
         result = await result.json();
 
         if (result.status) {
@@ -56,7 +56,7 @@ const TestimonialData = () => {
             data.append("id", params._id);
         }
 
-        const url = `${process.env.REACT_APP_BASE_URL}admin/saveTestimonial`;
+        const url = `${process.env.REACT_APP_BASE_URL}adminSaveTestimonial`;
 
         let result = await fetch(
             url,
