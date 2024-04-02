@@ -73,8 +73,8 @@ const ContactSect = () => {
                             <Socials data={siteInfo} />
                         </div>
                         <div className='col-lg-7 col-md-6 px-4'>
-                            <SectionTitle smTitle="Contact" mainTitle="Semper tellus semmag" />
-                            <p className='m-t20'>Cursus quis condimentum nunc ultricies dis nisi diam nec. Bibendum potenti taciti ex parturient lacinia velit habitant.  </p>
+                            <SectionTitle smTitle="Contact" mainTitle="India's No.1 Website Designing Company in Delhi, India" />
+                            <p className='m-t20'>Instant Web Technology PVT LTD one of the best Website Designing Company in Delhi, India, So, what are you waiting for, send your enquiry now.  </p>
                             <div className='Contact_box '>
                                 <form>
                                     <div className='row'>
