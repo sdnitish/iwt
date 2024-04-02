@@ -1,5 +1,4 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import React, { useState, useEffect } from 'react';
 import 'react-loading-skeleton/dist/skeleton.css'
 import { Link } from 'react-router-dom';
 // import { useLocation } from 'react-router-dom';
@@ -8,8 +7,8 @@ import MenuList from './MenuList';
 // import BtnLink from '../BtnLink';
 import PermPhoneMsgIcon from '@mui/icons-material/PermPhoneMsg';
 import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
-// import Socials from './Socials';
-const Socials = lazy(() => import('./Socials'));
+import Socials from './Socials';
+// const Socials = lazy(() => import('./Socials'));
 
 const Nav = () => {
 
@@ -57,19 +56,15 @@ const Nav = () => {
                             <div className="header-topbar-content">
                                 {/* socials */}
                                 <div className="cstm-socials">
-                                    <Suspense fallback={<Skeleton count={1} />}>
                                         <Socials data={siteInfo} />
-                                    </Suspense>
                                 </div>
 
                                 <div className="cstm-contact-infos">
-                                    <Suspense fallback={<Skeleton count={1} />}>
                                         <ul>
                                             <li><PermPhoneMsgIcon /><a href={"tel:" + siteInfo.primaryPhone}>{siteInfo.primaryPhone}</a></li>
                                             <li><ForwardToInboxIcon /><a href={"mailto:" + siteInfo.primaryMail}>{siteInfo.primaryMail}</a>
                                             </li>
                                         </ul>
-                                    </Suspense>
                                 </div>
                                 {/* <BtnLink Href="" addClass='' btnName="Request Quote" /> */}
                             </div>
@@ -107,10 +102,10 @@ const Nav = () => {
                 <span onClick={toggleSidenav} className='close-nav'><i className="fa-solid fa-xmark"></i></span>
                 <div className='phone-nav'>
                     <div className='logo-box'>
-                        <Link to={'/'}><img src={process.env.REACT_APP_BASE_URL + 'images/' + siteInfo.logo} alt={siteInfo.compName} title={siteInfo.compName} /></Link>
+                        <Link to={'/'}><img onClick={toggleSidenav} src={process.env.REACT_APP_BASE_URL + 'images/' + siteInfo.logo} alt={siteInfo.compName} title={siteInfo.compName} /></Link>
                     </div>
                     {/* menu list appear here for mobile*/}
-                    <MenuList closeMenu={setIsopen} />
+                    <MenuList categories={categories} closeMenu={setIsopen} />
                 </div>
                 <div>
                     {/* socials */}

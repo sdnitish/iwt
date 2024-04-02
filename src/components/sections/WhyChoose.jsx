@@ -107,7 +107,7 @@ const WhyChoose = () => {
             <div className='row align-items-center m-t40'>
               <div className='col-auto'><BtnLink Href="" btnName="Book Service" /></div>
               <div className='col-auto d-flex align-items-center'>
-                <img src={process.env.REACT_APP_BASE_URL + "images/shapes/group-img.png"} alt="" />
+                <img height={65}  src={process.env.REACT_APP_BASE_URL + "images/shapes/group-img.png"} alt="" />
                 <div className='client-count'>
                   <CountUp end={500} enableScrollSpy scrollSpyOnce="false" /> <span>+</span>
                   <p>Happy Clients</p>
@@ -123,7 +123,7 @@ const WhyChoose = () => {
               <div className='icon-box-bg'></div>
               <div className='icon-box row'>
                 <div className='cout-icon col-auto'>
-                  <img src={process.env.REACT_APP_BASE_URL + "images/gif/Client.gif"} alt="" />
+                  <img height={60} width={60} src={process.env.REACT_APP_BASE_URL + "images/gif/Client1.gif"} alt="" />
                 </div>
                 <div className='col-auto'>
                   <div className='count-text'>
@@ -140,7 +140,7 @@ const WhyChoose = () => {
               <div className='icon-box-bg'></div>
               <div className='icon-box row'>
                 <div className='cout-icon col-auto'>
-                  <img src={process.env.REACT_APP_BASE_URL + "images/gif/Award.gif"} alt="" />
+                  <img height={65} width={65} src={process.env.REACT_APP_BASE_URL + "images/gif/Award-2.gif"} alt="" />
                 </div>
                 <div className='col-auto'>
                   <div className='count-text'>
@@ -157,7 +157,7 @@ const WhyChoose = () => {
               <div className='icon-box-bg'></div>
               <div className='icon-box row'>
                 <div className='cout-icon col-auto'>
-                  <img src={process.env.REACT_APP_BASE_URL + "images/gif/Ideas.gif"} alt="" />
+                  <img height={60} width={60} src={process.env.REACT_APP_BASE_URL + "images/gif/Ideas1.gif"} alt="" />
                 </div>
                 <div className='col-auto'>
                   <div className='count-text'>
@@ -174,7 +174,7 @@ const WhyChoose = () => {
               <div className='icon-box-bg'></div>
               <div className='icon-box row'>
                 <div className='cout-icon col-auto'>
-                  <img src={process.env.REACT_APP_BASE_URL + "images/gif/Award.gif"} alt="" />
+                  <img height={65} width={65} src={process.env.REACT_APP_BASE_URL + "images/gif/Employees1.gif"} alt="" />
                 </div>
                 <div className='col-auto'>
                   <div className='count-text'>

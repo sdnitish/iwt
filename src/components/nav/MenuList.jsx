@@ -13,7 +13,7 @@ const MenuList = (props) => {
 
     return (
         <ul>
-            <li className='active'><Link onClick={closeMenu} to="/"><img className='menu-gif' src={process.env.REACT_APP_BASE_URL + "images/gif/Home-Icon.gif"} alt="" /><span>Home</span></Link></li>
+            <li className='active'><Link onClick={closeMenu} to="/"><img width={40} height={35} className='menu-gif' src={process.env.REACT_APP_BASE_URL + "images/gif/Home-Icon.gif"} alt="" /><span>Home</span></Link></li>
 
             {
                 categories
@@ -32,9 +32,9 @@ const MenuList = (props) => {
                     null
             }
 
-            <li ><Link onClick={closeMenu} to="/company-profile"><img className='menu-gif' src={process.env.REACT_APP_BASE_URL + "images/gif/Company-Profile.gif"} alt="" /> <span>Company Profile</span> </Link></li>
+            <li ><Link onClick={closeMenu} to="/company-profile"><img width={40} height={35} className='menu-gif' src={process.env.REACT_APP_BASE_URL + "images/gif/Company-Profile.gif"} alt="" /> <span>Company Profile</span> </Link></li>
 
-            <li ><Link onClick={closeMenu} to="/contact"><img className='menu-gif' src={process.env.REACT_APP_BASE_URL + "images/gif/contact.gif"} alt="" /> <span>Contact</span> </Link></li>
+            <li ><Link onClick={closeMenu} to="/contact"><img width={40} height={35} className='menu-gif' src={process.env.REACT_APP_BASE_URL + "images/gif/conta-icon.gif"} alt="" /> <span>Contact</span> </Link></li>
         </ul>
     )
 }
