@@ -9,7 +9,16 @@ const ChildMenu = (props) => {
 
         props.servChild.map((value, index) =>
             <li key={index}>
-                <Link onClick={closeMenu} to={"/" + value.slug}>
+                <Link
+                    onClick={closeMenu}
+                    to={
+                        props.data !== undefined
+                            ?
+                            "/" + props.data.slug + "/" + value.slug
+                            :
+                            "/" + value.slug
+                    }
+                >
                     <img
                         className='menu-gif'
                         src={process.env.REACT_APP_BASE_URL + "images/icons/" + value.icon}

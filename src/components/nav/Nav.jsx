@@ -8,7 +8,7 @@ import Socials from './Socials';
 import PermPhoneMsgIcon from '@mui/icons-material/PermPhoneMsg';
 import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
 
-const Nav = () => {
+const Nav = (props) => {
 
     const [categories, setCategories] = useState([]);
     const [isOpen, setIsopen] = useState(false);
@@ -81,7 +81,7 @@ const Nav = () => {
                                 {/* <div className='col-1'></div> */}
                                 <div className='Mainmenu'>
                                     {/* menu list appear here */}
-                                    <MenuList categories={categories} closeMenu={setIsopen} />
+                                    <MenuList data={props.data} categories={categories} closeMenu={setIsopen} />
                                 </div>
                                 <span onClick={toggleSidenav} className='menuBtn'><i className="fa-solid fa-bars-staggered"></i></span>
                             </div>

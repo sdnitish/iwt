@@ -36,7 +36,7 @@ const Home = () => {
       <HomeBanner />
       <WelcomeText />
       <ProductSlider />
-      <CompanyProfile pageData={homeData} />
+      <CompanyProfile pageData={homeData} homeTitle={homeData.shortDescription} />
       <FeaturesSect />
       <WhyChoose />
       <StepsSect />

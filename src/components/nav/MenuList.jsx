@@ -25,7 +25,13 @@ const MenuList = (props) => {
                             closeMenu={closeMenu}
                             servGif={process.env.REACT_APP_BASE_URL + "images/icons/" + value.icon}
                             servName={value.name}
-                            servChild={<ChildMenu closeMenu={closeMenu} servChild={value.products} />}
+                            servChild={
+                                <ChildMenu
+                                    data={props.data}
+                                    closeMenu={closeMenu}
+                                    servChild={value.products}
+                                />
+                            }
                         />
                     )
                     :

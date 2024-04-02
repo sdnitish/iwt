@@ -87,7 +87,7 @@ const CompanyProfile = (props) => {
 
             </motion.div>
             <div>
-              <SectionTitle smTitle="About Company" mainTitle={props.pageData.shortDescription} />
+              <SectionTitle smTitle="About Company" homeTitle={props.homeTitle} mainTitle={props.pageData.shortDescription} />
             </div>
             <p>{Parser().parse(props.pageData.description)}</p>
             <p>{Parser().parse(props.pageData.extraDescription)}</p>
