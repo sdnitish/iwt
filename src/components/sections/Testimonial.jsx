@@ -37,7 +37,7 @@ const Testimonial = () => {
     }, [control, inView]);
 
     const getTestimonials = async () => {
-        let result = await fetch(`${process.env.REACT_APP_BASE_URL}admin/testimonials`);
+        let result = await fetch(`${process.env.REACT_APP_BASE_URL}testimonials`);
         result = await result.json();
         if(result.status ){
             setTestimonials(result.testimonials);

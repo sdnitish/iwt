@@ -42,9 +42,9 @@ function Category() {
             td.push(
                 [
                     index + 1,
-                    <img className='img-one' src={"../images/categories/" + value.img} />,
+                    <img className='img-one' src={process.env.REACT_APP_BASE_URL + "images/icons/" + value.icon} />,
                     value.name,
-                    <SwitchBtn checked={value.isActive} url={process.env.REACT_APP_BASE_URL + "admin/changeActiveProduct/" + value._id} />,
+                    <SwitchBtn checked={value.isActive} url={process.env.REACT_APP_BASE_URL + "admin/changeActiveCategory/" + value._id} />,
                     <div className='d-flex gap-2 justify-content-center'>
                         <Link to={"/admin/category/data/" + value._id} className='btn btn-primary'>Edit</Link>
                         <DeleteBtn deleteAndRender={render} url={process.env.REACT_APP_BASE_URL + "admin/deleteCategory/" + value._id} />
