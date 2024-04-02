@@ -209,14 +209,6 @@ a{
   text-decoration: none;
   display: block;
 }
-
-/* .pd-slider::before{
-  content: "";
-  height: 150px;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-  background: linear-gradient(#f4f4f4 , white );
+/* .hero-slide-h{
+  min-height: 80vh;
 } */

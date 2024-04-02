@@ -20,6 +20,7 @@ const ChildMenu = (props) => {
                     }
                 >
                     <img
+                        width={35} height={35}
                         className='menu-gif'
                         src={process.env.REACT_APP_BASE_URL + "images/icons/" + value.icon}
                         alt={value.name}

@@ -49,8 +49,8 @@ const CompanyProfile = (props) => {
         onClose={() => setOpen(false)}
       />
       <section className="about-section">
-        <div className='about-left-shape anim-up-down'><img src="images/shapes/abt-left.png" alt={siteInfo.compName} title={siteInfo.compName} /></div>
-        <div className='about-right-shape anim-scale'><img src="images/shapes/abt-right.png" alt={siteInfo.compName} title={siteInfo.compName} /></div>
+        <div className='about-left-shape anim-up-down'><img src={process.env.REACT_APP_BASE_URL +"images/shapes/abt-left.webp"} alt={siteInfo.compName} title={siteInfo.compName} /></div>
+        <div className='about-right-shape anim-scale'><img src={process.env.REACT_APP_BASE_URL +"images/shapes/abt-right.webp"} alt={siteInfo.compName} title={siteInfo.compName} /></div>
         <div className='container'>
           <div className=''>
 

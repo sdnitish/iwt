@@ -35,19 +35,18 @@ const HomeBanner = () => {
                     delay: 6500,
                     disableOnInteraction: false,
                 }}
-                // navigation={true}
                 navigation={{
                     prevEl: '.prev-slide',
                     nextEl: '.next-slide',
                 }}
                 modules={[Autoplay, Navigation]}
-                className="home-slider">
+                className="home-slider hero-slide-h">
                 {
                     banners
                         ?
                         banners.map((value, index) =>
                             <SwiperSlide key={index}>
-                                <img className='w-100' loading='lazy' src={process.env.REACT_APP_BASE_URL + 'images/banners/' + value.img} alt={value.name} title={value.name} />
+                                <img className='w-100' src={process.env.REACT_APP_BASE_URL + 'images/banners/' + value.img} alt={value.name} title={value.name} />
                             </SwiperSlide>
                         )
                         :

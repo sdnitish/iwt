@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import 'react-loading-skeleton/dist/skeleton.css'
 import { Link } from 'react-router-dom';
 // import { useLocation } from 'react-router-dom';
 import './Nav.css';
 import MenuList from './MenuList';
-import Socials from './Socials';
 // import BtnLink from '../BtnLink';
 import PermPhoneMsgIcon from '@mui/icons-material/PermPhoneMsg';
 import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
+import Socials from './Socials';
+// const Socials = lazy(() => import('./Socials'));
 
 const Nav = (props) => {
 
@@ -54,15 +56,15 @@ const Nav = (props) => {
                             <div className="header-topbar-content">
                                 {/* socials */}
                                 <div className="cstm-socials">
-                                    <Socials data={siteInfo} />
+                                        <Socials data={siteInfo} />
                                 </div>
 
                                 <div className="cstm-contact-infos">
-                                    <ul>
-                                        <li><PermPhoneMsgIcon /><a href={"tel:" + siteInfo.primaryPhone}>{siteInfo.primaryPhone}</a></li>
-                                        <li><ForwardToInboxIcon /><a href={"mailto:" + siteInfo.primaryMail}>{siteInfo.primaryMail}</a>
-                                        </li>
-                                    </ul>
+                                        <ul>
+                                            <li><PermPhoneMsgIcon /><a href={"tel:" + siteInfo.primaryPhone}>{siteInfo.primaryPhone}</a></li>
+                                            <li><ForwardToInboxIcon /><a href={"mailto:" + siteInfo.primaryMail}>{siteInfo.primaryMail}</a>
+                                            </li>
+                                        </ul>
                                 </div>
                                 {/* <BtnLink Href="" addClass='' btnName="Request Quote" /> */}
                             </div>
@@ -89,7 +91,7 @@ const Nav = (props) => {
                     </div>
                 </div>
                 <div className='menu-shape-top'>
-                    <img src={process.env.REACT_APP_BASE_URL + "images/shapes/cloud-menu.png"} alt="" />
+                    <img src={process.env.REACT_APP_BASE_URL +  "images/shapes/cloud-menu.png"} alt="" />
                 </div>
                 <div className='menu-shape-botm'>
                     {/* <img src="../images/shapes/paper-cut.png" alt="" /> */}
@@ -100,10 +102,10 @@ const Nav = (props) => {
                 <span onClick={toggleSidenav} className='close-nav'><i className="fa-solid fa-xmark"></i></span>
                 <div className='phone-nav'>
                     <div className='logo-box'>
-                        <Link to={'/'}><img src={process.env.REACT_APP_BASE_URL + 'images/' + siteInfo.logo} alt={siteInfo.compName} title={siteInfo.compName} /></Link>
+                        <Link to={'/'}><img onClick={toggleSidenav} src={process.env.REACT_APP_BASE_URL + 'images/' + siteInfo.logo} alt={siteInfo.compName} title={siteInfo.compName} /></Link>
                     </div>
                     {/* menu list appear here for mobile*/}
-                    <MenuList closeMenu={setIsopen} />
+                    <MenuList categories={categories} closeMenu={setIsopen} />
                 </div>
                 <div>
                     {/* socials */}

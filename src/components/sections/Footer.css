@@ -295,3 +295,22 @@
     height: 16px;
     font-weight: bold;
 }
+@media (max-width: 767px) {
+    .css-7dv1rb-MuiButtonBase-root-MuiFab-root-MuiSpeedDial-fab{
+        width: 38px !important;
+        height: 38px !important;
+    }
+    .css-i4bv87-MuiSvgIcon-root{
+        font-size: 19px !important;
+    }
+    .css-1ef08qk-MuiSpeedDial-root{
+        left: 15px !important;
+        bottom: 21px !important;
+    }
+    .Scroll-top-btn .scroll-to-top {
+        right: 22px;
+        bottom: 28px;
+        width: 40px;
+        height: 40px;
+    }
+}

@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, lazy, Suspense } from 'react';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css'
 import { Routes, Route } from 'react-router-dom';
 import '../App.css';
-import Home from '../pages/Home';
-import About from '../pages/About';
-import Contact from '../pages/Contact';
-import Sitemap from '../pages/Sitemap';
-import MarketPlace from '../pages/MarketPlace';
-import Products from '../pages/Products';
-import ProductDetail from '../pages/ProductDetail';
-import ProductList from '../components/sections/ProductList';
-import Subdomain from '../pages/Subdomain';
-import OurPresenceInCity from '../pages/OurPresenceInCity';
-import KeywordInCity from '../pages/KeywordInCity';
+const About = lazy(() => import('../pages/About'));
+const Home = lazy(() => import('../pages/Home'));
+const Contact = lazy(() => import('../pages/Contact'));
+const Sitemap = lazy(() => import('../pages/Sitemap'));
+const MarketPlace = lazy(() => import('../pages/MarketPlace'));
+const Products = lazy(() => import('../pages/Products'));
+const ProductDetail = lazy(() => import('../pages/ProductDetail'));
+const ProductList = lazy(() => import('../components/sections/ProductList'));
+const Subdomain = lazy(() => import('../pages/Subdomain'));
+const OurPresenceInCity = lazy(() => import('../pages/OurPresenceInCity'));
+const KeywordInCity = lazy(() => import('../pages/KeywordInCity'));
 
 function SiteLayout() {
 
@@ -45,17 +47,17 @@ function SiteLayout() {
     <>
       {/* <Nav></Nav> */}
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/services' element={<Products />} />
-        <Route path='/company-profile' element={<About />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/sitemap' element={<Sitemap />} />
-        <Route path='/market-place' element={<MarketPlace />} />
+        <Route path='/' element={<Suspense fallback={<Skeleton count={15} />}><Home /></Suspense>} />
+        <Route path='/services' element={<Suspense fallback={<Skeleton count={15} />}><Products /></Suspense>} />
+        <Route path='/company-profile' element={<Suspense fallback={<Skeleton count={15} />}><About /></Suspense>} />
+        <Route path='/contact' element={<Suspense fallback={<Skeleton count={15} />}><Contact /></Suspense>} />
+        <Route path='/sitemap' element={<Suspense fallback={<Skeleton count={15} />}><Sitemap /></Suspense>} />
+        <Route path='/market-place' element={<Suspense fallback={<Skeleton count={15} />}><MarketPlace /></Suspense>} />
         {
           products
             ?
             products.map((value, index) =>
-              <Route key={index} path={'/' + value.slug} element={<ProductDetail slug={value.slug} />} />
+              <Route key={index} path={'/' + value.slug} element={<Suspense fallback={<Skeleton count={15} />}><ProductDetail slug={value.slug} /></Suspense>} />
             )
             :
             null
@@ -68,7 +70,7 @@ function SiteLayout() {
                 <Route
                   key={index}
                   path={'/' + value.slug}
-                  element={<ProductList slug={value.slug} />}
+                  element={<Suspense fallback={<Skeleton count={15} />}><ProductList slug={value.slug} /></Suspense>}
                 />
                 {
                   products
@@ -77,7 +79,7 @@ function SiteLayout() {
                       <Route
                         key={key}
                         path={'/' + value.slug + "/" + item.slug}
-                        element={<Subdomain categorySlug={value.slug} productSlug={item.slug} />}
+                        element={<Suspense fallback={<Skeleton count={15} />}><Subdomain categorySlug={value.slug} productSlug={item.slug} /></Suspense>}
                       />
                     )
                     :
@@ -93,7 +95,7 @@ function SiteLayout() {
             ?
             locations.map((value, index) =>
               <>
-                <Route key={index} path={'/' + value.parentSlug} element={<OurPresenceInCity slug={value.parentSlug} />} />
+                <Route key={index} path={'/' + value.parentSlug} element={<Suspense fallback={<Skeleton count={15} />}><OurPresenceInCity slug={value.parentSlug} /></Suspense>} />
                 {
                   products
                     ?
@@ -102,10 +104,12 @@ function SiteLayout() {
                         key={key}
                         path={'/' + value.parentSlug + '/' + item.slug}
                         element={
+                          <Suspense fallback={<Skeleton count={15} />}>
                           <KeywordInCity
                             locationSlug={value.parentSlug}
                             productSlug={item.slug}
-                          />
+                            />
+                            </Suspense>
                         }
                       />
                     )
@@ -115,7 +119,11 @@ function SiteLayout() {
                 {
                   value.cities.map((item, key) =>
                     <>
-                      <Route key={key} path={'/' + item.slug} element={<OurPresenceInCity slug={item.slug} />} />
+                      <Route key={key} path={'/' + item.slug} element={
+                        <Suspense fallback={<Skeleton count={15} />}>
+                         <OurPresenceInCity slug={item.slug} />
+                        </Suspense>
+                      } />
                       {
                         products
                           ?
@@ -124,10 +132,12 @@ function SiteLayout() {
                               key={i}
                               path={'/' + item.slug + '/' + val.slug}
                               element={
+                                <Suspense fallback={<Skeleton count={15} />}>
                                 <KeywordInCity
                                   locationSlug={item.slug}
                                   productSlug={val.slug}
-                                />
+                                  />
+                                  </Suspense>
                               }
                             />
                           )

@@ -104,7 +104,7 @@ const Testimonial = () => {
                                             animate={control}
                                             className='testi-box'>
                                             <div className='Testimonial-box'>
-                                                <img className='testi-img' src={'./images/testimonials/' + value.img} alt={value.name} title={value.name} />
+                                                <img className='testi-img' src={process.env.REACT_APP_BASE_URL +'images/testimonials/' + value.img} alt={value.name} title={value.name} />
                                                 <div className='reviews-box'>
                                                     <p className='testi-words'>{value.description}</p>
                                                     <div className='testi-name-box'>

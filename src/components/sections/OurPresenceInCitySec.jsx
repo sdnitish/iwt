@@ -1,6 +1,6 @@
 import React from 'react'
 import SectionTitle from '../SectionTitle';
-import PhoneInTalkOutlinedIcon from '@mui/icons-material/PhoneInTalkOutlined';
+import QuickHelpCard from '../QuickHelpCard';
 import { Parser } from 'html-to-react'
 
 function OurPresenceInCitySec(props) {
@@ -16,21 +16,7 @@ function OurPresenceInCitySec(props) {
                             {Parser().parse(props.data.extraDescription)}
                         </div>
                         <div className="col-lg-4 col-md-4">
-                            <div className="all__sidebar-item-help"  >
-
-                                <img className="support-bg" src={process.env.REACT_APP_BASE_URL + "images/img/support.jpg"} alt="" />
-                                <img className="support-bg-texture" src={process.env.REACT_APP_BASE_URL + "images/img/support.png"} alt="" />
-                                <div className="support-det">
-                                    <p className='sprt-h'>Request a Free Call in Today !</p>
-                                    <div className="all__sidebar-item-help-contact">
-                                        <PhoneInTalkOutlinedIcon />
-                                        <div className="all__sidebar-item-help-contact-content">
-                                            <span>Quick Help</span>
-                                            <a href="tel:">+91-00000 000000</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                          <QuickHelpCard />
                         </div>
                     </div>
                 </div>
