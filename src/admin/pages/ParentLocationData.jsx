@@ -13,12 +13,13 @@ const ParentLocationData = () => {
     const [name, setName] = useState('');
 
     const getParentLocation = async (id) => {
-        let result = await fetch(`${process.env.REACT_APP_BASE_URL}admin/parentLocation/` + id)
+        let result = await fetch(`${process.env.REACT_APP_BASE_URL}adminParentLocation/` + id)
         result = await result.json();
 
         if (result.status) {
             setName(result.parentLocation.name);
         }
+        console.log(result);
     }
 
     useEffect(() => {
