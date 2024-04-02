@@ -38,7 +38,7 @@ function ProductData() {
     const [metaKeywords, setMetaKeywords] = useState('');
 
     const getProduct = async (id) => {
-        let result = await fetch(process.env.REACT_APP_BASE_URL + "admin/product/" + id)
+        let result = await fetch(process.env.REACT_APP_BASE_URL + "adminProduct/" + id)
         result = await result.json();
 
         if (result.status) {
@@ -75,7 +75,7 @@ function ProductData() {
         }
 
         let result = await fetch(
-            process.env.REACT_APP_BASE_URL + "admin/saveProduct",
+            process.env.REACT_APP_BASE_URL + "adminSaveProduct",
             {
                 method: "POST",
                 body: data
@@ -89,7 +89,7 @@ function ProductData() {
     }
 
     const getCategories = async () => {
-        let categories_res = await fetch(`${process.env.REACT_APP_BASE_URL}admin/categories`)
+        let categories_res = await fetch(`${process.env.REACT_APP_BASE_URL}adminCategories`)
         categories_res = await categories_res.json();
         if (categories_res.status) {
             setCategories(categories_res.categories);

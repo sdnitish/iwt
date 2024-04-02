@@ -23,7 +23,7 @@ function ParentLocation() {
     }, []);
 
     const getParentLocations = async () => {
-        let result = await fetch(`${process.env.REACT_APP_BASE_URL}admin/parentLocations`);
+        let result = await fetch(`${process.env.REACT_APP_BASE_URL}adminParentLocations`);
         result = await result.json();
         if (result.status) {
             setParentLocation(result.parentLocations);
@@ -43,10 +43,10 @@ function ParentLocation() {
             [
                 index + 1,
                 value.name,
-                <SwitchBtn checked={value.isActive} url={process.env.REACT_APP_BASE_URL + "admin/changeActiveParentLocation/" + value._id} />,
+                <SwitchBtn checked={value.isActive} url={process.env.REACT_APP_BASE_URL + "adminChangeActiveParentLocation/" + value._id} />,
                 <div className='d-flex gap-2 justify-content-center'>
                     <Link to={"/admin/parentLocation/data/" + value._id} className='btn btn-primary'>Edit</Link>
-                    <DeleteBtn deleteAndRender={render} url={process.env.REACT_APP_BASE_URL + "admin/deleteParentLocation/" + value._id} />
+                    <DeleteBtn deleteAndRender={render} url={process.env.REACT_APP_BASE_URL + "adminDeleteParentLocation/" + value._id} />
                 </div>
             ]
         )

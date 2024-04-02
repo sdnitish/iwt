@@ -39,7 +39,7 @@ const ParentLocationData = () => {
             data.append("id", params._id);
         }
 
-        const url = `${process.env.REACT_APP_BASE_URL}admin/saveParentLocation`;
+        const url = `${process.env.REACT_APP_BASE_URL}adminSaveParentLocation`;
 
         let result = await fetch(
             url,
