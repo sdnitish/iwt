@@ -295,9 +295,9 @@
         display: none;
     }
 
-    .process-step {
+    /* .process-step {
         height: 85%;
-    }
+    } */
 
     .work-box {
         padding: 20px 0;
@@ -309,10 +309,21 @@
         justify-content: center;
     }
 
-    .process-step {
+    /* .process-step {
         height: 100%;
+    } */
+    .pright {
+        padding-right: 10px !important;
     }
-
+    .process-box p {
+        text-align: justify ;
+        line-height: 1.14 !important;
+    }
+    .process-box .p-name{
+        font-size: 18px;
+        margin-bottom: 6px;
+        text-align: left;
+    }
     .section-title-header {
         top: -10px;
         padding: 10px;
