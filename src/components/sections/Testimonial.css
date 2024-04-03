@@ -1,5 +1,4 @@
-
-.testi-img{
+.testi-img {
     width: 75px;
     height: 75px;
     border-radius: 50%;
@@ -7,17 +6,20 @@
     box-shadow: 0px 0px 4px rgb(116, 116, 116);
     margin-bottom: 19px;
 }
-.reviews-box{
+
+.reviews-box {
     position: relative;
     width: 100%;
 }
-.testi-box{
+
+.testi-box {
     position: relative;
-    padding:  60px;
+    padding: 60px;
     min-height: 450px;
     margin: 30px auto;
     width: 90%;
 }
+
 .Testimonial-box {
     display: flex;
     flex-direction: column;
@@ -27,7 +29,8 @@
     position: relative;
     z-index: 4;
 }
-.testi-box::before{
+
+.testi-box::before {
     content: "";
     width: 90%;
     height: 90%;
@@ -37,10 +40,11 @@
     background: white;
     z-index: 3;
     border-radius: 30px;
-    transform: skew(-2deg , -2deg);
+    transform: skew(-2deg, -2deg);
     box-shadow: 0px 0px 4px gray;
 }
-.testi-box::after{
+
+.testi-box::after {
     content: "";
     width: 100%;
     height: 100%;
@@ -49,58 +53,71 @@
     top: 0;
     background: var(--primry-clr);
     z-index: 2;
-    transform: rotate(-4deg) skew(-2deg , -2deg);
+    transform: rotate(-4deg) skew(-2deg, -2deg);
     border-radius: 30px;
     transition: all 450ms ease;
     box-shadow: 0px 0px 4px gray;
 }
-.testi-box:hover::after{
-    transform: rotate(-6deg) skew(-2deg , -2deg);
+
+.testi-box:hover::after {
+    transform: rotate(-6deg) skew(-2deg, -2deg);
     background: var(--secondary-clr);
 }
-.testi-words{
+
+.testi-words {
     font-size: 16px;
     color: rgb(107, 106, 106);
     line-height: 1.4;
     letter-spacing: 0;
 }
-.testi-name-box{
+
+.testi-name-box {
     width: 100%;
     position: relative;
     margin-top: 31px;
 }
-.testi-name-box i{
+
+.testi-name-box i {
     position: absolute;
     right: 40px;
     color: var(--primry-clr);
     top: 0;
     font-size: 40px;
 }
-.testi-name{
+
+.testi-name {
     font-size: 22px;
     font-weight: 600;
     color: black;
     line-height: 1;
     margin-bottom: 2px;
 }
-.testi-position{
+
+.testi-position {
     font-size: 12px;
     font-weight: 600;
     color: var(--primry-clr);
     text-transform: uppercase;
 }
+
 @media (max-width: 768px) {
-    .testi-img{
+    .testi-img {
         width: 50px;
         height: 50px;
         border: 3px solid white;
         margin-right: 30px;
         margin-top: 19px;
     }
-    .testi-words{
+
+    .testi-words {
         font-size: 16px;
     }
-    .testi-name-box i{
+
+    .testi-name-box i {
         font-size: 35px;
+    }
+
+    .testi-box {
+        padding: 40px;
     }
 }
