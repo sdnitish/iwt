@@ -40,8 +40,8 @@ const ProductCard = (props) => {
         <div className='service-content'>
           <Link className='service-name' to={props.servLink}>{props.productName}</Link>
           <span className='service-name-title' >{props.servDesc}</span>
-          <p className='serv-price'>&#8377;: {props.servPrice}/- <span>(Gst Exclusive)</span></p>
-          <BtnLink Href={props.servLink} btnName="Book our Service" />
+           <p className='serv-price'>&#8377;: {props.servPrice}/- <span>(Gst Exclusive)</span></p>
+          <BtnLink Href="/contact" btnName="Book our Service" />
         </div>
       </div>
       <div className='service-img'>
