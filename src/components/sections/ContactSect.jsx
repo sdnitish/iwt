@@ -13,6 +13,8 @@ import { useInView } from "react-intersection-observer";
 import PhoneInTalkOutlinedIcon from '@mui/icons-material/PhoneInTalkOutlined';
 import MarkEmailUnreadOutlinedIcon from '@mui/icons-material/MarkEmailUnreadOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import ReCAPTCHA from "react-google-recaptcha";
+const recaptchaRef = React.createRef();
 
 const ContactSect = () => {
 
@@ -54,6 +56,21 @@ const ContactSect = () => {
         }
     }
 
+    const handleEnquiryForm = async (event) => {
+        event.preventDefault();
+        const formData = event.target;
+        const form = new FormData(formData);
+        const data = Object.fromEntries(form.entries());
+        Object.keys(data).forEach(k => data[k] = data[k].trim());
+
+        let result = await fetch(`${process.env.REACT_APP_BASE_URL}enquiry`,
+            {
+                method: 'POST',
+                data: data,
+            }
+        )
+    }
+
     return (
         <>
             <section className='sect-space bg-gry contact-container'>
@@ -73,19 +90,26 @@ const ContactSect = () => {
                             <Socials data={siteInfo} />
                         </div>
                         <div className='col-lg-7 col-md-6 px-4'>
-                            <SectionTitle smTitle="Contact" mainTitle="Semper tellus semmag" />
-                            <p className='m-t20'>Cursus quis condimentum nunc ultricies dis nisi diam nec. Bibendum potenti taciti ex parturient lacinia velit habitant.  </p>
+                            <SectionTitle smTitle="Contact" mainTitle="India's No.1 Website Designing Company in Delhi, India" />
+                            <p className='m-t20'>Instant Web Technology PVT LTD one of the best Website Designing Company in Delhi, India, So, what are you waiting for, send your enquiry now.</p>
                             <div className='Contact_box '>
-                                <form>
+                                <form onSubmit={handleEnquiryForm}>
                                     <div className='row'>
-                                        <div className='col-lg-6'><TextField label="Your Name" /></div>
-                                        <div className='col-lg-6'><TextField label="Your Phone" /></div>
-                                        <div className='col-lg-6'><TextField label="Your Email" /></div>
+                                        <div className='col-lg-6'>
+                                            <TextField label="Your Name" name='name' type='text' />
+                                        </div>
+                                        <div className='col-lg-6'>
+                                            <TextField label="Your Phone" name='phone' type='number' />
+                                        </div>
+                                        <div className='col-lg-6'>
+                                            <TextField label="Your Email" name='email' type='email' />
+                                        </div>
                                         <div className='col-lg-6'>
                                             <FormControl fullWidth>
                                                 <InputLabel id="demo-simple-select-label">Select service</InputLabel>
                                                 <Select
                                                     label="Select product"
+                                                    name='product'
                                                 // onChange={handleChange}
                                                 >
                                                     {
@@ -101,9 +125,22 @@ const ContactSect = () => {
                                             </FormControl>
 
                                         </div>
-                                        <div className='col-12'><TextField label="Company Name" /></div>
-                                        <div className='col-12'><TextField multiline rows={3} label="Write any message..." /></div>
-                                        <div className='col-12'><Button btnType="submit" btnName="Submit Query" /></div>
+                                        <div className='col-12'>
+                                            <TextField label="Company Name" name='companyName' type='text' />
+                                        </div>
+                                        <div className='col-12'>
+                                            <TextField multiline rows={3} labe l="Write any message..." name='message' type='text' />
+                                        </div>
+                                        <div className='col-12 mb-2'>
+                                            <ReCAPTCHA
+                                                ref={recaptchaRef}
+                                                sitekey="6LfVBawpAAAAABKJjqc48n3_mncEVRj7aWEWCeZk"
+                                            // onChange={onChange}
+                                            />
+                                        </div>
+                                        <div className='col-12'>
+                                            <Button btnType="submit" btnName="Submit Query" />
+                                        </div>
                                     </div>
                                 </form>
                             </div>
