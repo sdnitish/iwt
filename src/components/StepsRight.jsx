@@ -42,7 +42,7 @@ const StepsRight = (props) => {
                                 <p className="m-0 p-0">Step</p>
                             </div>
                         </div>
-                        <div className="col-8 p-0">
+                        <div className="col-8 p-0 pright">
                         <img height={50} width={50} className='step-img' src={process.env.REACT_APP_BASE_URL + "images/gif/Award1.gif"} alt="Award Gif" />
                             <p className="p-name">{props.stepTitle}</p>
                             <p><small>{props.stepDesc}</small></p>

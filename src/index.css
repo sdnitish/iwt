@@ -48,6 +48,9 @@ a{
     -webkit-text-stroke-width: 1px;
     margin: 8px 0;
   }
+  .Welcome-Letter span{
+    background: transparent;
+  }
 }
 
 .feat-sect-bg{

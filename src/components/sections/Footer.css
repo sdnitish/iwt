@@ -296,13 +296,19 @@
     font-weight: bold;
 }
 @media (max-width: 767px) {
-    .css-1eet1uy,
+    
     .css-r9uhzn,
     .css-7dv1rb-MuiButtonBase-root-MuiFab-root-MuiSpeedDial-fab{
         width: 38px !important;
         height: 38px !important;
-        left: 15px !important;
-        bottom: 21px !important;
+        left: 0px !important;
+        bottom: 8px !important;
+    }
+    .css-1eet1uy{
+        width: 38px !important;
+        height: 38px !important;
+        left: 8px;
+        bottom: 12px;
     }
     .css-i4bv87-MuiSvgIcon-root{
         font-size: 19px !important;
