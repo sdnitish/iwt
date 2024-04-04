@@ -15,6 +15,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ReviewsIcon from '@mui/icons-material/Reviews';
 import FactCheckIcon from '@mui/icons-material/FactCheck';
 // import AddBusinessIcon from '@mui/icons-material/AddBusiness';
+import LeaderboardIcon from '@mui/icons-material/Leaderboard';
 
 function Sidebar() {
     const location = useLocation();
@@ -103,7 +104,14 @@ function Sidebar() {
             hasChildren: false,
             addClass: location.pathname === "/admin/location" ? "active mb-2 border rounded" : ""
         },
-     
+        {
+            name: 'Lead',
+            icon: <LeaderboardIcon />,
+            link: '/admin/lead',
+            hasChildren: false,
+            addClass: location.pathname === "/admin/lead" ? "active mb-2 border rounded" : ""
+        },
+
         // {
         //     name: 'Product',
         //     icon: <InventoryIcon />,

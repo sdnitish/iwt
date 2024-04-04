@@ -89,6 +89,7 @@ const ContactSect = () => {
                     color: '#fff',
                 }
             });
+            return false;
         }
 
         let result = await fetch(`${process.env.REACT_APP_BASE_URL}enquiry`,

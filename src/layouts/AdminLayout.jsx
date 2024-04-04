@@ -24,6 +24,7 @@ import Location from '../admin/pages/Location';
 import LocationData from '../admin/pages/LocationData';
 import ParentLocation from '../admin/pages/ParentLocation';
 import ParentLocationData from '../admin/pages/ParentLocationData';
+import Lead from '../admin/pages/Lead';
 
 function SiteLayout() {
     return (
@@ -66,6 +67,8 @@ function SiteLayout() {
                 <Route path='/admin/parentLocation' element={<ParentLocation />} />
                 <Route path='/admin/parentLocation/data' element={<ParentLocationData />} />
                 <Route path='/admin/parentLocation/data/:_id' element={<ParentLocationData />} />
+
+                <Route path='/admin/lead' element={<Lead />} />
             </Route>
 
             <Route path='/login' element={<Login />} />

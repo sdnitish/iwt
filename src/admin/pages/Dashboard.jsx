@@ -13,6 +13,7 @@ import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ReviewsIcon from '@mui/icons-material/Reviews';
 import FactCheckIcon from '@mui/icons-material/FactCheck';
+import LeaderboardIcon from '@mui/icons-material/Leaderboard';
 
 function Dashboard() {
 
@@ -94,6 +95,12 @@ function Dashboard() {
             'heading': dashboard.parentLocationCount,
             'icon': <LocationOnIcon className='fs-1' />,
             'link': '/admin/parentLocation'
+        },
+        {
+            'title': 'Leads',
+            'heading': dashboard.leadCount,
+            'icon': <LeaderboardIcon className='fs-1' />,
+            'link': '/admin/lead'
         }
     ];
 
