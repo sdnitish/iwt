@@ -1,5 +1,5 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 import { Routes, Route } from 'react-router-dom';
 import '../App.css';
@@ -53,6 +53,7 @@ function SiteLayout() {
         <Route path='/contact' element={<Suspense fallback={<Skeleton count={15} />}><Contact /></Suspense>} />
         <Route path='/sitemap' element={<Suspense fallback={<Skeleton count={15} />}><Sitemap /></Suspense>} />
         <Route path='/market-place' element={<Suspense fallback={<Skeleton count={15} />}><MarketPlace /></Suspense>} />
+        <Route path='/google35da33f130a69c13.html' element="google-site-verification: google35da33f130a69c13.html" />
         {
           products
             ?
@@ -105,11 +106,11 @@ function SiteLayout() {
                         path={'/' + value.parentSlug + '/' + item.slug}
                         element={
                           <Suspense fallback={<Skeleton count={15} />}>
-                          <KeywordInCity
-                            locationSlug={value.parentSlug}
-                            productSlug={item.slug}
+                            <KeywordInCity
+                              locationSlug={value.parentSlug}
+                              productSlug={item.slug}
                             />
-                            </Suspense>
+                          </Suspense>
                         }
                       />
                     )
@@ -121,7 +122,7 @@ function SiteLayout() {
                     <>
                       <Route key={key} path={'/' + item.slug} element={
                         <Suspense fallback={<Skeleton count={15} />}>
-                         <OurPresenceInCity slug={item.slug} />
+                          <OurPresenceInCity slug={item.slug} />
                         </Suspense>
                       } />
                       {
@@ -133,11 +134,11 @@ function SiteLayout() {
                               path={'/' + item.slug + '/' + val.slug}
                               element={
                                 <Suspense fallback={<Skeleton count={15} />}>
-                                <KeywordInCity
-                                  locationSlug={item.slug}
-                                  productSlug={val.slug}
+                                  <KeywordInCity
+                                    locationSlug={item.slug}
+                                    productSlug={val.slug}
                                   />
-                                  </Suspense>
+                                </Suspense>
                               }
                             />
                           )
