@@ -40,6 +40,7 @@
 .Contact_box form button{
     border-radius: 5px;
     border: 1px solid gray;
+    width: 218px;
 }
 .contact-info{
     width: 125%;
