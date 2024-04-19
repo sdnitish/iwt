@@ -130,7 +130,8 @@ const ContactSect = () => {
 
                     <div className='row'>
                         <div className='col-lg-5 col-md-6 conta-scls'>
-
+                            <SectionTitle smTitle="Contact" mainTitle="India's No.1 Website Designing Company in Delhi, India" />
+                            <p className='m-t20'>Instant Web Technology PVT LTD one of the best Website Designing Company in Delhi, India, So, what are you waiting for, send your enquiry now.</p>
                             <motion.div className='w-100'
                                 ref={ref}
                                 variants={boxVariant}
@@ -141,9 +142,8 @@ const ContactSect = () => {
                             </motion.div>
                             <Socials data={siteInfo} />
                         </div>
-                        <div className='col-lg-7 col-md-6 px-4'>
-                            <SectionTitle smTitle="Contact" mainTitle="India's No.1 Website Designing Company in Delhi, India" />
-                            <p className='m-t20'>Instant Web Technology PVT LTD one of the best Website Designing Company in Delhi, India, So, what are you waiting for, send your enquiry now.</p>
+                        <div className='col-lg-7 col-md-6 px-4 m-t50'>
+
                             <div className='Contact_box '>
                                 <form onSubmit={handleEnquiryForm}>
                                     <div className='row'>
