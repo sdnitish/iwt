@@ -8,7 +8,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 // import required modules
-import { Autoplay, Navigation } from 'swiper/modules';
+import { Autoplay, Navigation, FreeMode } from 'swiper/modules';
 
 const HomeBanner = () => {
 
@@ -29,17 +29,18 @@ const HomeBanner = () => {
     return (
         <>
             <Swiper
-                loop={true}
-                speed={1000}
                 autoplay={{
-                    delay: 2500,
+                    delay: 6500,
                     disableOnInteraction: false,
+                    // stopOnLastSlide: false,
                 }}
+                // loop={true}
+                speed={1000}
                 navigation={{
                     prevEl: '.prev-slide',
                     nextEl: '.next-slide',
                 }}
-                modules={[Autoplay, Navigation]}
+                modules={[FreeMode, Autoplay, Navigation]}
                 className="home-slider hero-slide-h">
                 {
                     banners
