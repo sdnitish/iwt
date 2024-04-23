@@ -32,7 +32,7 @@ const HomeBanner = () => {
                 loop={true}
                 speed={1000}
                 autoplay={{
-                    delay: 6500,
+                    delay: 2500,
                     disableOnInteraction: false,
                 }}
                 navigation={{
