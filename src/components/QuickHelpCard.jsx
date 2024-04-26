@@ -21,7 +21,7 @@ const QuickHelpCard = () => {
             <img className="support-bg" src={process.env.REACT_APP_BASE_URL + "images/img/support.jpg"} alt="Support Iwt" />
             <img className="support-bg-texture" src={process.env.REACT_APP_BASE_URL + "images/img/support.png"} alt="Support Iwt" />
             <div className="support-det">
-                <p className='sprt-h'>Request a Free Call in Today !</p>
+                <p className='sprt-h'>Contact Now!</p>
                 <div className="all__sidebar-item-help-contact">
                     <PhoneInTalkOutlinedIcon />
                     <div className="all__sidebar-item-help-contact-content">

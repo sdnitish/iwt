@@ -30,7 +30,7 @@ const ProductDetail = (props) => {
       <HelmetComp metaData={product}></HelmetComp>
       <Nav />
       <BreadCrumb name={product.name} />
-      <ProductDetailSect product={product} />
+      <ProductDetailSect product={product} hTwoTitle={product.shortDescription}/>
       <ProductSlider />
       <ContactSect />
       <Footer />

@@ -20,6 +20,28 @@ const HelmetComp = (props) => {
 
     return (
         <Helmet>
+            <meta name="twitter:card" content="summary" />
+
+            <meta name="twitter:site" content="@instantwebtech" />
+
+            <meta name="twitter:title" content={props.metaData.metaTitle} />
+
+            <meta name="twitter:description" content={props.metaData.metaDescription} />
+
+            <meta name="twitter:image" content="https://www.instantwebtech.com/images/banners/banner-1-1711952132465.webp" />
+
+            <meta property="og:title" content={props.metaData.metaTitle} />
+
+            <meta property="og:site_name" content="Instant Web Technology PVT. LTD." />
+
+            <meta property="og:url" content={window.location.href} />
+
+            <meta property="og:description" content={props.metaData.metaDescription} />
+
+            <meta property="og:type" content="website" />
+
+            <meta property="og:image" content="https://www.instantwebtech.com/images/banners/banner-1-1711952132465.webp" />
+
             <link href={process.env.REACT_APP_BASE_URL + 'images/' + siteInfo.favicon} rel="shortcut icon" type="image/png" />
             {Parser().parse(siteInfo.googleAnalytic)}
             <title>{props.metaData.metaTitle}</title>
@@ -27,7 +49,7 @@ const HelmetComp = (props) => {
             <meta name="description" content={props.metaData.metaDescription} />
 
             <script type="application/ld+json">
-                    {`
+                {`
                     "@context": "https://schema.org",
                     "@type": "LocalBusiness",
                     "name": "${`${props.metaData.metaTitle}`}",
@@ -61,7 +83,7 @@ const HelmetComp = (props) => {
             </script>
 
             <script type="application/ld+json">
-            {`
+                {`
             "@context": "https://schema.org/",
             "@type": "Product",
             "name": "${`${props.metaData.metaTitle}`}",
@@ -82,8 +104,8 @@ const HelmetComp = (props) => {
             </script>
 
             <script type="application/ld+json">
-            {
-            `
+                {
+                    `
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "${`${props.metaData.metaTitle}`}",
@@ -92,7 +114,7 @@ const HelmetComp = (props) => {
             "logo": "${`${process.env.REACT_APP_BASE_URL + 'images/' + siteInfo.logo}`}",
             "sameAs": "${`${window.location.href}`}"
             `
-            }
+                }
             </script>
 
         </Helmet>

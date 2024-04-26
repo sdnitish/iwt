@@ -23,7 +23,7 @@ const Socials = (props) => {
                         {
                             props.data.whatsapp
                                 ?
-                                <li><a href={props.data.whatsapp}><WhatsAppIcon /></a></li>
+                                <li><a href={'https://api.whatsapp.com/send?phone'+props.data.whatsapp}><WhatsAppIcon /></a></li>
                                 :
                                 null
                         }

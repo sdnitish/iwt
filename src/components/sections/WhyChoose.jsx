@@ -105,7 +105,7 @@ const WhyChoose = () => {
             </div>
 
             <div className='row align-items-center m-t40'>
-              <div className='col-auto'><BtnLink Href="" btnName="Book Service" /></div>
+              <div className='col-auto'><BtnLink Href="/contact" btnName="Book Service" /></div>
               <div className='col-auto d-flex align-items-center'>
                 <img height={65}  src={process.env.REACT_APP_BASE_URL + "images/shapes/group-img.png"} alt="" />
                 <div className='client-count'>

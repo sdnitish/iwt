@@ -30,7 +30,7 @@ function KeywordInCity(props) {
             <HelmetComp metaData={keywordInCity} />
             <Nav data={{ slug: props.locationSlug }} />
             <BreadCrumb name={keywordInCity.shortDescription} />
-            <KeywordInCitySec data={keywordInCity} />
+            <KeywordInCitySec data={keywordInCity}  hTwoTitle={keywordInCity.shortDescription}/>
             <ContactSect/>
             <Footer />
         </>
