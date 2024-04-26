@@ -27,7 +27,8 @@ const HelmetComp = (props) => {
             <meta name="description" content={props.metaData.metaDescription} />
 
             <script type="application/ld+json">
-                    {`"@context": "https://schema.org",
+                    {`
+                    "@context": "https://schema.org",
                     "@type": "LocalBusiness",
                     "name": "${`${props.metaData.metaTitle}`}",
                     "url": "${`${window.location.href}`}",
