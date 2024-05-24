@@ -39,7 +39,7 @@ const MenuList = (props) => {
             }
 
             <li ><Link onClick={closeMenu} to="/company-profile"><img width={40} height={35} className='menu-gif' src={process.env.REACT_APP_BASE_URL + "images/gif/Company-Profile.gif"} alt="" /> <span>Company Profile</span> </Link></li>
-
+            <li ><Link onClick={closeMenu} to="/blogs"><img width={40} height={35} className='menu-gif' src={process.env.REACT_APP_BASE_URL + "images/gif/Blog.gif"} alt="" /> <span>Blogs</span> </Link></li>
             <li ><Link onClick={closeMenu} to="/contact"><img width={40} height={35} className='menu-gif' src={process.env.REACT_APP_BASE_URL + "images/gif/conta-icon.gif"} alt="" /> <span>Contact</span> </Link></li>
         </ul>
     )

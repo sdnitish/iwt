@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import 'react-loading-skeleton/dist/skeleton.css'
 import { Link } from 'react-router-dom';
-// import { useLocation } from 'react-router-dom';
 import './Nav.css';
 import MenuList from './MenuList';
-// import BtnLink from '../BtnLink';
 import PermPhoneMsgIcon from '@mui/icons-material/PermPhoneMsg';
 import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
 import Socials from './Socials';
-// const Socials = lazy(() => import('./Socials'));
+import PreLoader from '../PreLoader';
 
 const Nav = (props) => {
 
     const [categories, setCategories] = useState([]);
     const [isOpen, setIsopen] = useState(false);
     const [siteInfo, setSiteInfo] = useState([]);
+    const [loadedData, setLoadedData] = useState(null);
 
     useEffect(() => {
         getCategories();
@@ -24,6 +22,7 @@ const Nav = (props) => {
     const getSiteInfo = async () => {
         let result = await fetch(`${process.env.REACT_APP_BASE_URL}siteInfo`);
         result = await result.json();
+        setLoadedData(result);
         if (result.status) {
             setSiteInfo(result.siteInfo);
         }
@@ -32,24 +31,22 @@ const Nav = (props) => {
     const getCategories = async () => {
         let result = await fetch(`${process.env.REACT_APP_BASE_URL}/categories`);
         result = await result.json();
+        setLoadedData(result);
         if (result.status) {
             setCategories(result.data);
         }
     };
 
-    // const {pathname} = useLocation();
     const toggleSidenav = () => {
         setIsopen(!isOpen);
     }
 
-    // Close the navigation panel
-    // useEffect(() => {
-    //     setIsopen(!isOpen); 
-    // }, [ pathname ]);
-
     return (
         <>
-            <header className="Header">
+            {
+                loadedData ? (
+                    <>
+                    <header className="Header">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
@@ -112,6 +109,11 @@ const Nav = (props) => {
                     <div className="cstm-socials"><Socials /></div>
                 </div>
             </div>
+                    </>
+                ) : (
+                    <PreLoader />
+                )
+            }
         </>
     );
 

@@ -2,16 +2,13 @@ import React, { useState, useEffect, lazy, Suspense } from 'react';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 import Nav from '../components/nav/Nav';
-// import HomeBanner from '../components/sections/HomeBanner';
 import FeaturesSect from '../components/sections/FeaturesSect';
 import StepsSect from '../components/sections/StepsSect';
 import Testimonial from '../components/sections/Testimonial';
 import ContactSect from '../components/sections/ContactSect';
-// import ProductSection from './components/sections/ProductSection';
 import HelmetComp from '../components/HelmetComp';
 import Footer from '../components/sections/Footer';
-// import CompanyProfile from '../components/sections/CompanyProfile';
-// import WhyChoose from '../components/sections/WhyChoose';
+import PreLoader from '../components/PreLoader';
 const WhyChoose = lazy(() => import('../components/sections/WhyChoose'));
 const CompanyProfile = lazy(() => import('../components/sections/CompanyProfile'));
 const ProductSlider = lazy(() => import('../components/sections/ProductSlider'));
@@ -38,19 +35,19 @@ const Home = () => {
     <>
       <HelmetComp metaData={homeData} />
       <Nav />
-      <Suspense fallback={<SkeletonTheme baseColor="#f5f4f4" highlightColor="#cfcece"> <p> <Skeleton count={31} /> </p> </SkeletonTheme>}>
+      <Suspense fallback={<PreLoader />}>
         <HomeBanner />
       </Suspense>
-      <Suspense fallback={<Skeleton count={5} />}>
+      <Suspense fallback={<PreLoader />}>
         <WelcomeText />
       </Suspense>
-      <Suspense fallback={<Skeleton count={10} />}>
+      <Suspense fallback={<PreLoader />}>
         <ProductSlider />
       </Suspense>
-      <Suspense fallback={<Skeleton count={24} />}>
+      <Suspense fallback={<PreLoader />}>
         <CompanyProfile pageData={homeData} homeTitle={homeData.shortDescription} />
       </Suspense>
-      <Suspense fallback={<Skeleton count={21} />}>
+      <Suspense fallback={<PreLoader />}>
         <FeaturesSect />
         <WhyChoose />
         <StepsSect />

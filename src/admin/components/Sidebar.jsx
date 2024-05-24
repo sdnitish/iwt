@@ -16,6 +16,7 @@ import ReviewsIcon from '@mui/icons-material/Reviews';
 import FactCheckIcon from '@mui/icons-material/FactCheck';
 // import AddBusinessIcon from '@mui/icons-material/AddBusiness';
 import LeaderboardIcon from '@mui/icons-material/Leaderboard';
+import NoteAltIcon from '@mui/icons-material/NoteAlt';
 
 function Sidebar() {
     const location = useLocation();
@@ -68,6 +69,13 @@ function Sidebar() {
             link: '/admin/testimonial',
             hasChildren: false,
             addClass: location.pathname === "/admin/testimonial" ? "active mb-2 border rounded" : ""
+        },
+        {
+            name: 'Blogs',
+            icon: <NoteAltIcon />,
+            link: '/admin/blogs',
+            hasChildren: false,
+            addClass: location.pathname === "/admin/blogs" ? "active mb-2 border rounded" : ""
         },
         {
             name: 'Promotional Category',

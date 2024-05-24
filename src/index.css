@@ -27,6 +27,13 @@ a{
   text-decoration: none;
   transition: all 400ms;
 }
+.ul-dots ul li,
+.ul-dots ul{
+  list-style: unset !important;
+}
+.ul-dots ul{
+  padding-left: 15px;
+}
 .Welcome-Letter{
   font-weight: 800;
   -webkit-text-stroke-color: var(--primry-clr);
@@ -60,7 +67,7 @@ a{
   background-position: bottom;
   /* background-attachment: fixed; */
   padding-top: 140px ;
-  padding-bottom: 140px ;
+  padding-bottom: 40px ;
   position: relative;
 }
 .feat-sect-bg .svg-anm{
