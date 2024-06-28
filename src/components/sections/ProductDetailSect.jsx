@@ -12,7 +12,7 @@ const ProductDetailSect = (props) => {
                     <img className='w-100' src={process.env.REACT_APP_BASE_URL + "images/products/" + props.product.img} alt={props.product.name} title={props.product.name} />
                     <div className="row">
                         <div className="col-lg-8 col-md-8 mt-4">
-                            <SectionTitle smTitle="Service Details" mainTitle={props.product.shortDescription} />
+                            <SectionTitle smTitle="Service Details" hTwoTitle={props.hTwoTitle} mainTitle={props.product.shortDescription} />
                             {Parser().parse(props.product.description)}
                             {Parser().parse(props.product.extraDescription)}
                         </div>

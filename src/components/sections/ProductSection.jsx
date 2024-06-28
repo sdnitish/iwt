@@ -23,25 +23,7 @@ const ProductSection = () => {
     <section className='sect-space bg-gry'>
       <div className='container'>
         <div className='text-center m-b40'>
-          <SectionTitle smTitle="All Services" mainTitle={
-          <TypeAnimation
-            sequence={[
-              'Welcome to Instant Web Technology Pvt. Ltd.',
-              1000, 
-              'Join us to get our most popular services',
-              1000, 
-              'Easily affordable prices',
-              1000,
-              'which brings your company on top of google',
-              1000,
-              'and helps you to build a big brand.',
-              1000
-            ]}
-            wrapper="span"
-            speed={50}
-            style={{ fontSize: '34px', display: 'inline-block' }}
-            repeat={Infinity}
-          />} />
+          <SectionTitle smTitle="All Services" mainTitle={"All Services"} />
         </div>
         <div className='row'>
         {

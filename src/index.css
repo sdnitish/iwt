@@ -6,10 +6,12 @@
   padding: 0;
   /* font-family: "Open Sans", sans-serif; */
   font-family: "Red Hat Display", sans-serif;
+  scroll-behavior: smooth;
 }
 body{
   width: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 section{
   overflow-x: hidden;
@@ -26,6 +28,13 @@ ul{
 a{
   text-decoration: none;
   transition: all 400ms;
+}
+.ul-dots ul li,
+.ul-dots ul{
+  list-style: unset !important;
+}
+.ul-dots ul{
+  padding-left: 15px;
 }
 .Welcome-Letter{
   font-weight: 800;
@@ -60,7 +69,7 @@ a{
   background-position: bottom;
   /* background-attachment: fixed; */
   padding-top: 140px ;
-  padding-bottom: 140px ;
+  padding-bottom: 40px ;
   position: relative;
 }
 .feat-sect-bg .svg-anm{

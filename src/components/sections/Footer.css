@@ -222,6 +222,12 @@
 .footer-widget .links{
     list-style: none;
 }
+@media (min-width: 768px) {
+    .footer-widget .links {
+        max-height: 206px;
+        overflow-y: auto;
+    }
+}
 .footer-widget .links li{
     margin: 5px 0;
 }

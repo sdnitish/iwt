@@ -14,6 +14,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ReviewsIcon from '@mui/icons-material/Reviews';
 import FactCheckIcon from '@mui/icons-material/FactCheck';
 import LeaderboardIcon from '@mui/icons-material/Leaderboard';
+import NoteAltIcon from '@mui/icons-material/NoteAlt';
 
 function Dashboard() {
 
@@ -65,6 +66,12 @@ function Dashboard() {
             'heading': dashboard.testimonialCount,
             'icon': <ReviewsIcon className='fs-1' />,
             'link': '/admin/testimonial'
+        },
+        {
+            'title': 'Blogs',
+            'heading': dashboard.blogsCount,
+            'icon': <NoteAltIcon className='fs-1' />,
+            'link': '/admin/blogs'
         },
         {
             'title': 'Promotional Categories',

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import Nav from '../components/nav/Nav';
 import BreadCrumb from '../components/sections/BreadCrumb'
-import ProductDetailSect from '../components/sections/ProductDetailSect'
+import BlogsSect from '../components/sections/BlogsSect';
 import ProductSlider from '../components/sections/ProductSlider';
 import ContactSect from '../components/sections/ContactSect'
 import HelmetComp from '../components/HelmetComp';
 import Footer from '../components/sections/Footer';
 import { useParams } from 'react-router-dom';
 
-const ProductDetail = (props) => {
+const Blogs = (props) => {
 
   const [product, setProduct] = useState([]);
   const param = useParams();
@@ -29,13 +29,12 @@ const ProductDetail = (props) => {
     <>
       <HelmetComp metaData={product}></HelmetComp>
       <Nav />
-      <BreadCrumb name={product.name} />
-      <ProductDetailSect product={product} hTwoTitle={product.shortDescription}/>
-      <ProductSlider />
+      <BreadCrumb name="Blogs" />
+      <BlogsSect />
       <ContactSect />
       <Footer />
     </>
   )
 }
 
-export default ProductDetail
+export default Blogs

@@ -14,6 +14,8 @@ import Category from '../admin/pages/Category';
 import CategoryData from '../admin/pages/CategoryData';
 import Testimonials from '../admin/pages/Testimonials';
 import TestimonialData from '../admin/pages/TestimonialData';
+import Blogs from '../admin/pages/Blogs';
+import BlogData from '../admin/pages/BlogData';
 import PromotionalCategory from '../admin/pages/PromotionalCategory';
 import PromotionalCategoryData from '../admin/pages/PromotionalCategoryData';
 import KeywordInCity from '../admin/pages/KeywordInCity';
@@ -52,6 +54,10 @@ function SiteLayout() {
                 <Route path='/admin/testimonial' element={<Testimonials />} />
                 <Route path='/admin/testimonial/data' element={<TestimonialData />} />
                 <Route path='/admin/testimonial/data/:_id' element={<TestimonialData />} />
+
+                <Route path='/admin/blogs' element={<Blogs />} />
+                <Route path='/admin/blogs/data' element={<BlogData />} />
+                <Route path='/admin/blogs/data/:_id' element={<BlogData />} />
 
                 <Route path='/admin/promotionalCategory' element={<PromotionalCategory />} />
                 <Route path='/admin/promotionalCategory/data' element={<PromotionalCategoryData />} />

@@ -52,7 +52,7 @@ const Footer = () => {
                     <div className="btm-layer"></div>
                     <div className="btm-layer2"></div>
                     <div className="btm-layer3">
-                        <img src={process.env.REACT_APP_BASE_URL + "images/bg/web-development.gif"} alt="" />
+                        <img src={process.env.REACT_APP_BASE_URL + "images/bg/web-development.gif"} alt="web-development gif" title='web-development gif' />
                     </div>
                     <div className='container'>
                         <div className='row justify-content-between'>
@@ -61,7 +61,7 @@ const Footer = () => {
 
                                 </div>
                             </div>
-                            <div className='col-lg-2 col-md-6 m-t40'>
+                            <div className='col-lg-2 col-md-6 m-t10'>
                                 <div className='footer-widget'>
                                     <p className='title-ft'>Useful Links</p>
                                     <ul className='links'>
@@ -71,10 +71,15 @@ const Footer = () => {
                                         <li><Link to="/sitemap">Sitemap</Link></li>
                                         <li><Link to="/market-place">Market Place</Link></li>
                                         <li><Link to="/contact">Contact Us</Link></li>
+                                        <li><Link to="/payment">Payment</Link></li>
+                                        <li><Link to="/terms-and-conditions">Terms & Conditions</Link></li>
+                                        <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+                                        <li><Link to="/cancellation-and-refund">Cancellation & Refund</Link></li>
+                                        <li><Link to="/shipping-and-delivery">Shipping & Delivery</Link></li>
                                     </ul>
                                 </div>
                             </div>
-                            <div className='col-lg-4 col-md-6 m-t40'>
+                            <div className='col-lg-4 col-md-6 m-t10'>
                                 <div className='footer-widget'>
                                     <p className='title-ft'>Contact Info</p>
 

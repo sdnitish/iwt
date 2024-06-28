@@ -36,7 +36,9 @@ function KeywordInCity() {
         result = await result.json();
         if (result.status) {
             setShortDescription(result.ourPresenceInCity.shortDescription);
+            setDescription(result.ourPresenceInCity.description);
             setDefaultDescription(result.ourPresenceInCity.description);
+            setExtraDescription(result.ourPresenceInCity.extraDescription);
             setDefaultExtraDescription(result.ourPresenceInCity.extraDescription);
             setMetaTitle(result.ourPresenceInCity.metaTitle);
             setMetaDescription(result.ourPresenceInCity.metaDescription);

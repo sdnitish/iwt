@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Parser } from 'html-to-react'
-import {  Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -33,7 +33,7 @@ const ProductSlider = () => {
         <div className='container'>
           <div className='text-center'>
             {/* <SectionTitle smTitle='Services' mainTitle={} /> */}
-           </div>
+          </div>
           <div className=' m-t30'>
             <Swiper
               loop={true}
@@ -66,25 +66,25 @@ const ProductSlider = () => {
                 },
               }}
               modules={[Autoplay, Navigation]}
-              className="home-slider">
+              className="serv-slider">
 
-{
-            products
-              ?
-              products.map((value, index) =>
-              <SwiperSlide key={index}>
-                 <ProductCard 
-                productName={value.name}
-                servDesc={Parser().parse(value.description)}
-                servPrice={value.price}
-                servLink={'/'+value.slug}
-                servIcon={value.icon}
-                />
-             </SwiperSlide>
-              )
-              :
-              null
-          }
+              {
+                products
+                  ?
+                  products.map((value, index) =>
+                    <SwiperSlide key={index}>
+                      <ProductCard
+                        productName={value.name}
+                        servDesc={Parser().parse(value.description)}
+                        servPrice={value.price}
+                        servLink={'/' + value.slug}
+                        servIcon={value.icon}
+                      />
+                    </SwiperSlide>
+                  )
+                  :
+                  null
+              }
 
             </Swiper>
           </div>

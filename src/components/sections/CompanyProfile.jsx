@@ -26,9 +26,9 @@ const CompanyProfile = (props) => {
     if (inView) {
       control.start("visible");
     }
-    else {
-      control.start("hidden");
-    }
+    // else {
+    //   control.start("hidden");
+    // }
   }, [control, inView]);
 
   const getSiteInfo = async () => {
@@ -72,7 +72,7 @@ const CompanyProfile = (props) => {
                   <span onClick={() => setOpen(true)} className="video-btn" ><i className="fa fa-play"></i></span>
                 </div>
               </div>
-              <div className='abt-shape anim-left-right'><img loading='lazy' src={process.env.REACT_APP_BASE_URL + "images/shapes/service-left-shape.svg"} alt="" /></div>
+              <div className='abt-shape anim-left-right'><img loading='lazy' src={process.env.REACT_APP_BASE_URL + "images/shapes/service-left-shape.svg"} alt="line texture" title='line texture' /></div>
               <div className='row h-100 align-items-end'>
                 <div className='w-50'>
                   <img className='w-100' loading='lazy' src={process.env.REACT_APP_BASE_URL + "images/pages/" + props.pageData.img} alt={props.pageData.shortDescription} title={props.pageData.shortDescription} />

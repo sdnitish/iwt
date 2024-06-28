@@ -17,7 +17,7 @@ const HasChildMenu = (props) => {
     return (
         <li className='hasChild'>
             <Link onClick={closeMenu} to={"/services"}>
-                <img width={40} height={35} className='menu-gif' src={props.servGif} alt="" />
+                <img width={40} height={35} className='menu-gif' src={props.servGif} alt={props.servChildAlt} title={props.servChildTitle} />
                 <span>{props.servName}</span>
             </Link>
             <i onClick={toggleDropdown} className="fa-solid fa-angle-down"></i>

@@ -30,30 +30,30 @@ const WhyChoose = () => {
     if (inView) {
       control.start("visible");
     }
-    else {
-      control.start("hidden");
-    }
+    // else {
+    //   control.start("hidden");
+    // }
   }, [control, inView]);
 
   return (
     <section className="sect-space pb-2 why-sect">
-      <img className='shape-right anim-up-down' src={process.env.REACT_APP_BASE_URL + "images/shapes/why-shape.png"} alt="" />
+      <img className='shape-right anim-up-down' src={process.env.REACT_APP_BASE_URL + "images/shapes/why-shape.png"} alt="shpae png" title='shape png' />
       {/* <h1 className='text-center'><CountUp end={100} enableScrollSpy scrollSpyOnce="true" /></h1> */}
       <div className='container'>
 
         <div className='row'>
           <div className='col-lg-6'>
             <div className='why-img'>
-              <img className='why-left-img' src={process.env.REACT_APP_BASE_URL + "images/img/why-img4.webp"} alt="" />
+              <img className='why-left-img' src={process.env.REACT_APP_BASE_URL + "images/img/why-img4.webp"} alt="Why chooose Instant Web Technology." title='Why chooose Instant Web Technology.' />
               <motion.div
                 ref={ref}
                 variants={boxVariantTwo}
                 initial="hidden"
                 animate={control}
                 className='why-right-img'>
-                <img src={process.env.REACT_APP_BASE_URL + "images/img/why-img1.webp"} alt="" />
+                <img src={process.env.REACT_APP_BASE_URL + "images/img/why-img1.webp"} alt="Why chooose Instant Web Technology." title='Why chooose Instant Web Technology.' />
               </motion.div>
-              <img className='shape-left  anim-up-down' src={process.env.REACT_APP_BASE_URL + "images/shapes/dots.png"} alt="" />
+              <img className='shape-left  anim-up-down' src={process.env.REACT_APP_BASE_URL + "images/shapes/dots.png"} alt="dot shapes" title='dot shapes' />
               <span className='why-text anim-up-down'><span>Why Choose Us</span></span>
             </div>
           </div>
@@ -63,7 +63,7 @@ const WhyChoose = () => {
             <p>We at Instant Web Technology are all about giving you the best and top-of-the-line Google promotion and web designing services that you can count on for all your online presence-building needs.</p>
             <div className="row ">
               <div className="col-lg-5 col-md-5 col-sm-12">
-                <img className='w-100' src={process.env.REACT_APP_BASE_URL + "images/gif/why-gif.gif"} alt="" />
+                <img className='w-100' src={process.env.REACT_APP_BASE_URL + "images/gif/why-gif.gif"} alt="Why chooose Instant Web Technology." title='Why chooose Instant Web Technology.' />
               </div>
               <div className="col-lg-7 col-md-7 col-sm-12">
                 <ul className="list-why-us">
@@ -105,9 +105,9 @@ const WhyChoose = () => {
             </div>
 
             <div className='row align-items-center m-t40'>
-              <div className='col-auto'><BtnLink Href="" btnName="Book Service" /></div>
+              <div className='col-auto'><BtnLink Href="/contact" btnName="Book Service" /></div>
               <div className='col-auto d-flex align-items-center'>
-                <img height={65}  src={process.env.REACT_APP_BASE_URL + "images/shapes/group-img.png"} alt="" />
+                <img height={65}  src={process.env.REACT_APP_BASE_URL + "images/shapes/group-img.png"} alt="Happy Clients" title='Happy Clients' />
                 <div className='client-count'>
                   <CountUp end={500} enableScrollSpy scrollSpyOnce="false" /> <span>+</span>
                   <p>Happy Clients</p>
@@ -123,7 +123,7 @@ const WhyChoose = () => {
               <div className='icon-box-bg'></div>
               <div className='icon-box row'>
                 <div className='cout-icon col-auto'>
-                  <img height={60} width={60} src={process.env.REACT_APP_BASE_URL + "images/gif/Client1.gif"} alt="" />
+                  <img height={60} width={60} src={process.env.REACT_APP_BASE_URL + "images/gif/Client1.gif"} alt="Client gif" title='Client gif'/>
                 </div>
                 <div className='col-auto'>
                   <div className='count-text'>
@@ -140,7 +140,7 @@ const WhyChoose = () => {
               <div className='icon-box-bg'></div>
               <div className='icon-box row'>
                 <div className='cout-icon col-auto'>
-                  <img height={65} width={65} src={process.env.REACT_APP_BASE_URL + "images/gif/Award-2.gif"} alt="" />
+                  <img height={65} width={65} src={process.env.REACT_APP_BASE_URL + "images/gif/Award-2.gif"} alt="Award gif" title='Award gif' />
                 </div>
                 <div className='col-auto'>
                   <div className='count-text'>
@@ -157,7 +157,7 @@ const WhyChoose = () => {
               <div className='icon-box-bg'></div>
               <div className='icon-box row'>
                 <div className='cout-icon col-auto'>
-                  <img height={60} width={60} src={process.env.REACT_APP_BASE_URL + "images/gif/Ideas1.gif"} alt="" />
+                  <img height={60} width={60} src={process.env.REACT_APP_BASE_URL + "images/gif/Ideas1.gif"} alt="Ideas gif" title='Ideas gif' />
                 </div>
                 <div className='col-auto'>
                   <div className='count-text'>
@@ -174,7 +174,7 @@ const WhyChoose = () => {
               <div className='icon-box-bg'></div>
               <div className='icon-box row'>
                 <div className='cout-icon col-auto'>
-                  <img height={65} width={65} src={process.env.REACT_APP_BASE_URL + "images/gif/Employees1.gif"} alt="" />
+                  <img height={65} width={65} src={process.env.REACT_APP_BASE_URL + "images/gif/Employees1.gif"} alt="Employees gif" title='Employees gif' />
                 </div>
                 <div className='col-auto'>
                   <div className='count-text'>

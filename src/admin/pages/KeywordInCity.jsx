@@ -37,7 +37,9 @@ function KeywordInCity() {
         if (result.status) {
             setShortDescription(result.keywordInCity.shortDescription);
             setDefaultDescription(result.keywordInCity.description);
+            setDescription(result.keywordInCity.description);
             setDefaultExtraDescription(result.keywordInCity.extraDescription);
+            setExtraDescription(result.keywordInCity.extraDescription);
             setMetaTitle(result.keywordInCity.metaTitle);
             setMetaDescription(result.keywordInCity.metaDescription);
             setMetaKeywords(result.keywordInCity.metaKeywords);
