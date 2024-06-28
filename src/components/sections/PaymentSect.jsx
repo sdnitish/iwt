@@ -301,7 +301,7 @@ const PaymentSect = () => {
                                         value="phonepay"
                                         name="paymentMethod"
                                         id="phonepay" />
-                                    <img className='w-100 ' src="images/img/phonepe.png" alt="" />
+                                    <img className='w-100 ' src="images/img/phonepe.png" alt="phonepay logo" title='phonepay logo' />
                                 </label>
                             </div>
                             <div className='col-lg-3 col-md-4 col-sm-6 m-t25'>
@@ -319,7 +319,7 @@ const PaymentSect = () => {
                                         value="payu"
                                         name="paymentMethod"
                                         id="payu" />
-                                    <img className='w-100 ' src="images/img/payu2.png" alt="" />
+                                    <img className='w-100 ' src="images/img/payu2.png" alt="payu logo" title='payu logo'/>
                                 </label>
                             </div>
                         </div>

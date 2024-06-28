@@ -16,9 +16,9 @@ const StepsLeft = (props) => {
         if (inView) {
             control.start("visible");
         }
-        else {
-            control.start("hidden");
-        }
+        // else {
+        //     control.start("hidden");
+        // }
     }, [control, inView]);
 
     return (
@@ -32,7 +32,7 @@ const StepsLeft = (props) => {
                 <div className="process-box process-left wow slideInLeft" >
                     <div className="row">
                         <div className="col-8 step-cnt">
-                            <img height={50} width={50} className='step-img' src={process.env.REACT_APP_BASE_URL + "images/gif/Award1.gif"} alt="Award Gif" />
+                            <img height={50} width={50} className='step-img' src={process.env.REACT_APP_BASE_URL + "images/gif/Award1.gif"} alt={props.stepTitle} title={props.stepTitle} />
                             <p className="p-name">{props.stepTitle}</p>
                             <p className="lh-p"><small>{props.stepDesc}</small></p>
                         </div>

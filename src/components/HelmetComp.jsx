@@ -47,6 +47,9 @@ const HelmetComp = (props) => {
             <title>{props.metaData.metaTitle}</title>
             <meta name="keywords" content={props.metaData.metaKeywords} />
             <meta name="description" content={props.metaData.metaDescription} />
+
+            <meta name="author" content={siteInfo.compName} />
+
             <link rel="canonical" href={window.location.href} />
 
             <script type="application/ld+json">

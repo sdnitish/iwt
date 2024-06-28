@@ -6,7 +6,7 @@ const BtnLink = (props) => {
   return (
     <Link className={props.addClass  + ' ' + 'thm-btn'} to={props.Href}>{props.btnName} 
     {/* <LastPageIcon /> */}
-    <img src="images/img/pointer.gif" alt="" />
+    <img src="images/img/pointer.gif" alt="pointer gif" title='pointer gif' />
     </Link>
   )
 }

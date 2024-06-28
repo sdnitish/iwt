@@ -43,7 +43,7 @@ const BlogDetailSect = (props) => {
                                     blogs.map((value, index) =>
                                         <div key={index} className="recent-blogs">
                                             <div className="blogs-card">
-                                                <img className='w-100 mb-0' src={process.env.REACT_APP_BASE_URL + "images/blogs/" + value.imgSmall} alt="" />
+                                                <img className='w-100 mb-0' src={process.env.REACT_APP_BASE_URL + "images/blogs/" + value.imgSmall} alt={value.blogTitle} title={value.blogTitle} />
                                                 <div className="blog-content-part">
                                                     <div className="admin-post-date">
                                                         <span>< AccountCircleIcon /> By {value.admin}</span>

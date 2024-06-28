@@ -19,9 +19,9 @@ const ProductCard = (props) => {
     if (inView) {
       control.start("visible");
     }
-    else {
-      control.start("hidden");
-    }
+    // else {
+    //   control.start("hidden");
+    // }
   }, [control, inView]);
 
 

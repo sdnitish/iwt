@@ -18,8 +18,8 @@ const QuickHelpCard = () => {
     }
     return (
         <div className="all__sidebar-item-help"  >
-            <img className="support-bg" src={process.env.REACT_APP_BASE_URL + "images/img/support.jpg"} alt="Support Iwt" />
-            <img className="support-bg-texture" src={process.env.REACT_APP_BASE_URL + "images/img/support.png"} alt="Support Iwt" />
+            <img className="support-bg" src={process.env.REACT_APP_BASE_URL + "images/img/support.jpg"} alt="Support Iwt" title='Support Iwt'/>
+            <img className="support-bg-texture" src={process.env.REACT_APP_BASE_URL + "images/img/support.png"} alt="Support Iwt" title='Support Iwt'/>
             <div className="support-det">
                 <p className='sprt-h'>Contact Now!</p>
                 <div className="all__sidebar-item-help-contact">

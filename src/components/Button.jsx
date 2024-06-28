@@ -4,7 +4,7 @@ import React from 'react';
 const Button = (props) => {
   return (
     <button className='thm-btn ' type={props.btnType}>{props.btnName} 
-     <img src="images/img/pointer.gif" alt="" />
+     <img src="images/img/pointer.gif" alt="pointer gif" title='pointer gif' />
     </button>
   )
 }

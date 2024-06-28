@@ -52,7 +52,7 @@ const Footer = () => {
                     <div className="btm-layer"></div>
                     <div className="btm-layer2"></div>
                     <div className="btm-layer3">
-                        <img src={process.env.REACT_APP_BASE_URL + "images/bg/web-development.gif"} alt="" />
+                        <img src={process.env.REACT_APP_BASE_URL + "images/bg/web-development.gif"} alt="web-development gif" title='web-development gif' />
                     </div>
                     <div className='container'>
                         <div className='row justify-content-between'>

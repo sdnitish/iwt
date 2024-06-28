@@ -17,9 +17,9 @@ const FeatureCard = (props) => {
     if (inView) {
       control.start("visible");
     }
-    else {
-      control.start("hidden");
-    }
+    // else {
+    //   control.start("hidden");
+    // }
   }, [control, inView]);
 
   return (
@@ -35,7 +35,7 @@ const FeatureCard = (props) => {
           <div className='icn-and-text'>
             <div className='brdr-shd-one'>
               <div className='brdr-shd-two'>
-                <div className='Icn'><img src={props.featImg} alt="" /></div>
+                <div className='Icn'><img src={props.featImg} alt={props.featTitle} title={props.featTitle} /></div>
                 <p className='Text'>{props.titleOne}</p>
               </div>
             </div>

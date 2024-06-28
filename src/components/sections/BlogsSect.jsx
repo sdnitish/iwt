@@ -62,14 +62,14 @@ const BlogsSect = (props) => {
                                 blogs.map((value, index) =>
                                     <div key={index} className="col-lg-4 col-md-6 ">
                                         <div className="blogs-card">
-                                            <img className='w-100' src={process.env.REACT_APP_BASE_URL + "images/blogs/" + value.imgSmall} alt="" />
+                                            <img className='w-100' src={process.env.REACT_APP_BASE_URL + "images/blogs/" + value.imgSmall} alt={value.blogTitle} title={value.blogTitle} />
                                             <div className="admin-post-date">
                                                 <span>< AccountCircleIcon /> By {value.admin}</span>
                                                 <span><CalendarMonthIcon /> {value.date}</span>
                                             </div>
                                             <Link to={"/"+ value.slug} className="blog-card-title">{value.blogTitle}</Link>
                                             <BtnLink Href={"/"+ value.slug} addClass="btn-blog" btnName="Read More" />
-                                            <img className='blog-vector' src={process.env.REACT_APP_BASE_URL +"images/img/blog-shape.svg"} alt="blog-vector" />
+                                            <img className='blog-vector' src={process.env.REACT_APP_BASE_URL +"images/img/blog-shape.svg"} alt="blog-vector" title='blog-vector' />
                                         </div>
                                     </div>
                                 )
