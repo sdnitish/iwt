@@ -53,7 +53,6 @@ function SiteLayout() {
         <Route path='/contact' element={<Suspense fallback={<Skeleton count={15} />}><Contact /></Suspense>} />
         <Route path='/sitemap' element={<Suspense fallback={<Skeleton count={15} />}><Sitemap /></Suspense>} />
         <Route path='/market-place' element={<Suspense fallback={<Skeleton count={15} />}><MarketPlace /></Suspense>} />
-        <Route path='/google35da33f130a69c13.html' element="google-site-verification: google35da33f130a69c13.html" />
         {
           products
             ?

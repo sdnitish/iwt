@@ -56,15 +56,15 @@ const Nav = (props) => {
                             <div className="header-topbar-content">
                                 {/* socials */}
                                 <div className="cstm-socials">
-                                        <Socials data={siteInfo} />
+                                    <Socials data={siteInfo} />
                                 </div>
 
                                 <div className="cstm-contact-infos">
-                                        <ul>
-                                            <li><PermPhoneMsgIcon /><a href={"tel:" + siteInfo.primaryPhone}>{siteInfo.primaryPhone}</a></li>
-                                            <li><ForwardToInboxIcon /><a href={"mailto:" + siteInfo.primaryMail}>{siteInfo.primaryMail}</a>
-                                            </li>
-                                        </ul>
+                                    <ul>
+                                        <li><PermPhoneMsgIcon /><a href={"tel:" + siteInfo.primaryPhone}>{siteInfo.primaryPhone}</a></li>
+                                        <li><ForwardToInboxIcon /><a href={"mailto:" + siteInfo.primaryMail}>{siteInfo.primaryMail}</a>
+                                        </li>
+                                    </ul>
                                 </div>
                                 {/* <BtnLink Href="" addClass='' btnName="Request Quote" /> */}
                             </div>
@@ -91,7 +91,7 @@ const Nav = (props) => {
                     </div>
                 </div>
                 <div className='menu-shape-top'>
-                    <img src={process.env.REACT_APP_BASE_URL +  "images/shapes/cloud-menu.png"} alt="" />
+                    <img src={process.env.REACT_APP_BASE_URL + "images/shapes/cloud-menu.png"} alt="" />
                 </div>
                 <div className='menu-shape-botm'>
                     {/* <img src="../images/shapes/paper-cut.png" alt="" /> */}
